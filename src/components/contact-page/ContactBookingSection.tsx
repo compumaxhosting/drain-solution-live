@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import Image from "next/image";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import {
   ArrowRight,
   CalendarDays,
@@ -13,8 +14,9 @@ import {
   Phone,
   ShieldCheck,
   Wrench,
-  AlertCircle,
   X,
+  Star,
+  QrCode,
 } from "lucide-react";
 
 const serviceOptions = [
@@ -44,88 +46,114 @@ const credentials = [
     desc: "Professional service for residential and commercial drain and sewer needs.",
     icon: Wrench,
   },
-];
+] as const;
+
+type FormState = {
+  fullName: string;
+  phone: string;
+  email: string;
+  address: string;
+  service: string;
+  date: string;
+  notes: string;
+};
+
+const initialFormData: FormState = {
+  fullName: "",
+  phone: "",
+  email: "",
+  address: "",
+  service: serviceOptions[0],
+  date: "",
+  notes: "",
+};
 
 export default function ContactBookingSection() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
-    email: "",
-    address: "",
-    service: serviceOptions[0],
-    date: "",
-    isUrgent: false,
-    notes: "",
-  });
-
+  const [formData, setFormData] = useState<FormState>(initialFormData);
   const [uploadedImages, setUploadedImages] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value, type } = e.target;
+    const { name, value } = e.target;
 
-    if (type === "checkbox") {
-      const checked = (e.target as HTMLInputElement).checked;
-
-      setFormData((prev) => ({
-        ...prev,
-        [name]: checked,
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    }
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  const handleImageUpload = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
-
     if (!files.length) return;
 
     setUploadedImages((prev) => [...prev, ...files].slice(0, 5));
-
     e.target.value = "";
   };
 
   const removeImage = (index: number) => {
     setUploadedImages((prev) =>
-      prev.filter((_, imageIndex) => imageIndex !== index)
+      prev.filter((_, imageIndex) => imageIndex !== index),
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage("");
 
-    /*
-      The selected images are available in `uploadedImages`.
+    try {
+      const dataToSend = new FormData();
 
-      When connecting this form to your backend/email service,
-      send `uploadedImages` together with `formData`.
-    */
+      Object.entries(formData).forEach(([key, value]) => {
+        dataToSend.append(key, value);
+      });
 
-    setSubmitted(true);
+      uploadedImages.forEach((file) => {
+        dataToSend.append("images", file);
+      });
+
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        body: dataToSend,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Something went wrong.");
+      }
+
+      setSubmitted(true);
+    } catch (error: unknown) {
+      console.error("Service request submission failed:", error);
+
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Failed to submit your request. Please try calling us directly.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const resetForm = () => {
+    setSubmitted(false);
+    setUploadedImages([]);
+    setFormData(initialFormData);
+    setErrorMessage("");
   };
 
   return (
     <section className="relative overflow-hidden bg-[#f4f7fa] py-14 sm:py-20 lg:py-24">
-      {/* Background decoration */}
       <div className="pointer-events-none absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-[#014484]/[0.035]" />
-
       <div className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-[#c02f2d]/[0.025]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* ================================================== */}
-        {/* SECTION HEADER */}
-        {/* ================================================== */}
-
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14 lg:mb-16">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#014484]/10 bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#014484] shadow-sm sm:text-[11px]">
             <CalendarDays className="h-3.5 w-3.5" />
@@ -142,18 +170,10 @@ export default function ContactBookingSection() {
           </p>
         </div>
 
-        {/* ================================================== */}
-        {/* MAIN CONTENT */}
-        {/* ================================================== */}
-
         <div className="grid gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start lg:gap-10">
-          {/* ================================================== */}
-          {/* FORM - FIRST ON MOBILE */}
-          {/* ================================================== */}
-
+          {/* RIGHT SIDE: FORM */}
           <div className="order-1 lg:order-2">
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.09)]">
-              {/* Top accent */}
               <div className="h-1.5 w-full bg-gradient-to-r from-[#014484] via-[#014484] to-[#c02f2d]" />
 
               <div className="p-5 sm:p-8 lg:p-9">
@@ -178,11 +198,8 @@ export default function ContactBookingSection() {
 
                     <button
                       type="button"
-                      onClick={() => {
-                        setSubmitted(false);
-                        setUploadedImages([]);
-                      }}
-                      className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#014484] px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#c02f2d]"
+                      onClick={resetForm}
+                      className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#014484] px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#c02f2d]"
                     >
                       Submit Another Request
                       <ArrowRight className="h-4 w-4" />
@@ -190,25 +207,8 @@ export default function ContactBookingSection() {
                   </div>
                 ) : (
                   <>
-                    {/* Form heading */}
                     <div className="mb-7 border-b border-slate-100 pb-6 sm:mb-8">
                       <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#c02f2d]">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#c02f2d]" />
-                            Request Service
-                          </div>
-
-                          <h3 className="mt-2 text-2xl font-bold tracking-tight text-[#014484] sm:text-3xl">
-                            Tell Us What You Need
-                          </h3>
-
-                          <p className="mt-2 text-xs leading-5 text-slate-500 sm:text-sm">
-                            Complete the form below and we&apos;ll get back to
-                            you shortly.
-                          </p>
-                        </div>
-
                         <div className="hidden shrink-0 items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-[10px] font-bold text-emerald-700 sm:flex">
                           <CheckCircle2 className="h-3.5 w-3.5" />
                           No Obligation
@@ -217,21 +217,15 @@ export default function ContactBookingSection() {
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-7">
-                      {/* ================================================== */}
-                      {/* 01 CONTACT */}
-                      {/* ================================================== */}
-
                       <div>
                         <div className="mb-4 flex items-center gap-3">
                           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#014484] text-[11px] font-bold text-white shadow-sm">
                             01
                           </span>
-
                           <div>
                             <h4 className="text-sm font-bold text-slate-800">
                               Contact Information
                             </h4>
-
                             <p className="text-[11px] text-slate-400">
                               How can we reach you?
                             </p>
@@ -239,101 +233,105 @@ export default function ContactBookingSection() {
                         </div>
 
                         <div className="grid gap-4 sm:grid-cols-2">
-                          {/* Full Name */}
                           <div>
-                            <label className="mb-2 block text-xs font-bold text-slate-600">
+                            <label
+                              htmlFor="fullName"
+                              className="mb-2 block text-xs font-bold text-slate-600"
+                            >
                               Full Name
                             </label>
-
                             <input
+                              id="fullName"
                               type="text"
                               name="fullName"
                               required
                               value={formData.fullName}
                               onChange={handleChange}
                               placeholder="First & last name"
-                              className="h-[52px] w-full rounded-xl border border-slate-200 bg-[#f8fafc] px-4 text-sm font-medium text-slate-800 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 hover:bg-white focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10 focus:shadow-[0_5px_20px_rgba(1,68,132,0.08)]"
+                              style={{ height: "52px" }}
+                              className="w-full rounded-xl border border-slate-200 bg-[#f8fafc] px-4 text-sm font-medium text-slate-800 outline-none transition-all placeholder:text-slate-400 focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10"
                             />
                           </div>
 
-                          {/* Phone */}
                           <div>
-                            <label className="mb-2 block text-xs font-bold text-slate-600">
+                            <label
+                              htmlFor="phone"
+                              className="mb-2 block text-xs font-bold text-slate-600"
+                            >
                               Phone Number
                             </label>
-
                             <div className="relative">
                               <Phone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#014484]/60" />
-
                               <input
+                                id="phone"
                                 type="tel"
                                 name="phone"
                                 required
                                 value={formData.phone}
                                 onChange={handleChange}
                                 placeholder="(201) 000-0000"
-                                className="h-[52px] w-full rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-800 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 hover:bg-white focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10 focus:shadow-[0_5px_20px_rgba(1,68,132,0.08)]"
+                                style={{ height: "52px" }}
+                                className="w-full rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-800 outline-none transition-all placeholder:text-slate-400 focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10"
                               />
                             </div>
                           </div>
 
-                          {/* Email */}
                           <div>
-                            <label className="mb-2 block text-xs font-bold text-slate-600">
+                            <label
+                              htmlFor="email"
+                              className="mb-2 block text-xs font-bold text-slate-600"
+                            >
                               Email Address
                             </label>
-
                             <div className="relative">
                               <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#014484]/60" />
-
                               <input
+                                id="email"
                                 type="email"
                                 name="email"
+                                required
                                 value={formData.email}
                                 onChange={handleChange}
                                 placeholder="you@example.com"
-                                className="h-[52px] w-full rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-800 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 hover:bg-white focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10 focus:shadow-[0_5px_20px_rgba(1,68,132,0.08)]"
+                                style={{ height: "52px" }}
+                                className="w-full rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-800 outline-none transition-all placeholder:text-slate-400 focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10"
                               />
                             </div>
                           </div>
 
-                          {/* City */}
                           <div>
-                            <label className="mb-2 block text-xs font-bold text-slate-600">
+                            <label
+                              htmlFor="address"
+                              className="mb-2 block text-xs font-bold text-slate-600"
+                            >
                               City / ZIP Code
                             </label>
-
                             <div className="relative">
                               <MapPin className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#014484]/60" />
-
                               <input
+                                id="address"
                                 type="text"
                                 name="address"
                                 value={formData.address}
                                 onChange={handleChange}
                                 placeholder="City, NJ 00000"
-                                className="h-[52px] w-full rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-800 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 hover:bg-white focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10 focus:shadow-[0_5px_20px_rgba(1,68,132,0.08)]"
+                                style={{ height: "52px" }}
+                                className="w-full rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-800 outline-none transition-all placeholder:text-slate-400 focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10"
                               />
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      {/* ================================================== */}
-                      {/* 02 SERVICE */}
-                      {/* ================================================== */}
-
                       <div>
                         <div className="mb-4 flex items-center gap-3">
                           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#014484] text-[11px] font-bold text-white shadow-sm">
                             02
                           </span>
-
                           <div>
                             <h4 className="text-sm font-bold text-slate-800">
                               Service Information
                             </h4>
-
                             <p className="text-[11px] text-slate-400">
                               Help us understand the job
                             </p>
@@ -341,20 +339,22 @@ export default function ContactBookingSection() {
                         </div>
 
                         <div className="grid gap-4 sm:grid-cols-2">
-                          {/* Service */}
                           <div>
-                            <label className="mb-2 block text-xs font-bold text-slate-600">
+                            <label
+                              htmlFor="service"
+                              className="mb-2 block text-xs font-bold text-slate-600"
+                            >
                               Service Needed
                             </label>
-
                             <div className="relative">
                               <Wrench className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#014484]/60" />
-
                               <select
+                                id="service"
                                 name="service"
                                 value={formData.service}
                                 onChange={handleChange}
-                                className="h-[52px] w-full appearance-none rounded-xl border border-slate-200 bg-[#f8fafc] px-11 pr-10 text-sm font-medium text-slate-700 outline-none transition-all duration-200 hover:border-slate-300 hover:bg-white focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10 focus:shadow-[0_5px_20px_rgba(1,68,132,0.08)]"
+                                style={{ height: "52px" }}
+                                className="w-full cursor-pointer appearance-none rounded-xl border border-slate-200 bg-[#f8fafc] px-11 pr-10 text-sm font-medium text-slate-700 outline-none transition-all focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10"
                               >
                                 {serviceOptions.map((option) => (
                                   <option key={option} value={option}>
@@ -362,86 +362,75 @@ export default function ContactBookingSection() {
                                   </option>
                                 ))}
                               </select>
-
                               <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
                                 <ArrowRight className="h-4 w-4 rotate-90" />
                               </span>
                             </div>
                           </div>
 
-                          {/* Date */}
                           <div>
-                            <label className="mb-2 block text-xs font-bold text-slate-600">
+                            <label
+                              htmlFor="date"
+                              className="mb-2 block text-xs font-bold text-slate-600"
+                            >
                               Preferred Date
                             </label>
-
                             <div className="relative">
                               <CalendarDays className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#014484]/60" />
-
                               <input
+                                id="date"
                                 type="date"
                                 name="date"
                                 value={formData.date}
                                 onChange={handleChange}
-                                className="h-[52px] w-full rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-700 outline-none transition-all duration-200 hover:border-slate-300 hover:bg-white focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10 focus:shadow-[0_5px_20px_rgba(1,68,132,0.08)]"
+                                style={{ height: "52px" }}
+                                className="w-full cursor-pointer rounded-xl border border-slate-200 bg-[#f8fafc] pl-11 pr-4 text-sm font-medium text-slate-700 outline-none transition-all focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10"
                               />
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      {/* ================================================== */}
-                      {/* 03 ISSUE DETAILS */}
-                      {/* ================================================== */}
-
                       <div>
                         <div className="mb-4 flex items-center gap-3">
                           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#014484] text-[11px] font-bold text-white shadow-sm">
                             03
                           </span>
-
                           <div>
                             <h4 className="text-sm font-bold text-slate-800">
                               Issue Details
                             </h4>
-
                             <p className="text-[11px] text-slate-400">
                               Describe the problem
                             </p>
                           </div>
                         </div>
 
-                        {/* Notes */}
                         <div className="relative">
                           <FileText className="pointer-events-none absolute left-4 top-4 h-4 w-4 text-[#014484]/60" />
-
                           <textarea
                             name="notes"
                             rows={4}
                             value={formData.notes}
                             onChange={handleChange}
                             placeholder="Describe the issue, symptoms, backup, blockage, leak, or anything our technician should know..."
-                            className="w-full resize-none rounded-xl border border-slate-200 bg-[#f8fafc] py-3.5 pl-11 pr-4 text-sm leading-6 text-slate-800 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 hover:bg-white focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10 focus:shadow-[0_5px_20px_rgba(1,68,132,0.08)]"
+                            className="w-full resize-none rounded-xl border border-slate-200 bg-[#f8fafc] py-3.5 pl-11 pr-4 text-sm leading-6 text-slate-800 outline-none transition-all placeholder:text-slate-400 focus:border-[#014484] focus:bg-white focus:ring-4 focus:ring-[#014484]/10"
                           />
                         </div>
-
-                        {/* ================================================== */}
-                        {/* IMAGE UPLOAD */}
-                        {/* ================================================== */}
 
                         <div className="mt-4">
                           <label className="mb-2 block text-xs font-bold text-slate-600">
                             Add Photos{" "}
                             <span className="font-normal text-slate-400">
-                              (Optional)
+                              (Optional — up to 5)
                             </span>
                           </label>
 
                           <label
                             htmlFor="service-images"
-                            className="group flex min-h-[125px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-[#f8fafc] px-5 py-6 text-center transition-all duration-300 hover:border-[#014484]/40 hover:bg-[#014484]/[0.025]"
+                            className="group flex min-h-[125px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-[#f8fafc] px-5 py-6 text-center transition-all hover:border-[#014484]/40 hover:bg-[#014484]/[0.025]"
                           >
-                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#014484] shadow-sm transition-all duration-300 group-hover:bg-[#014484] group-hover:text-white">
+                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#014484] shadow-sm transition-all group-hover:bg-[#014484] group-hover:text-white">
                               <ImagePlus className="h-5 w-5" />
                             </div>
 
@@ -450,9 +439,8 @@ export default function ContactBookingSection() {
                             </p>
 
                             <p className="mt-1 max-w-sm text-[11px] leading-5 text-slate-400">
-                              Photos of leaks, damaged pipes, clogged drains,
-                              fixtures, or other problem areas can help our
-                              team better understand the issue.
+                              Photos of leaks, damaged pipes, clogged drains, or
+                              fixtures help our team prepare.
                             </p>
 
                             <span className="mt-3 rounded-lg bg-white px-3 py-1.5 text-[11px] font-bold text-[#014484] shadow-sm ring-1 ring-slate-200">
@@ -469,14 +457,12 @@ export default function ContactBookingSection() {
                             />
                           </label>
 
-                          {/* Uploaded images */}
                           {uploadedImages.length > 0 && (
                             <div className="mt-3 space-y-2">
                               <div className="flex items-center justify-between">
                                 <p className="text-[11px] font-bold text-slate-600">
                                   Selected Photos
                                 </p>
-
                                 <p className="text-[10px] text-slate-400">
                                   {uploadedImages.length}/5
                                 </p>
@@ -490,7 +476,6 @@ export default function ContactBookingSection() {
                                   >
                                     <div className="flex h-20 items-center gap-2 px-2">
                                       <ImagePlus className="h-4 w-4 shrink-0 text-[#014484]" />
-
                                       <span className="min-w-0 truncate text-[10px] font-medium text-slate-600">
                                         {file.name}
                                       </span>
@@ -500,7 +485,7 @@ export default function ContactBookingSection() {
                                       type="button"
                                       onClick={() => removeImage(index)}
                                       aria-label={`Remove ${file.name}`}
-                                      className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white text-slate-400 shadow-sm transition-colors hover:bg-[#c02f2d] hover:text-white"
+                                      className="absolute right-1.5 top-1.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-white text-slate-400 shadow-sm transition-colors hover:bg-[#c02f2d] hover:text-white"
                                     >
                                       <X className="h-3.5 w-3.5" />
                                     </button>
@@ -512,57 +497,26 @@ export default function ContactBookingSection() {
                         </div>
                       </div>
 
-                      {/* ================================================== */}
-                      {/* URGENT OPTION */}
-                      {/* ================================================== */}
-
-                      <label
-                        className={`flex cursor-pointer items-start gap-3 rounded-xl border p-4 transition-all duration-200 ${
-                          formData.isUrgent
-                            ? "border-[#c02f2d]/30 bg-red-50 shadow-[0_5px_20px_rgba(192,47,45,0.07)]"
-                            : "border-slate-200 bg-slate-50 hover:border-slate-300 hover:bg-white"
-                        }`}
-                      >
-                        <input
-                          type="checkbox"
-                          name="isUrgent"
-                          checked={formData.isUrgent}
-                          onChange={handleChange}
-                          className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-[#c02f2d] focus:ring-[#c02f2d]"
-                        />
-
-                        <span>
-                          <span className="flex items-center gap-2 text-sm font-bold text-slate-800">
-                            <AlertCircle className="h-4 w-4 text-[#c02f2d]" />
-                            This is an urgent service request
-                          </span>
-
-                          <span className="mt-1 block text-xs leading-5 text-slate-500">
-                            Select this if you are experiencing an active
-                            backup, severe blockage, or another time-sensitive
-                            issue.
-                          </span>
-                        </span>
-                      </label>
-
-                      {/* ================================================== */}
-                      {/* SUBMIT */}
-                      {/* ================================================== */}
-
                       <div className="border-t border-slate-100 pt-6">
                         <button
                           type="submit"
-                          className="group flex min-h-[54px] w-full items-center justify-center gap-3 rounded-xl bg-[#c02f2d] px-6 py-4 text-sm font-bold text-white shadow-[0_10px_30px_rgba(192,47,45,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#a92523] hover:shadow-[0_15px_35px_rgba(192,47,45,0.25)] active:translate-y-0"
+                          disabled={isSubmitting}
+                          className="group flex min-h-[54px] w-full cursor-pointer items-center justify-center gap-3 rounded-xl bg-[#c02f2d] px-6 py-4 text-sm font-bold text-white shadow-[0_10px_30px_rgba(192,47,45,0.18)] transition-all hover:bg-[#a92523] disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                          Request Service
-                          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                          {isSubmitting
+                            ? "Sending Request..."
+                            : "Request Service"}
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </button>
 
-                        <div className="mt-4 flex items-center justify-center gap-2 text-center text-[10px] leading-4 text-slate-400 sm:text-[11px]">
-                          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
-                          Your information is only used to respond to your
-                          service request.
-                        </div>
+                        {errorMessage && (
+                          <p
+                            role="alert"
+                            className="mt-3 text-center text-xs font-semibold text-[#c02f2d]"
+                          >
+                            {errorMessage}
+                          </p>
+                        )}
                       </div>
                     </form>
                   </>
@@ -571,21 +525,17 @@ export default function ContactBookingSection() {
             </div>
           </div>
 
-          {/* ================================================== */}
-          {/* LEFT INFORMATION - SECOND ON MOBILE */}
-          {/* ================================================== */}
-
+          {/* LEFT SIDE: 3 CARDS + GOOGLE REVIEWS SCANNER CARD */}
           <div className="order-2 space-y-6 lg:order-1">
-            {/* Emergency Card */}
+            {/* 1. Emergency Card */}
             <div className="relative overflow-hidden rounded-2xl bg-[#014484] p-7 text-white shadow-[0_18px_50px_rgba(1,68,132,0.16)] sm:p-8">
               <div className="absolute -right-14 -top-14 h-36 w-36 rounded-full bg-white/[0.05]" />
-
               <div className="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-white/[0.04]" />
 
               <div className="relative">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
-                    <AlertCircle className="h-5 w-5 text-white" />
+                    <Clock3 className="h-5 w-5 text-white" />
                   </div>
 
                   <div>
@@ -635,13 +585,12 @@ export default function ContactBookingSection() {
               </div>
             </div>
 
-            {/* Benefits */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_10px_35px_rgba(15,23,42,0.045)] sm:p-7">
+            {/* 2. Credentials Card */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
               <div className="mb-6">
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#c02f2d]">
                   Why Choose Us
                 </p>
-
                 <h3 className="mt-2 text-xl font-bold tracking-tight text-[#014484]">
                   Professional service from start to finish
                 </h3>
@@ -652,10 +601,7 @@ export default function ContactBookingSection() {
                   const Icon = item.icon;
 
                   return (
-                    <div
-                      key={item.title}
-                      className="flex items-start gap-4"
-                    >
+                    <div key={item.title} className="flex items-start gap-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#014484]/[0.07] text-[#014484]">
                         <Icon className="h-5 w-5" strokeWidth={1.8} />
                       </div>
@@ -664,7 +610,6 @@ export default function ContactBookingSection() {
                         <h4 className="text-sm font-bold text-slate-800">
                           {item.title}
                         </h4>
-
                         <p className="mt-1 text-xs leading-5 text-slate-500">
                           {item.desc}
                         </p>
@@ -675,8 +620,8 @@ export default function ContactBookingSection() {
               </div>
             </div>
 
-            {/* Direct Email */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_10px_35px_rgba(15,23,42,0.045)]">
+            {/* 3. Direct Email Card */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c02f2d]/[0.07] text-[#c02f2d]">
                   <Mail className="h-5 w-5" />
@@ -701,25 +646,45 @@ export default function ContactBookingSection() {
                 info@drainsolutionsplus.com
               </a>
             </div>
-          </div>
-        </div>
 
-        {/* ================================================== */}
-        {/* BOTTOM TRUST STRIP */}
-        {/* ================================================== */}
+            {/* 4. Google Reviews Scanner Card */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-7">
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#014484]">
+                Feedback &amp; Appreciation
+              </p>
+              <h3 className="mt-2 text-xl font-bold tracking-tight text-slate-800">
+                Review Us on Google
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">
+                Scan or click the QR code below with your phone camera to leave a review!
+              </p>
 
-        <div className="mt-8 rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm sm:mt-10 sm:px-7">
-          <div className="flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-              <CheckCircle2 className="h-4 w-4" />
+              {/* QR Code Scanner Placeholder Box */}
+              <div className="mx-auto mt-5 flex h-46 w-36 items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-[#f8fafc]">
+                <div className="text-center">
+                  <a href="https://g.page/r/CS_LwaZHDtpqEBE/review">
+                    <Image
+                      src="/images/google-qr.png"
+                      alt="Google QR Scanner"
+                      width={120}
+                      height={120}
+                      priority
+                      className="mx-auto h-[120px] w-[120px] object-contain"
+                    />
+                  </a>
+                  <span className="mt-1 block text-[10px] font-semibold text-slate-400">
+                    Google QR Scanner
+                  </span>
+                </div>
+              </div>
+
+              {/* 5 Stars Display */}
+              <div className="mt-5 flex items-center justify-center gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-amber-400" />
+                ))}
+              </div>
             </div>
-
-            <p className="text-xs leading-5 text-slate-500 sm:text-sm">
-              <span className="font-bold text-slate-700">
-                Ready when you need us.
-              </span>{" "}
-              Submit your service request and our team will review the details.
-            </p>
           </div>
         </div>
       </div>

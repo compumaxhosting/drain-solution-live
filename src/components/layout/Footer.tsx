@@ -164,6 +164,21 @@ export default function Footer() {
               Hawthorne, NJ 07507
             </p>
 
+            <div className="flex flex-col items-start gap-2 text-xs text-white/90 sm:text-[13px]">
+              <a
+                href="tel:9738668122"
+                className="transition-colors hover:text-white hover:underline underline-offset-4"
+              >
+                Text: (973) 866-8122
+              </a>
+              <a
+                href="mailto:drainsolutionsplus@gmail.com"
+                className="break-all transition-colors hover:text-white hover:underline underline-offset-4"
+              >
+                drainsolutionsplus@gmail.com
+              </a>
+            </div>
+
             {/* CTAs */}
             <div className="space-y-2 w-full max-w-[240px]">
               {/* Schedule Online Button */}
@@ -229,6 +244,17 @@ export default function Footer() {
               >
                 <svg className="h-3.5 w-3.5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/drain-solutions-plus-57323b166"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0a66c2] shadow-sm transition-transform hover:scale-110"
+              >
+                <svg className="h-4 w-4 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.554V9h3.565v11.452Z" />
                 </svg>
               </a>
             </div>
