@@ -12,15 +12,15 @@ interface ProjectItem {
   title: string;
   category: string;
   description: string;
-  image: string; 
+  image: string;
 }
 
 interface VideoItem {
   id: number;
   title: string;
   description: string;
-  videoSrc: string; // Path to your local video file (e.g., "/videos/project-video-1.mp4")
-  posterSrc?: string; // Optional thumbnail preview image for the video
+  embedUrl: string;
+  watchUrl: string;
 }
 
 // Add your horizontal landscape before/after images here with exact matching categories
@@ -41,14 +41,14 @@ const myGalleryProjects: ProjectItem[] = [
       "Replaced deteriorated cast iron sewer piping with durable PVC, improving drainage performance and providing a reliable long-term sewer solution.",
     image: "/images/before-after/3.webp",
   },
-{
-  id: 2,
-  title: "Damaged Sewer Pipe Replacement",
-  category: "Sewer Line Replacement",
-  description:
-    "Removed the damaged sewer pipe and replaced it with new PVC piping to restore proper drainage and reliable wastewater flow.",
-  image: "/images/before-after/2.webp",
-},
+  {
+    id: 2,
+    title: "Damaged Sewer Pipe Replacement",
+    category: "Sewer Line Replacement",
+    description:
+      "Removed the damaged sewer pipe and replaced it with new PVC piping to restore proper drainage and reliable wastewater flow.",
+    image: "/images/before-after/2.webp",
+  },
   {
     id: 4,
     title: "Underground Sewer Pipe Replacement",
@@ -59,21 +59,56 @@ const myGalleryProjects: ProjectItem[] = [
   },
 ];
 
-// Add your 2 local videos here (stored in your public folder)
+// YouTube video inspection items configured with iframe embed links
 const myProjectVideos: VideoItem[] = [
   {
     id: 1,
-   title: "Commercial Drain Repair",
-description:
-  "Repairing damaged commercial drain piping on-site to restore proper drainage and keep the system operating reliably.",
-    videoSrc: "/vids/commercial-drain-repair-v1.mp4", 
+    title:
+      "Sewer Video Inspection front wall exterior cleanout Safelite 319 Mountain ave Hackettstown, NJ 07840",
+    description:
+      "Front wall exterior cleanout video inspection showcasing line condition.",
+    embedUrl: "https://www.youtube.com/embed/3UEpDoUnCcQ",
+    watchUrl: "https://youtu.be/3UEpDoUnCcQ?si=AvaFe6s3cwbNnjGF",
   },
   {
     id: 2,
-   title: "Toilet Line Clearing",
-description:
-  "Cleared the clogged toilet line by snaking the line to remove the blockage, then reassembled the toilet and restored proper drainage.",
-    videoSrc: "/vids/vid.mp4", 
+    title:
+      "Sewer Video Inspection side wall exterior cleanout Safelite 319 Mountain ave Hackettstown, NJ 07840",
+    description:
+      "Side wall exterior cleanout video inspection checking pipeline integrity.",
+    embedUrl: "https://www.youtube.com/embed/mC7ZuEEAthw",
+    watchUrl: "https://youtu.be/mC7ZuEEAthw?si=dzsrmqiGlF-6fUS7",
+  },
+  {
+    id: 3,
+    title: "600 Bayonne Crossing way 354694760 former NYSC",
+    description: "Comprehensive commercial sewer camera inspection on-site.",
+    embedUrl: "https://www.youtube.com/embed/YkOVqEfApjM",
+    watchUrl: "https://youtu.be/YkOVqEfApjM?si=B-qe_8iazLs0E_Xv",
+  },
+  {
+    id: 4,
+    title: "Adidas Bergen Town Center",
+    description:
+      "Detailed pipeline and commercial drain inspection at Bergen Town Center.",
+    embedUrl: "https://www.youtube.com/embed/bY4vi1mxQ0s",
+    watchUrl: "https://youtu.be/bY4vi1mxQ0s?si=wFVZkM_MZGHiLDxZ",
+  },
+  {
+    id: 5,
+    title: "10 Old Rifle Camp Rd, Woodland Park",
+    description:
+      "Sewer camera inspection and line testing at Old Rifle Camp Road.",
+    embedUrl: "https://www.youtube.com/embed/sp12OmBWXcM",
+    watchUrl: "https://youtu.be/sp12OmBWXcM?si=K5_l808frxKVfev4",
+  },
+  {
+    id: 6,
+    title: "10 Old Rifle Camp Rd (Exterior Cleanout)",
+    description:
+      "Exterior cleanout line inspection and check at Woodland Park.",
+    embedUrl: "https://www.youtube.com/embed/WFuiw6DjEeU",
+    watchUrl: "https://youtu.be/WFuiw6DjEeU?si=3_5gyNpwT8kR2H21",
   },
 ];
 
@@ -85,8 +120,8 @@ export default function SuccessfulProjectsPage() {
   const [selectedImage, setSelectedImage] = useState<ProjectItem | null>(null);
 
   // Find index for Lightbox navigation arrows
-  const currentIndex = selectedImage 
-    ? myGalleryProjects.findIndex((p) => p.id === selectedImage.id) 
+  const currentIndex = selectedImage
+    ? myGalleryProjects.findIndex((p) => p.id === selectedImage.id)
     : -1;
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -111,7 +146,6 @@ export default function SuccessfulProjectsPage() {
     <>
       <main className="relative w-full bg-[#f4f4f2] py-20 lg:py-28 min-h-screen">
         <div className="mx-auto w-[92%] sm:w-[88%] lg:w-[82%] max-w-[1400px]">
-          
           {/* ================= SECTION HEADER ================= */}
           <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
             <div className="inline-flex items-center space-x-3 bg-white px-4 py-1.5 rounded-full shadow-sm border border-stone-200 mb-4">
@@ -126,9 +160,11 @@ export default function SuccessfulProjectsPage() {
             </h1>
 
             <div className="mt-4 h-1.5 w-16 bg-[#c02f2d] rounded-full" />
-            
+
             <p className="mt-5 text-base sm:text-lg text-stone-600 max-w-2xl font-normal leading-relaxed">
-              Explore our verified archive of complex residential and commercial pipeline restorations, high-pressure cleans, and advanced diagnostics across North NJ.
+              Explore our verified archive of complex residential and commercial
+              pipeline restorations, high-pressure cleans, and advanced
+              diagnostics across North NJ.
             </p>
           </div>
 
@@ -150,7 +186,7 @@ export default function SuccessfulProjectsPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                   />
-                  
+
                   {/* Category Pill Badge Positioned on Bottom Right */}
                   <span className="absolute bottom-3 right-3 z-10 text-[10px] sm:text-xs font-black uppercase tracking-widest bg-[#014485] text-white px-3 py-1 rounded shadow-md border border-white/20">
                     {project.category}
@@ -177,53 +213,67 @@ export default function SuccessfulProjectsPage() {
             ))}
           </div>
 
-          {/* ================= LOCAL VIDEO SHOWCASE SECTION ================= */}
+          {/* ================= YOUTUBE VIDEO SHOWCASE SECTION (3-Column Grid with iFrames) ================= */}
           <section className="mt-20 pt-16 border-t-2 border-stone-300/60">
             <div className="flex flex-col items-center text-center mb-12">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#c02f2d] mb-2 bg-red-50 px-3 py-1 rounded-full border border-red-100">
-                On-Site Video Documentation
+                Live Video Inspections
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#014485]">
-                Field Operation Videos
+                Sewer Scope & Inspection Videos
               </h2>
               <div className="mt-3 h-1 w-12 bg-[#c02f2d] rounded-full" />
               <p className="mt-3 text-stone-600 max-w-lg text-sm sm:text-base">
-                Watch our local project recordings showcasing heavy-duty equipment and professional workflow routines.
+                Watch our professional sewer camera and pipeline video
+                inspections recorded on location.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {myProjectVideos.map((video) => (
-                <div 
-                  key={video.id} 
-                  className="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200/80 flex flex-col"
+                <div
+                  key={video.id}
+                  className="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200/80 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                 >
-                  {/* Local HTML5 Video Element Container */}
-                  <div className="relative w-full aspect-video bg-stone-950">
-                    <video
-                      src={video.videoSrc}
-                      poster={video.posterSrc}
-                      controls
-                      preload="metadata"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    >
-                      Your browser does not support the video tag.
-                    </video>
+                  {/* YouTube iFrame Embed Container */}
+                  <div className="relative aspect-video w-full bg-stone-950">
+                    <iframe
+                      src={video.embedUrl}
+                      title={video.title}
+                      className="absolute inset-0 w-full h-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                   </div>
 
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-lg font-bold text-[#014485] uppercase tracking-wide">
-                      {video.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-stone-600 leading-relaxed">
-                      {video.description}
-                    </p>
+                  <div className="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                      <h3 className="text-base font-bold text-[#014485] uppercase tracking-wide line-clamp-2">
+                        {video.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-stone-600 leading-relaxed line-clamp-2">
+                        {video.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-5 pt-3 border-t border-stone-100 flex items-center justify-between">
+                      <span className="text-xs font-semibold text-stone-400">
+                        Drain Solutions Plus
+                      </span>
+                      <a
+                        href={video.watchUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#c02f2d] hover:underline"
+                      >
+                        Watch on YouTube ➔
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </section>
-
         </div>
 
         {/* ================= FULLSCREEN IMAGE LIGHTBOX MODAL WITH ARROWS IN BLUR AREA ================= */}
@@ -276,7 +326,9 @@ export default function SuccessfulProjectsPage() {
                   <h3 className="text-lg sm:text-xl font-black uppercase text-[#014485] mt-0.5">
                     {selectedImage.title}
                   </h3>
-                  <p className="text-sm text-stone-600 mt-1">{selectedImage.description}</p>
+                  <p className="text-sm text-stone-600 mt-1">
+                    {selectedImage.description}
+                  </p>
                 </div>
                 <button
                   onClick={() => setSelectedImage(null)}
@@ -295,11 +347,9 @@ export default function SuccessfulProjectsPage() {
             >
               ❯
             </button>
-
           </div>
         )}
       </main>
-
     </>
   );
 }

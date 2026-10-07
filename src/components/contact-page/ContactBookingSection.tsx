@@ -639,11 +639,11 @@ export default function ContactBookingSection() {
               </div>
 
               <a
-                href="mailto:info@drainsolutionsplus.com"
+                href="mailto:drainsolutionsplus@gmail.com"
                 className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-5 text-sm font-semibold text-[#014484] transition-colors hover:text-[#c02f2d]"
               >
                 <Mail className="h-4 w-4" />
-                info@drainsolutionsplus.com
+                drainsolutionsplus@gmail.com
               </a>
             </div>
 
@@ -656,7 +656,8 @@ export default function ContactBookingSection() {
                 Review Us on Google
               </h3>
               <p className="mt-1 text-xs text-slate-500">
-                Scan or click the QR code below with your phone camera to leave a review!
+                Scan or click the QR code below with your phone camera to leave
+                a review!
               </p>
 
               {/* QR Code Scanner Placeholder Box */}

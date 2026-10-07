@@ -17,7 +17,11 @@ const navLinks: NavItem[] = [
   { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/our-services", hasDropdown: true },
   { name: "Residential", href: "/", hasDropdown: true },
-  { name: "Commercial", href: "/commercial-drain-and-sewer", hasDropdown: true },
+  {
+    name: "Commercial",
+    href: "/commercial-drain-and-sewer",
+    hasDropdown: true,
+  },
   { name: "Projects", href: "/successful-drain-sewer-projects-north-nj" },
   { name: "Contact", href: "/contact" },
   { name: "Reviews", href: "/reviews" },
@@ -26,7 +30,9 @@ const navLinks: NavItem[] = [
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(
+    null,
+  );
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -44,9 +50,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[100] w-full bg-[#c02f2d] shadow-md">
       <div className="mx-auto flex h-16 w-full max-w-[1920px] items-center justify-between pr-2 sm:h-[88px] sm:pr-5 lg:h-[100px] lg:pr-8 2xl:h-[112px]">
-        
         {/* ================= LEFT SECTION: LOGO TAB + BADGE ================= */}
-        <div className="flex items-center h-full shrink-0 overflow-visible">
+        <div className="flex items-center h-full shrink-0 overflow-visible gap-2 sm:gap-3">
           <div
             className="relative z-20 h-full p-[3px] sm:p-[4px] bg-[#c02f2d] shrink-0 select-none shadow-md"
             style={{ clipPath: diagonalCut }}
@@ -56,7 +61,7 @@ export default function Header() {
               style={{ clipPath: diagonalCut }}
             >
               <div
-                className="h-full flex items-center bg-white pl-2 xs:pl-3.5 sm:pl-6 lg:pl-8 pr-7 xs:pr-8 sm:pr-10 md:pr-12 lg:pr-14"
+                className="h-full flex items-center bg-white pl-3 xs:pl-4 sm:pl-7 lg:pl-10 pr-8 xs:pr-9 sm:pr-12 md:pr-14 lg:pr-16"
                 style={{ clipPath: diagonalCut }}
               >
                 <Link href="/" className="inline-flex items-center">
@@ -66,27 +71,31 @@ export default function Header() {
                     width={380}
                     height={100}
                     priority
-                    className="h-[clamp(50px,16vw,72px)] w-[clamp(96px,32vw,180px)] object-contain transition-transform duration-200 hover:scale-105 sm:h-[72px] sm:w-[200px] md:w-[220px] lg:h-[82px] lg:w-[260px] 2xl:h-[90px] 2xl:w-[300px]"
+                    className="h-[44px] w-auto max-w-[150px] xs:max-w-[170px] sm:h-[64px] sm:max-w-[210px] md:h-[72px] md:max-w-[240px] lg:h-[90px] lg:max-w-[310px] 2xl:h-[100px] 2xl:max-w-[350px] object-contain transition-transform duration-200 hover:scale-105"
                   />
                 </Link>
               </div>
             </div>
           </div>
 
-          <div className="z-20 ml-3 hidden shrink-0 items-center md:flex lg:ml-5 xl:hidden">
+          {/* Anniversary Badge (Visible on Mobile, Tablet, and Intermediate screens) */}
+          <div className="z-20 flex shrink-0 items-center xl:hidden">
             <Image
               src="/images/batch.webp"
               alt="Anniversary Badge"
               width={160}
               height={160}
               priority
-              className="h-16 w-16 object-contain drop-shadow-md transition-transform duration-200 hover:scale-105 lg:h-20 lg:w-20"
+              className="h-10 w-10 xs:h-12 xs:w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain drop-shadow-md transition-transform duration-200 hover:scale-105"
             />
           </div>
         </div>
 
         {/* ================= DESKTOP NAVIGATION LINKS ================= */}
-        <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-3 px-2 2xl:flex 2xl:gap-4 2xl:px-3">
+        <nav
+          aria-label="Main navigation"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-3 px-2 2xl:flex 2xl:gap-4 2xl:px-3"
+        >
           {navLinks.map((item) => {
             const isActive =
               item.href === "/"
@@ -95,7 +104,7 @@ export default function Header() {
 
             if (item.hasDropdown) {
               const matchedGroup = serviceGroups.find(
-                (grp) => grp.title.toLowerCase() === item.name.toLowerCase()
+                (grp) => grp.title.toLowerCase() === item.name.toLowerCase(),
               );
 
               return (
@@ -125,9 +134,17 @@ export default function Header() {
 
                   {/* Dropdown Menu with hover bridge */}
                   <div className="absolute left-1/2 top-full z-[120] hidden -translate-x-1/2 pt-2 group-hover:block group-focus-within:block">
-                    <div className={`${item.name === "Services" ? "w-[min(760px,calc(100vw-2rem))]" : "w-[320px]"} max-h-[70vh] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl bg-[#a82422] border border-white/20 py-3 px-2 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]`}>
+                    <div
+                      className={`${item.name === "Services" ? "w-[min(760px,calc(100vw-2rem))]" : "w-[320px]"} max-h-[70vh] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl bg-[#a82422] border border-white/20 py-3 px-2 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]`}
+                    >
                       {matchedGroup && (
-                        <div className={item.name === "Services" ? "grid grid-cols-3 gap-1" : "space-y-1"}>
+                        <div
+                          className={
+                            item.name === "Services"
+                              ? "grid grid-cols-3 gap-1"
+                              : "space-y-1"
+                          }
+                        >
                           {matchedGroup.items.map((svc) => (
                             <Link
                               key={svc.name}
@@ -200,6 +217,23 @@ export default function Header() {
             </svg>
             <span>Call Now</span>
           </a>
+
+          <a
+            href="https://wa.me/19738668122"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-green-600 transition hover:bg-green-700 active:scale-95"
+            aria-label="Chat with us on WhatsApp"
+            title="Chat with us on WhatsApp"
+          >
+            <Image
+              src="/images/wasup.webp"
+              alt=""
+              width={128}
+              height={128}
+              className="h-8 w-8 object-contain"
+            />
+          </a>
         </div>
 
         {/* ================= HEADER CONTROLS (Mobile & Tablets) ================= */}
@@ -220,20 +254,22 @@ export default function Header() {
             <span className="hidden sm:inline">Call Now</span>
           </a>
 
-          <Link
-            href="/"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25 active:scale-95"
-            aria-label="Home"
+          <a
+            href="https://wa.me/19738668122"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-600 transition hover:bg-green-700 active:scale-95 sm:h-11 sm:w-11"
+            aria-label="Chat with us on WhatsApp"
+            title="Chat with us on WhatsApp"
           >
-            <svg
-              className="h-5 w-5 fill-none stroke-current stroke-2"
-              viewBox="0 0 24 24"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-          </Link>
+            <Image
+              src="/images/wasup.webp"
+              alt=""
+              width={128}
+              height={128}
+              className="h-7 w-7 object-contain sm:h-8 sm:w-8"
+            />
+          </a>
 
           <button
             onClick={() => setMobileMenuOpen(true)}
@@ -258,7 +294,9 @@ export default function Header() {
       <div
         onClick={() => setMobileMenuOpen(false)}
         className={`fixed inset-0 z-[130] bg-black/60 backdrop-blur-sm transition-opacity duration-300 2xl:hidden ${
-          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          mobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       />
 
@@ -269,7 +307,9 @@ export default function Header() {
         }`}
       >
         <div className="flex h-[65px] shrink-0 items-center justify-between border-b border-red-800/60 px-5 sm:px-6">
-          <span className="text-white font-bold tracking-wider text-base uppercase">Menu</span>
+          <span className="text-white font-bold tracking-wider text-base uppercase">
+            Menu
+          </span>
           <button
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close Menu"
@@ -287,7 +327,10 @@ export default function Header() {
           </button>
         </div>
 
-        <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto px-5 py-4 sm:px-6">
+        <nav
+          aria-label="Mobile navigation"
+          className="flex-1 overflow-y-auto px-5 py-4 sm:px-6"
+        >
           <ul className="flex flex-col gap-3">
             {navLinks.map((item) => {
               const isActive =
@@ -297,15 +340,20 @@ export default function Header() {
 
               if (item.hasDropdown) {
                 const matchedGroup = serviceGroups.find(
-                  (grp) => grp.title.toLowerCase() === item.name.toLowerCase()
+                  (grp) => grp.title.toLowerCase() === item.name.toLowerCase(),
                 );
                 const isDropdownExpanded = mobileDropdownOpen === item.name;
 
                 return (
-                  <li key={item.name} className="flex flex-col border-b border-red-800/40 pb-2">
+                  <li
+                    key={item.name}
+                    className="flex flex-col border-b border-red-800/40 pb-2"
+                  >
                     <button
                       onClick={() =>
-                        setMobileDropdownOpen(isDropdownExpanded ? null : item.name)
+                        setMobileDropdownOpen(
+                          isDropdownExpanded ? null : item.name,
+                        )
                       }
                       className="flex items-center justify-between py-1 text-left text-sm font-semibold text-white uppercase tracking-wider w-full"
                     >
@@ -349,7 +397,9 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center justify-between py-1 text-sm font-semibold uppercase tracking-wider text-white ${
-                      isActive ? "text-white underline decoration-2 underline-offset-4" : "text-white/95"
+                      isActive
+                        ? "text-white underline decoration-2 underline-offset-4"
+                        : "text-white/95"
                     }`}
                   >
                     <span>{item.name}</span>
@@ -365,7 +415,10 @@ export default function Header() {
             href="tel:2018819622"
             className="flex items-center justify-center space-x-2 w-full py-2.5 bg-gray-100/90 text-[#c02f2d] font-bold rounded shadow hover:bg-white transition text-sm uppercase"
           >
-            <svg className="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+            <svg
+              className="w-4 h-4 fill-none stroke-current stroke-2"
+              viewBox="0 0 24 24"
+            >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             <span>Call Now</span>
