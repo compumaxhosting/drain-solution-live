@@ -1,37 +1,66 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allServicesData } from "@/data/servicesData";
+import { allServicesData } from "@/data/indexServicesData";
+import type { Metadata } from "next";
 
 interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = allServicesData.find((item) => item.id === slug);
+
+  if (!service || !service.meta) return {};
+
+  return {
+    title: service.meta.title,
+    description: service.meta.description,
+    keywords: service.meta.keywords,
+    alternates: {
+      canonical: service.meta.canonical,
+    },
+    openGraph: {
+      type: "website",
+      title: service.meta.title,
+      description: service.meta.description,
+      url: service.meta.canonical,
+      siteName: "Drain Solution Plus",
+      images: [{ url: service.meta.ogImage }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.meta.title,
+      description: service.meta.description,
+      images: [service.meta.ogImage],
+    },
+  };
 }
 
 export async function generateStaticParams() {
-  return allServicesData.map((service) => ({
-    slug: service.id,
-  }));
+  return allServicesData.map((service) => ({ slug: service.id }));
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const service = allServicesData.find((item) => item.id === slug);
 
-  if (!service) {
-    notFound();
-  }
+  if (!service) notFound();
 
   return (
     <>
+      {service.schemaGraph && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schemaGraph) }}
+        />
+      )}
+
       <div className="min-h-screen bg-[#fafaf9]">
         {/* ================= HERO SECTION ================= */}
         <section className="relative w-full overflow-hidden py-16 sm:py-20 lg:py-24">
           <div className="relative z-10 mx-auto w-[92%] sm:w-[85%] lg:w-[80%] max-w-[1500px]">
-            
-            {/* Breadcrumb / Back Link */}
             <div className="mb-8">
               <Link
                 href="/our-services"
@@ -45,8 +74,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
 
             <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
-              
-              {/* Content Column */}
               <div className="flex flex-col items-start lg:col-span-6 space-y-4">
                 <div className="flex items-center space-x-2">
                   <span className="h-2 w-2 rounded-full bg-[#c02f2d]" />
@@ -81,23 +108,20 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Image Column */}
               <div className="lg:col-span-6 w-full">
                 <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-stone-100 shadow-[0_8px_22px_rgba(0,0,0,0.08)]">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    priority
+                    preload
                     sizes="(max-width: 1024px) 92vw, 48vw"
                     className="object-cover"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5" />
                 </div>
               </div>
-
             </div>
-
           </div>
         </section>
 
@@ -127,6 +151,66 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
         </section>
 
+
+{/* ================= FAQ SECTION ================= */}
+{service.faqs && service.faqs.length > 0 && (
+  <section className="w-full bg-[#fafaf9] py-16 sm:py-20 border-t border-stone-200">
+    <div className="mx-auto w-[92%] sm:w-[85%] lg:w-[70%] max-w-[900px]">
+      <div className="text-center mb-10">
+        <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#c02f2d]">
+          Got Questions?
+        </span>
+
+        <h2 className="text-2xl sm:text-3xl font-black uppercase text-[#014485] mt-2">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="mx-auto mt-3 h-1 w-12 bg-[#c02f2d] rounded-full" />
+      </div>
+
+      <div className="space-y-4">
+        {service.faqs.map((faq, index) => (
+          <details
+            key={index}
+            className="group bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden"
+          >
+            <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none">
+              <h3 className="text-base sm:text-lg font-bold text-[#014485]">
+                {faq.question}
+              </h3>
+
+              <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#014485]/5 text-[#014485] transition-transform duration-300 group-open:rotate-180">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </summary>
+
+            <div className="px-5 sm:px-6 pb-5 sm:pb-6">
+              <div className="border-t border-stone-100 pt-4">
+                <p className="text-stone-600 text-sm sm:text-base leading-7">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+
         {/* ================= CUSTOM BOTTOM BANNER ================= */}
         <section className="w-full bg-[#014485] py-16 sm:py-20 text-white text-center">
           <div className="mx-auto w-[92%] sm:w-[85%] lg:w-[70%] max-w-[900px] space-y-4">
@@ -146,9 +230,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
           </div>
         </section>
-
       </div>
-
     </>
   );
 }

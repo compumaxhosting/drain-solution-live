@@ -168,6 +168,10 @@ export default function SuccessfulProjectsPage() {
             </p>
           </div>
 
+          <h2 className="mb-8 text-center text-xl font-bold uppercase tracking-wide text-[#014485] sm:mb-10 sm:text-2xl">
+            Recent Drain &amp; Sewer Projects
+          </h2>
+
           {/* ================= HORIZONTAL IMAGE GRID (2 PER ROW) ================= */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-24">
             {myGalleryProjects.map((project, index) => (
@@ -241,6 +245,7 @@ export default function SuccessfulProjectsPage() {
                       src={video.embedUrl}
                       title={video.title}
                       className="absolute inset-0 w-full h-full border-0"
+                      loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -313,7 +318,6 @@ export default function SuccessfulProjectsPage() {
                   fill
                   sizes="90vw"
                   className="object-contain"
-                  priority
                 />
               </div>
 

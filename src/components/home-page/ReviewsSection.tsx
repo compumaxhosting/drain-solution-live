@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 
 interface Review {
@@ -177,9 +177,9 @@ export default function ReviewsSection() {
                       {/* Author & Verification Footer */}
                       <div className="pt-8 flex items-center justify-between">
                         <div>
-                          <h4 className="text-base sm:text-lg font-bold text-white tracking-wide">
+                          <h3 className="text-base sm:text-lg font-bold text-white tracking-wide">
                             {item.name}
-                          </h4>
+                          </h3>
                           <p className="text-xs sm:text-sm text-white/80 font-medium">
                             {item.location} (
                             <Link

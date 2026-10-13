@@ -1,4 +1,4 @@
-import CustomerReviews from '@/components/customer-review-page-components/CustomerReviews'
+import CustomerReviews from "@/components/customer-review-page-components/CustomerReviews";
 
 const page = () => {
   return (

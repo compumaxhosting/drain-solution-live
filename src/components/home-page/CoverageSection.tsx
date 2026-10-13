@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -102,7 +99,6 @@ export default function CoverageSection() {
                 width={500}
                 height={700}
                 className="w-full h-auto max-h-[620px] object-contain drop-shadow-2xl"
-                priority
               />
             </div>
           </div>

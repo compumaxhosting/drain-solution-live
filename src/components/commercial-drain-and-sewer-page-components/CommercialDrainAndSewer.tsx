@@ -1,12 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Check,
-  ShieldCheck,
   Pipette,
   Leaf,
   Layers,
-  Activity,
   AlertTriangle,
 } from "lucide-react";
 
@@ -94,10 +93,13 @@ const CommercialDrainAndSewer: React.FC = () => {
 
           {/* RIGHT IMAGE / BADGE */}
           <div className="relative min-h-[500px] lg:min-h-0">
-            <img
-              src="/images/client-images/hydro-jetting.webp"
+            <Image
+              src="/images/services-images/hydro-jetting.webp"
               alt="Technician using hydro-jetting equipment to clean a commercial drain"
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              preload
+              sizes="(max-width: 1024px) 100vw, 56vw"
+              className="object-cover"
             />
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-black/15" />
@@ -120,7 +122,6 @@ const CommercialDrainAndSewer: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 top-0 h-24 w-24 bg-[#c02f2d]" />
           </div>
         </div>
       </div>
@@ -247,11 +248,13 @@ const CommercialDrainAndSewer: React.FC = () => {
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           {/* IMAGE SIDE */}
           <div className="relative">
-            <div className="overflow-hidden">
-              <img
-                src="/images/client-images/emergency-main-sewer-clogged.webp"
+            <div className="relative h-[440px] overflow-hidden sm:h-[540px]">
+              <Image
+                src="/images/services-images/emergency-main-sewer-clogged.webp"
                 alt="Clogged main sewer line requiring professional drain service"
-                className="h-[440px] w-full object-cover sm:h-[540px]"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
 

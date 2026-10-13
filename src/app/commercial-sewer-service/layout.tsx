@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
-import React from 'react';
+import type { Metadata, Viewport } from "next";
+import React from "react";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title: 'Commercial Sewer Cleaning & Repair NJ | Drain Solutions Plus',
@@ -28,7 +32,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  themeColor: '#ffffff',
   alternates: {
     canonical: 'https://www.drainsolutionplus.com/commercial-sewer-service',
   },
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     siteName: 'Drain Solutions Plus',
     images: [
       {
-        url: '/images/client-images/slab-sewer-repair.webp',
+        url: '/images/services-images/slab-sewer-repair.webp',
         alt: 'Commercial sewer cleaning and sewer line repair services by Drain Solutions Plus in New Jersey',
       },
     ],
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Commercial Sewer Cleaning & Repair NJ | Drain Solutions Plus',
     description: 'Commercial sewer cleaning and repair in NJ for clogs, backups, hydro jetting, damaged pipes, replacements and tree root problems.',
-    images: ['/images/client-images/slab-sewer-repair.webp'],
+    images: ['/images/services-images/slab-sewer-repair.webp'],
   },
 };
 

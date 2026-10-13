@@ -1,5 +1,4 @@
-import CommercialDrainAndSewer from '@/components/commercial-drain-and-sewer-page-components/CommercialDrainAndSewer'
-import React from 'react'
+import CommercialDrainAndSewer from "@/components/commercial-drain-and-sewer-page-components/CommercialDrainAndSewer";
 
 const page = () => {
   return (

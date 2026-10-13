@@ -1,11 +1,10 @@
 import AboutSection from "@/components/home-page/AboutSection"
 import CoverageSection from "@/components/home-page/CoverageSection"
-import React from "react"
 
 const page = () => {
   return (
     <>
-    <AboutSection />
+    <AboutSection headingLevel={1} preloadImage />
     <CoverageSection />
     </>
   )

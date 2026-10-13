@@ -259,16 +259,16 @@ export default function CustomerReviews() {
                 <span className="h-[2px] w-10 bg-[#c02f2d]" />
 
                 <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#c02f2d]">
-                  Customer Reviews
+                  What Our Customers Say
                 </span>
               </div>
 
-              <h2 className="max-w-3xl text-3xl font-bold leading-[1.12] tracking-tight text-[#014484] sm:text-4xl lg:text-[48px]">
+              <h1 className="max-w-3xl text-3xl font-bold leading-[1.12] tracking-tight text-[#014484] sm:text-4xl lg:text-[48px]">
                 Our Clients Reviews Speak For The Quality Of Our{" "}
                 <span className="text-[#c02f2d]">
                   Drain &amp; Sewer Services
                 </span>
-              </h2>
+              </h1>
             </div>
 
             {/* Description */}
@@ -299,6 +299,9 @@ export default function CustomerReviews() {
           ================================================= */}
 
           <div className="relative">
+            <h2 className="mb-6 text-xl font-bold tracking-tight text-[#014485] sm:text-2xl">
+              Recent Customer Testimonials
+            </h2>
             <div
               ref={sliderRef}
               onScroll={handleScroll}

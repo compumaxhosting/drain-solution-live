@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/images/client-images/kitchen-cleaning.webp",
+        url: "/images/services-images/kitchen-cleaning.webp",
         alt: "Technician cleaning a kitchen drain line",
       },
     ],
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drain & Sewer Services NJ | Commercial Drain Cleaning & Repair",
     description: "Explore commercial and residential drain, sewer, inspection, repair and emergency services from Drain Solutions Plus across Northern New Jersey.",
-    images: ["/images/client-images/kitchen-cleaning.webp"],
+    images: ["/images/services-images/kitchen-cleaning.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",

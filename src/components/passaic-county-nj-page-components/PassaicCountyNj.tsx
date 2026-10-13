@@ -1,6 +1,5 @@
-'use client'
-
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 export const PassaicCountyNj: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);

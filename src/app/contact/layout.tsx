@@ -1,5 +1,5 @@
-import type { Metadata, Viewport } from 'next';
-import React from 'react';
+import type { Metadata, Viewport } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   title: 'Contact Drain Solutions Plus | Drain & Sewer Services NJ',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: 'Drain Solutions Plus',
     images: [
       {
-        url: '/images/client-images/emergency-main-sewer-clogged.webp',
+        url: '/images/services-images/emergency-main-sewer-clogged.webp',
         alt: 'Sewer drain blockage requiring emergency service',
       },
     ],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Drain Solutions Plus | Drain & Sewer Services NJ',
     description: 'Contact Drain Solutions Plus in Hawthorne, NJ for commercial and residential drain, sewer, repair and emergency services across Northern NJ.',
-    images: ['/images/client-images/emergency-main-sewer-clogged.webp'],
+    images: ['/images/services-images/emergency-main-sewer-clogged.webp'],
   },
 };
 

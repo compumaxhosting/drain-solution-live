@@ -1,5 +1,5 @@
 'use client'
-import BergenCountyNj from '@/components/bergen-county-nj-page-components/BergenCountyNj'
+import BergenCountyNj from "@/components/bergen-county-nj-page-components/BergenCountyNj";
 
 
 

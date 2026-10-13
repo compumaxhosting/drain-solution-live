@@ -1,4 +1,4 @@
-import CommercialSewerService from '@/components/commercial-sewer-service-page-components/CommercialSewerService'
+import CommercialSewerService from "@/components/commercial-sewer-service-page-components/CommercialSewerService";
 const page = () => {
   return (
 	<>

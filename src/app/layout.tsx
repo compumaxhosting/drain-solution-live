@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/images/client-images/drain-pipe-video-inspection.webp",
+        url: "/images/services-images/drain-pipe-video-inspection.webp",
         alt: "Technician performing a sewer pipe video inspection",
       },
     ],
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drain Cleaning NJ | Commercial Sewer & Drain Services",
     description: "Commercial drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services across Northern New Jersey.",
-    images: ["/images/client-images/drain-pipe-video-inspection.webp"],
+    images: ["/images/services-images/drain-pipe-video-inspection.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",
