@@ -97,7 +97,7 @@ export default function Header() {
                     alt="Drain Solution Plus company logo"
                     width={168}
                     height={120}
-                    sizes="(max-width: 639px) 67px, (max-width: 767px) 95px, (max-width: 1023px) 101px, (max-width: 1535px) 115px, 132px"
+                    unoptimized
                     className="h-[48px] w-auto object-contain transition-transform duration-200 hover:scale-105 sm:h-[68px] md:h-[72px] lg:h-[82px] 2xl:h-[94px]"
                   />
                 </Link>
