@@ -70,10 +70,10 @@ export default function Footer() {
           <div className="lg:col-span-3 flex flex-col items-start space-y-4">
             <div className="rounded-xl bg-white px-5 py-3.5 shadow-md flex items-center justify-center w-full max-w-[210px] transition-transform duration-200 hover:scale-[1.02]">
               <Image
-                src="/images/logo.webp"
+                src="/images/logo.png"
                 alt="Drain Solutions Plus"
-                width={190}
-                height={80}
+                width={168}
+                height={120}
                 className="w-full h-auto object-contain"
               />
             </div>

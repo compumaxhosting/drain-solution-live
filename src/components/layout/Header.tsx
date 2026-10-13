@@ -93,12 +93,12 @@ export default function Header() {
               >
                 <Link href="/" className="inline-flex items-center">
                   <Image
-                    src="/images/logo.webp"
+                    src="/images/logo.png"
                     alt="Drain Solution Plus company logo"
-                    width={380}
-                    height={100}
-                    sizes="(max-width: 640px) 170px, (max-width: 1280px) 310px, 350px"
-                    className="h-[44px] w-auto max-w-[150px] xs:max-w-[170px] sm:h-[64px] sm:max-w-[210px] md:h-[72px] md:max-w-[240px] lg:h-[90px] lg:max-w-[310px] 2xl:h-[100px] 2xl:max-w-[350px] object-contain transition-transform duration-200 hover:scale-105"
+                    width={168}
+                    height={120}
+                    sizes="(max-width: 639px) 67px, (max-width: 767px) 95px, (max-width: 1023px) 101px, (max-width: 1535px) 115px, 132px"
+                    className="h-[48px] w-auto object-contain transition-transform duration-200 hover:scale-105 sm:h-[68px] md:h-[72px] lg:h-[82px] 2xl:h-[94px]"
                   />
                 </Link>
               </div>

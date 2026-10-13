@@ -81,7 +81,7 @@ const jsonLd = {
       "url": "https://www.drainsolutionplus.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.drainsolutionplus.com/path-to-your-logo.webp"
+        "url": "https://www.drainsolutionplus.com/images/logo.png"
       },
       "image": "https://www.drainsolutionplus.com/path-to-your-business-image.webp",
       "description": "Drain Solutions Plus provides commercial and residential drain cleaning, sewer cleaning, sewer repair, video sewer inspections, toilet repair, faucet and leak repair, frozen pipe repair, and emergency drain services throughout Northern New Jersey.",
