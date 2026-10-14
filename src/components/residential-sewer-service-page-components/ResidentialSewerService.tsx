@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import InternalPageLinks from "@/components/InternalPageLinks";
+import RelatedServiceLinks from "@/components/RelatedServiceLinks";
 import {
   ArrowUpRight,
   Check,
@@ -557,86 +559,90 @@ const ResidentialSewerService: React.FC = () => {
             <div className="mt-6 mx-auto h-1 w-20 bg-[#c02f2d]" />
           </div>
 
-          <div className="mt-12 space-y-6">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> What is residential sewer cleaning?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                Residential sewer cleaning removes blockages and buildup from sewer lines serving a home. Drain Solution Plus uses methods including hydro-jetting to address certain clogs, grease buildup, and debris. The appropriate cleaning method depends on the condition of the sewer line and the type of obstruction involved.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> When should I have my sewer line inspected?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                A sewer inspection may be useful when blockages repeatedly return, the source of a drainage problem is unclear, or there is concern about damage inside the sewer line. Drain Solution Plus uses video inspection to view sewer lines and help identify the location and cause of problems.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> Does Drain Solution Plus offer hydro-jetting?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                Yes. Hydro-jetting is listed as one of Drain Solution Plus&apos;s residential sewer cleaning methods. It uses high-pressure water to help remove certain blockages and buildup from inside sewer lines. Whether it is suitable for a particular line depends on the condition of the system.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> What is trenchless sewer repair?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                Trenchless sewer repair is a repair approach that can address certain underground pipe problems without extensive excavation. Drain Solution Plus lists trenchless pipe repair among its residential sewer repair services. The appropriate repair method depends on the condition and configuration of the sewer line.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> Does Drain Solution Plus install residential sewer lines?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                Yes. Drain Solution Plus provides residential sewer installation services for new construction and system upgrades. The company describes planning and installation based on the requirements of the residential property.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> What areas does Drain Solution Plus serve?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                Drain Solution Plus currently lists{" "}
-                <Link href="/bergen-county-nj" className="text-[#014485] underline">Bergen</Link>,{" "}
-                <Link href="/essex-county-nj" className="text-[#014485] underline">Essex</Link>,{" "}
-                <Link href="/hudson-county-nj" className="text-[#014485] underline">Hudson</Link>, and{" "}
-                <Link href="/passaic-county-nj" className="text-[#014485] underline">Passaic</Link>{" "}
-                counties as its Northern New Jersey service areas. Homeowners should contact the company to confirm service availability for their specific property.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> Does Drain Solution Plus offer 24/7 sewer service?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                The company currently advertises 24/7 drain and sewer service in Northern New Jersey and also advertises same-day service. Actual response and scheduling depend on the circumstances and service availability.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> Can a recurring sewer clog indicate a bigger problem?
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-                Yes. A recurring blockage can result from continued buildup, an obstruction farther inside the sewer line, or a damaged section of pipe. When a problem repeatedly returns, video inspection can help determine what is happening inside the line before choosing the next service.
-              </p>
-            </div>
+          <div className="mt-12 space-y-4">
+            {[
+              {
+                q: "What is residential sewer cleaning?",
+                a: "Residential sewer cleaning removes blockages and buildup from sewer lines serving a home. Drain Solution Plus uses methods including hydro-jetting to address certain clogs, grease buildup, and debris. The appropriate cleaning method depends on the condition of the sewer line and the type of obstruction involved.",
+              },
+              {
+                q: "When should I have my sewer line inspected?",
+                a: "A sewer inspection may be useful when blockages repeatedly return, the source of a drainage problem is unclear, or there is concern about damage inside the sewer line. Drain Solution Plus uses video inspection to view sewer lines and help identify the location and cause of problems.",
+              },
+              {
+                q: "Does Drain Solution Plus offer hydro-jetting?",
+                a: "Yes. Hydro-jetting is listed as one of Drain Solution Plus's residential sewer cleaning methods. It uses high-pressure water to help remove certain blockages and buildup from inside sewer lines. Whether it is suitable for a particular line depends on the condition of the system.",
+              },
+              {
+                q: "What is trenchless sewer repair?",
+                a: "Trenchless sewer repair is a repair approach that can address certain underground pipe problems without extensive excavation. Drain Solution Plus lists trenchless pipe repair among its residential sewer repair services. The appropriate repair method depends on the condition and configuration of the sewer line.",
+              },
+              {
+                q: "Does Drain Solution Plus install residential sewer lines?",
+                a: "Yes. Drain Solution Plus provides residential sewer installation services for new construction and system upgrades. The company describes planning and installation based on the requirements of the residential property.",
+              },
+              {
+                q: "What areas does Drain Solution Plus serve?",
+                a: "Drain Solution Plus currently lists Bergen, Essex, Hudson, and Passaic counties as its Northern New Jersey service areas. Homeowners should contact the company to confirm service availability for their specific property.",
+              },
+              {
+                q: "Does Drain Solution Plus offer 24/7 sewer service?",
+                a: "The company currently advertises 24/7 drain and sewer service in Northern New Jersey and also advertises same-day service. Actual response and scheduling depend on the circumstances and service availability.",
+              },
+              {
+                q: "Can a recurring sewer clog indicate a bigger problem?",
+                a: "Yes. A recurring blockage can result from continued buildup, an obstruction farther inside the sewer line, or a damaged section of pipe. When a problem repeatedly returns, video inspection can help determine what is happening inside the line before choosing the next service.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold text-slate-900 [&::-webkit-details-marker]:hidden">
+                  <span className="flex items-center gap-3">
+                    <HelpCircle className="h-5 w-5 shrink-0 text-[#c02f2d]" />
+                    {faq.q}
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-3 pl-8 text-sm leading-7 text-slate-600">
+                  {faq.q === "What areas does Drain Solution Plus serve?" ? (
+                    <>
+                      Drain Solution Plus currently lists{" "}
+                      <Link href="/bergen-county-nj" className="text-[#014485] underline">Bergen</Link>,{" "}
+                      <Link href="/essex-county-nj" className="text-[#014485] underline">Essex</Link>,{" "}
+                      <Link href="/hudson-county-nj" className="text-[#014485] underline">Hudson</Link>, and{" "}
+                      <Link href="/passaic-county-nj" className="text-[#014485] underline">Passaic</Link>{" "}
+                      counties as its Northern New Jersey service areas. Homeowners should contact the company to confirm service availability for their specific property.
+                    </>
+                  ) : (
+                    faq.a
+                  )}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </div>
+
+      <RelatedServiceLinks
+        serviceIds={[
+          "sewer-and-drain-cleaning",
+          "sewer-and-drain-repairs",
+          "sewer-and-drain-video-inspections",
+          "hydro-jetting",
+          "residential-drain-cleaning",
+          "residential-drain-repairs",
+        ]}
+      />
 
       {/* ================= FINAL CTA ================= */}
       <div className="relative overflow-hidden bg-[#014484]">
@@ -673,6 +679,7 @@ const ResidentialSewerService: React.FC = () => {
           </div>
         </div>
       </div>
+      <InternalPageLinks excludeService="/residential-sewer-service" />
     </section>
   );
 };

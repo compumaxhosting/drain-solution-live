@@ -1,4 +1,6 @@
 import Image from "next/image";
+import InternalPageLinks from "@/components/InternalPageLinks";
+import RelatedServiceLinks from "@/components/RelatedServiceLinks";
 import {
   ArrowUpRight,
   Check,
@@ -390,6 +392,17 @@ const CommercialSewerService = () => {
         </div>
       </div>
 
+      <RelatedServiceLinks
+        serviceIds={[
+          "sewer-and-drain-cleaning",
+          "sewer-and-drain-repairs",
+          "sewer-and-drain-video-inspections",
+          "hydro-jetting",
+          "commercial-drain-cleaning",
+          "commercial-drain-repairs",
+        ]}
+      />
+
       {/* ================= FINAL CTA ================= */}
       <div className="relative overflow-hidden bg-[#014484]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -420,6 +433,7 @@ const CommercialSewerService = () => {
           </div>
         </div>
       </div>
+      <InternalPageLinks excludeService="/commercial-sewer-service" />
     </section>
   );
 };

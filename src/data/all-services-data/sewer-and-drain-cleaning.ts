@@ -23,7 +23,7 @@ export const sewerAndDrainCleaning: ServiceItem = {
     description: "Professional sewer and drain cleaning in Hawthorne, NJ for clogged drains, sewer lines, blocked toilets, and recurring backups. Serving homes and businesses.",
     keywords: "sewer and drain cleaning, sewer cleaning Hawthorne NJ, drain cleaning Hawthorne NJ, sewer line cleaning, clogged drain cleaning, sewer drain cleaning NJ, Drain Solution Plus",
     canonical: "https://www.drainsolutionplus.com/our-services/sewer-and-drain-cleaning",
-    ogImage: "https://www.drainsolutionplus.com/images/sewer-drain-cleaning.jpg"
+    ogImage: "/images/services-images/bathtub-drain-snakin.webp"
   },
 
   faqs: [

@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import InternalPageLinks from "@/components/InternalPageLinks";
+import RelatedServiceLinks from "@/components/RelatedServiceLinks";
 import {
   ArrowUpRight,
   Check,
@@ -363,6 +365,19 @@ const CommercialDrainAndSewer: React.FC = () => {
         </div>
       </div>
 
+      <RelatedServiceLinks
+        serviceIds={[
+          "commercial-drain-cleaning",
+          "commercial-drain-repairs",
+          "sewer-and-drain-cleaning",
+          "sewer-and-drain-repairs",
+          "sewer-and-drain-video-inspections",
+          "hydro-jetting",
+          "sump-pump-repairs-or-replacement",
+          "sewage-ejector-pumps-repairs-or-replacement",
+        ]}
+      />
+
       {/* ================= FINAL CTA ================= */}
       <div className="relative overflow-hidden bg-[#014484]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -392,6 +407,7 @@ const CommercialDrainAndSewer: React.FC = () => {
           </div>
         </div>
       </div>
+      <InternalPageLinks excludeService="/commercial-drain-and-sewer" />
     </section>
   );
 };

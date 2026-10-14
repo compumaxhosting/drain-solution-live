@@ -3,10 +3,30 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allServicesData } from "@/data/indexServicesData";
 import type { Metadata } from "next";
+import InternalPageLinks from "@/components/InternalPageLinks";
+import RelatedServiceLinks from "@/components/RelatedServiceLinks";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+const relatedServiceIds: Record<string, string[]> = {
+  "residential-drain-cleaning": ["residential-drain-repairs", "toilet-clogs", "sink-clogs", "tub-clogs"],
+  "residential-drain-repairs": ["residential-drain-cleaning", "sewer-and-drain-repairs", "sewer-and-drain-video-inspections", "hydro-jetting"],
+  "commercial-drain-repairs": ["commercial-drain-cleaning", "sewer-and-drain-repairs", "sewer-and-drain-video-inspections", "hydro-jetting"],
+  "commercial-drain-cleaning": ["commercial-drain-repairs", "sewer-and-drain-cleaning", "sewer-and-drain-video-inspections", "hydro-jetting"],
+  "faucet-leak-repairs": ["flush-valve-leak-repairs", "sump-pump-repairs-or-replacement", "sewage-ejector-pumps-repairs-or-replacement", "residential-drain-repairs"],
+  "sewer-and-drain-cleaning": ["sewer-and-drain-repairs", "sewer-and-drain-video-inspections", "hydro-jetting", "residential-drain-cleaning"],
+  "toilet-clogs": ["flush-valve-leak-repairs", "sink-clogs", "tub-clogs", "residential-drain-cleaning"],
+  "tub-clogs": ["sink-clogs", "toilet-clogs", "residential-drain-cleaning", "sewer-and-drain-video-inspections"],
+  "sewer-and-drain-video-inspections": ["sewer-and-drain-cleaning", "sewer-and-drain-repairs", "hydro-jetting", "commercial-drain-repairs"],
+  "sink-clogs": ["residential-drain-cleaning", "tub-clogs", "toilet-clogs", "faucet-leak-repairs"],
+  "sewer-and-drain-repairs": ["sewer-and-drain-cleaning", "sewer-and-drain-video-inspections", "hydro-jetting", "sump-pump-repairs-or-replacement"],
+  "hydro-jetting": ["sewer-and-drain-cleaning", "sewer-and-drain-repairs", "sewer-and-drain-video-inspections", "commercial-drain-cleaning"],
+  "flush-valve-leak-repairs": ["toilet-clogs", "faucet-leak-repairs", "sewage-ejector-pumps-repairs-or-replacement", "residential-drain-repairs"],
+  "sump-pump-repairs-or-replacement": ["sewage-ejector-pumps-repairs-or-replacement", "sewer-and-drain-repairs", "sewer-and-drain-video-inspections", "faucet-leak-repairs"],
+  "sewage-ejector-pumps-repairs-or-replacement": ["sump-pump-repairs-or-replacement", "sewer-and-drain-repairs", "sewer-and-drain-cleaning", "sewer-and-drain-video-inspections"],
+};
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -99,12 +119,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   >
                     Book This Service
                   </Link>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center rounded-sm bg-[#014485] px-8 py-3.5 text-xs sm:text-sm font-bold tracking-wider uppercase text-white shadow-md transition-all duration-200 hover:bg-[#013568] active:scale-95"
-                  >
-                    Request Estimate
-                  </Link>
                 </div>
               </div>
 
@@ -151,6 +165,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
         </section>
 
+        <RelatedServiceLinks serviceIds={relatedServiceIds[service.id] ?? []} />
 
 {/* ================= FAQ SECTION ================= */}
 {service.faqs && service.faqs.length > 0 && (
@@ -230,6 +245,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+        <InternalPageLinks />
       </div>
     </>
   );

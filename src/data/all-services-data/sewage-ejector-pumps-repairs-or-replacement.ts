@@ -23,7 +23,7 @@ export const sewageEjectorPumpsRepairsOrReplacement: ServiceItem = {
     description: "Professional sewage ejector pump repair and replacement in Hawthorne, NJ. Fix failing pumps and help prevent wastewater backups, odors, and water damage.",
     keywords: "sewage ejector pump repair, sewage ejector pump replacement, sewage ejector pump repair Hawthorne NJ, sewage pump repair NJ, ejector pump replacement, sewage ejector pump service, wastewater pump repair, Drain Solution Plus",
     canonical: "https://www.drainsolutionplus.com/our-services/sewage-ejector-pumps-repairs-or-replacement",
-    ogImage: "https://www.drainsolutionplus.com/images/sewage-ejector-pump-repair.jpg"
+    ogImage: "/images/services-images/ejector.webp"
   },
 
   faqs: [
