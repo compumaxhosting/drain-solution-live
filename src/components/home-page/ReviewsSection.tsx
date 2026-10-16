@@ -83,6 +83,10 @@ export default function ReviewsSection() {
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + reviewsData.length) % reviewsData.length);
   };
+  const currentReview = reviewsData[currentIndex];
+  const isEven = currentIndex % 2 === 1;
+  const cardBg = isEven ? "bg-[#c02f2d]" : "bg-[#014485]";
+  const pillBg = isEven ? "bg-[#014485]" : "bg-[#c02f2d]";
 
   useEffect(() => {
     if (isPaused) return;
@@ -122,93 +126,67 @@ export default function ReviewsSection() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Viewport Mask */}
-          <div className="overflow-hidden py-4">
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
-            >
-              {reviewsData.map((item, idx) => {
-                const isEven = idx % 2 === 1;
-                const cardBg = isEven ? "bg-[#c02f2d]" : "bg-[#014485]";
-                const pillBg = isEven ? "bg-[#014485]" : "bg-[#c02f2d]";
-
-                return (
-                  <div
-                    key={item.id}
-                    className="w-full flex-shrink-0 px-2 sm:px-4 md:px-8 flex justify-center"
-                  >
-                    {/* Alternating Red / Blue Card */}
-                    <div
-                      className={`relative w-full max-w-[850px] rounded-2xl ${cardBg} p-7 sm:p-10 lg:p-12 shadow-xl text-white flex flex-col justify-between`}
-                    >
-                      <div>
-                        {/* Top Bar: Stars + Alternating Pill Tag */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-white/20">
-                          {/* 5 Stars */}
-                          <div className="flex items-center space-x-1 text-amber-300">
-                            {[...Array(item.rating)].map((_, i) => (
-                              <svg
-                                key={i}
-                                className="h-5 w-5 fill-current"
-                                viewBox="0 0 20 20"
-                              >
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                              </svg>
-                            ))}
-                          </div>
-
-                          {/* Contrasting Pill Tag */}
-                          <span
-                            className={`rounded-full ${pillBg} px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm border border-white/25`}
-                          >
-                            {item.service}
-                          </span>
-                        </div>
-
-                        {/* Review Quote Body */}
-                        <p className="pt-6 text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-white/95 italic">
-                          &ldquo;{item.review}&rdquo;
-                        </p>
-                      </div>
-
-                      {/* Author & Verification Footer */}
-                      <div className="pt-8 flex items-center justify-between">
-                        <div>
-                          <h3 className="text-base sm:text-lg font-bold text-white tracking-wide">
-                            {item.name}
-                          </h3>
-                          <p className="text-xs sm:text-sm text-white/80 font-medium">
-                            {item.location} (
-                            <Link
-                              href={item.countyHref}
-                              className="underline decoration-white/60 underline-offset-2 hover:decoration-white focus-visible:outline-none focus-visible:underline"
-                            >
-                              {item.county}
-                            </Link>
-                            )
-                          </p>
-                        </div>
-
-                        {/* Verified Tag */}
-                        <div className="flex items-center space-x-1.5 text-emerald-300 text-xs font-bold uppercase tracking-wider">
-                          <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                            <path
-                              fillRule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          <span>Verified Job</span>
-                        </div>
-                      </div>
-
+          <div className="py-4">
+            <div className="flex justify-center px-2 sm:px-4 md:px-8">
+              <div
+                className={`relative flex w-full max-w-[850px] flex-col justify-between rounded-2xl ${cardBg} p-7 text-white shadow-xl sm:p-10 lg:p-12`}
+              >
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/20 pb-6">
+                    <div className="flex items-center space-x-1 text-amber-300" aria-label={`${currentReview.rating} out of 5 stars`}>
+                      {[...Array(currentReview.rating)].map((_, index) => (
+                        <svg
+                          key={index}
+                          className="h-5 w-5 fill-current"
+                          viewBox="0 0 20 20"
+                          aria-hidden="true"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
                     </div>
+
+                    <span
+                      className={`rounded-full ${pillBg} border border-white/25 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm`}
+                    >
+                      {currentReview.service}
+                    </span>
                   </div>
-                );
-              })}
+
+                  <p className="pt-6 text-base font-normal italic leading-relaxed text-white/95 sm:text-lg lg:text-xl">
+                    &ldquo;{currentReview.review}&rdquo;
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between pt-8">
+                  <div>
+                    <h3 className="text-base font-bold tracking-wide text-white sm:text-lg">
+                      {currentReview.name}
+                    </h3>
+                    <p className="text-xs font-medium text-white/80 sm:text-sm">
+                      {currentReview.location} (
+                      <Link
+                        href={currentReview.countyHref}
+                        className="underline decoration-white/60 underline-offset-2 hover:decoration-white focus-visible:outline-none focus-visible:underline"
+                      >
+                        {currentReview.county}
+                      </Link>
+                      )
+                    </p>
+                  </div>
+
+                  <div className="flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-emerald-300">
+                    <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span>Verified Job</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

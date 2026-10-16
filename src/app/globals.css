@@ -12,6 +12,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-poppins);
+  --breakpoint-xs: 30rem;
 }
 
 html {
@@ -23,6 +24,18 @@ body {
   background-color: #ffffff;
   color: var(--foreground);
   font-family: var(--font-poppins);
+}
+
+@media (max-width: 767px) {
+  .site-shell {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+}
+
+@media (min-width: 768px) {
+  .site-shell {
+    padding-bottom: 0;
+  }
 }
 
 @keyframes marquee {

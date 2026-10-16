@@ -235,7 +235,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col pb-16 md:pb-0">
+      <body className="site-shell min-h-full flex flex-col">
         <TopBar />
         <Header />
         {children}
