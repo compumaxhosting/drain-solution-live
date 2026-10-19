@@ -230,6 +230,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <head>
+        <meta
+          name="google-site-verification"
+          content="ccfxmKF0PBLqJb9fczHSPN1yxAuR-SuhT0-9aRzWtzw"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
