@@ -1,5 +1,5 @@
 
-import CommercialDrainService from '@/components/commercial-drain-service-page-components/CommercialDrainService'
+import CommercialDrainService from "@/components/commercial-drain-service-page-components/CommercialDrainService";
 const page = () => {
   return (
 	<>

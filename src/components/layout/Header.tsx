@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -29,10 +29,19 @@ const navLinks: NavItem[] = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState<string | null>(
+    null,
+  );
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(
     null,
   );
+
+  useEffect(() => {
+    setDesktopDropdownOpen(null);
+    setMobileMenuOpen(false);
+    setMobileDropdownOpen(null);
+  }, [pathname]);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -44,6 +53,24 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setDesktopDropdownOpen(null);
+        setMobileMenuOpen(false);
+        setMobileDropdownOpen(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileDropdownOpen(null);
+  };
 
   const diagonalCut = "polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%)";
 
@@ -66,12 +93,12 @@ export default function Header() {
               >
                 <Link href="/" className="inline-flex items-center">
                   <Image
-                    src="/images/logo.webp"
+                    src="/images/logo.png"
                     alt="Drain Solution Plus company logo"
-                    width={380}
-                    height={100}
-                    priority
-                    className="h-[44px] w-auto max-w-[150px] xs:max-w-[170px] sm:h-[64px] sm:max-w-[210px] md:h-[72px] md:max-w-[240px] lg:h-[90px] lg:max-w-[310px] 2xl:h-[100px] 2xl:max-w-[350px] object-contain transition-transform duration-200 hover:scale-105"
+                    width={168}
+                    height={120}
+                    unoptimized
+                    className="h-[48px] w-auto object-contain transition-transform duration-200 hover:scale-105 sm:h-[68px] md:h-[72px] lg:h-[82px] 2xl:h-[94px]"
                   />
                 </Link>
               </div>
@@ -85,7 +112,6 @@ export default function Header() {
               alt="Anniversary Badge"
               width={160}
               height={160}
-              priority
               className="h-10 w-10 xs:h-12 xs:w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain drop-shadow-md transition-transform duration-200 hover:scale-105"
             />
           </div>
@@ -106,18 +132,38 @@ export default function Header() {
               const matchedGroup = serviceGroups.find(
                 (grp) => grp.title.toLowerCase() === item.name.toLowerCase(),
               );
+              const isDropdownOpen = desktopDropdownOpen === item.name;
 
               return (
-                <div key={item.name} className="group relative shrink-0 py-6">
+                <div
+                  key={item.name}
+                  className="relative shrink-0 py-6"
+                  onMouseEnter={() => setDesktopDropdownOpen(item.name)}
+                  onMouseLeave={() => setDesktopDropdownOpen(null)}
+                  onFocus={() => setDesktopDropdownOpen(item.name)}
+                  onBlur={(event) => {
+                    if (
+                      !event.currentTarget.contains(
+                        event.relatedTarget as Node | null,
+                      )
+                    ) {
+                      setDesktopDropdownOpen(null);
+                    }
+                  }}
+                >
                   <Link
                     href={item.href}
+                    aria-haspopup="true"
+                    aria-expanded={isDropdownOpen}
                     className={`flex items-center whitespace-nowrap text-xs uppercase tracking-wide text-white transition-all hover:text-white/80 2xl:text-[13px] ${
                       isActive ? "text-white" : "text-white/95"
                     }`}
                   >
                     <span>{item.name}</span>
                     <svg
-                      className="ml-1 h-3.5 w-3.5 fill-current transition-transform duration-200 group-hover:rotate-180"
+                      className={`ml-1 h-3.5 w-3.5 fill-current transition-transform duration-200 ${
+                        isDropdownOpen ? "rotate-180" : ""
+                      }`}
                       viewBox="0 0 20 20"
                     >
                       <path
@@ -133,7 +179,11 @@ export default function Header() {
                   </Link>
 
                   {/* Dropdown Menu with hover bridge */}
-                  <div className="absolute left-1/2 top-full z-[120] hidden -translate-x-1/2 pt-2 group-hover:block group-focus-within:block">
+                  <div
+                    className={`absolute left-1/2 top-full z-[120] -translate-x-1/2 pt-2 ${
+                      isDropdownOpen ? "block" : "hidden"
+                    }`}
+                  >
                     <div
                       className={`${item.name === "Services" ? "w-[min(760px,calc(100vw-2rem))]" : "w-[320px]"} max-h-[70vh] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl bg-[#a82422] border border-white/20 py-3 px-2 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]`}
                     >
@@ -199,7 +249,6 @@ export default function Header() {
             alt="Anniversary Badge"
             width={95}
             height={95}
-            priority
             className="h-[72px] w-[72px] object-contain drop-shadow-lg transition-transform duration-200 hover:scale-105"
           />
 
@@ -272,7 +321,10 @@ export default function Header() {
           </a>
 
           <button
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={() => {
+              setMobileDropdownOpen(null);
+              setMobileMenuOpen(true);
+            }}
             aria-label="Open Navigation"
             className="flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
@@ -292,7 +344,7 @@ export default function Header() {
 
       {/* ================= BLUR BACKDROP OVERLAY ================= */}
       <div
-        onClick={() => setMobileMenuOpen(false)}
+        onClick={closeMobileMenu}
         className={`fixed inset-0 z-[130] bg-black/60 backdrop-blur-sm transition-opacity duration-300 2xl:hidden ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
@@ -311,7 +363,7 @@ export default function Header() {
             Menu
           </span>
           <button
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMobileMenu}
             aria-label="Close Menu"
             className="rounded-full p-2 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
@@ -350,6 +402,10 @@ export default function Header() {
                     className="flex flex-col border-b border-red-800/40 pb-2"
                   >
                     <button
+                      aria-expanded={isDropdownExpanded}
+                      aria-controls={`mobile-${item.name
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}-dropdown`}
                       onClick={() =>
                         setMobileDropdownOpen(
                           isDropdownExpanded ? null : item.name,
@@ -373,13 +429,20 @@ export default function Header() {
                       </svg>
                     </button>
 
-                    {isDropdownExpanded && matchedGroup && (
-                      <div className="mt-2 space-y-2 pl-3 border-l-2 border-white/30">
+                    {matchedGroup && (
+                      <div
+                        id={`mobile-${item.name
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}-dropdown`}
+                        className={`mt-2 space-y-2 pl-3 border-l-2 border-white/30 ${
+                          isDropdownExpanded ? "" : "hidden"
+                        }`}
+                      >
                         {matchedGroup.items.map((svc) => (
                           <Link
                             key={svc.name}
                             href={svc.href}
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={closeMobileMenu}
                             className="block py-1 text-xs font-medium text-white/90 hover:text-white uppercase"
                           >
                             {svc.name}
@@ -395,7 +458,7 @@ export default function Header() {
                 <li key={item.name} className="border-b border-red-800/40 pb-2">
                   <Link
                     href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={closeMobileMenu}
                     className={`flex items-center justify-between py-1 text-sm font-semibold uppercase tracking-wider text-white ${
                       isActive
                         ? "text-white underline decoration-2 underline-offset-4"

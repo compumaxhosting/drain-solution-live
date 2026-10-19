@@ -1,6 +1,6 @@
-'use client'
-
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import InternalPageLinks from "@/components/InternalPageLinks";
 
 export const HudsonCountyNj: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -288,6 +288,7 @@ export const HudsonCountyNj: React.FC = () => {
           </p>
         </section>
       </div>
+      <InternalPageLinks excludeCounty="/hudson-county-nj" />
     </article>
   );
 };

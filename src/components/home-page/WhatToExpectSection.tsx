@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import {
   ArrowRight,
   ArrowDown,
@@ -76,68 +73,32 @@ export default function WhatToExpectSection() {
           </p>
         </div>
 
-        {/* ================= DESKTOP LAYOUT (Unchanged Snake Grid) ================= */}
-        <div className="hidden lg:block">
-          {/* Top Row: 01 -> 02 -> 03 */}
-          <div className="grid grid-cols-[1fr_40px_1fr_40px_1fr] items-center">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)_40px_minmax(0,1fr)] lg:grid-rows-[auto_3rem_auto] lg:items-center lg:gap-y-0">
+          <div className="lg:col-start-1 lg:row-start-1">
             <StepCard {...steps[0]} />
-            <div className="flex justify-center"><ArrowRight className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} /></div>
+          </div>
+          <div className="lg:col-start-3 lg:row-start-1">
             <StepCard {...steps[1]} />
-            <div className="flex justify-center"><ArrowRight className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} /></div>
+          </div>
+          <div className="lg:col-start-5 lg:row-start-1">
             <StepCard {...steps[2]} />
           </div>
-
-          {/* Downward Connector under Step 03 */}
-          <div className="h-12 flex justify-end pr-[15%] items-center">
-            <ArrowDown className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} />
-          </div>
-
-          {/* Bottom Row: Goal CTA (left), Arrow Left, Step 05, Arrow Left, Step 04 */}
-          <div className="grid grid-cols-[1fr_40px_1fr_40px_1fr] items-center">
-            {/* GOAL / CTA CARD */}
-            <div className="flex flex-col justify-between rounded-2xl bg-[#C02F2D] p-7 text-white shadow-xl relative overflow-hidden min-h-[200px]">
-              <Target className="absolute -right-6 -bottom-6 h-36 w-36 text-white/10 pointer-events-none" />
-              <div className="relative z-10">
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-white/80">Our Goal</span>
-                  <span className="h-px w-6 bg-white/50" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight">Solve the problem.<br />Do it right.</h3>
-                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-white/90">We believe in honest recommendations and treating you the way we would want to be treated.</p>
-              </div>
-              <div className="relative z-10 mt-6">
-                <a href="tel:2018819622" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-[#014484] shadow-md transition-all hover:bg-gray-100 active:scale-95">
-                  <span>Call Drain Solutions Plus</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-[#C02F2D]" strokeWidth={2.5} />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex justify-center"><ArrowLeft className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} /></div>
-            <StepCard {...steps[4]} />
-            <div className="flex justify-center"><ArrowLeft className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} /></div>
+          <div className="lg:col-start-5 lg:row-start-3">
             <StepCard {...steps[3]} />
           </div>
-        </div>
+          <div className="lg:col-start-3 lg:row-start-3">
+            <StepCard {...steps[4]} />
+          </div>
 
-        {/* ================= MOBILE LAYOUT (Strict 1 -> 2 -> 3 -> 4 -> 5 -> CTA Stack) ================= */}
-        <div className="flex flex-col gap-4 lg:hidden">
-          <StepCard {...steps[0]} />
-          <StepCard {...steps[1]} />
-          <StepCard {...steps[2]} />
-          <StepCard {...steps[3]} />
-          <StepCard {...steps[4]} />
-
-          {/* Mobile Goal / CTA Card */}
-          <div className="flex flex-col justify-between rounded-2xl bg-[#C02F2D] p-7 text-white shadow-xl relative overflow-hidden min-h-[200px]">
-            <Target className="absolute -right-6 -bottom-6 h-36 w-36 text-white/10 pointer-events-none" />
+          <div className="relative flex min-h-[200px] flex-col justify-between overflow-hidden rounded-2xl bg-[#C02F2D] p-7 text-white shadow-xl lg:col-start-1 lg:row-start-3">
+            <Target className="pointer-events-none absolute -bottom-6 -right-6 h-36 w-36 text-white/10" />
             <div className="relative z-10">
-              <div className="flex items-center space-x-2 mb-2">
+              <div className="mb-2 flex items-center space-x-2">
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-white/80">Our Goal</span>
                 <span className="h-px w-6 bg-white/50" />
               </div>
-              <h3 className="text-xl font-black tracking-tight leading-tight">Solve the problem.<br />Do it right.</h3>
-              <p className="mt-2 text-xs leading-relaxed text-white/90">We believe in honest recommendations and treating you the way we would want to be treated.</p>
+              <h3 className="text-xl font-black leading-tight tracking-tight sm:text-2xl">Solve the problem.<br />Do it right.</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/90 sm:text-sm">We believe in honest recommendations and treating you the way we would want to be treated.</p>
             </div>
             <div className="relative z-10 mt-6">
               <a href="tel:2018819622" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-[#014484] shadow-md transition-all hover:bg-gray-100 active:scale-95">
@@ -145,6 +106,22 @@ export default function WhatToExpectSection() {
                 <ArrowRight className="h-3.5 w-3.5 text-[#C02F2D]" strokeWidth={2.5} />
               </a>
             </div>
+          </div>
+
+          <div className="hidden justify-center lg:col-start-2 lg:row-start-1 lg:flex">
+            <ArrowRight className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} />
+          </div>
+          <div className="hidden justify-center lg:col-start-4 lg:row-start-1 lg:flex">
+            <ArrowRight className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} />
+          </div>
+          <div className="hidden items-center justify-self-end pr-[15%] lg:col-start-5 lg:row-start-2 lg:flex">
+            <ArrowDown className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} />
+          </div>
+          <div className="hidden justify-center lg:col-start-2 lg:row-start-3 lg:flex">
+            <ArrowLeft className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} />
+          </div>
+          <div className="hidden justify-center lg:col-start-4 lg:row-start-3 lg:flex">
+            <ArrowLeft className="h-6 w-6 text-[#C02F2D]" strokeWidth={2.5} />
           </div>
         </div>
 

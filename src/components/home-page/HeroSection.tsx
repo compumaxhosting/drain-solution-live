@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 
 export default function HeroSection() {
@@ -12,7 +9,7 @@ export default function HeroSection() {
           src="/images/1.webp"
           alt="Hero Background"
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover object-center"
         />

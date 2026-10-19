@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
-import React from 'react';
+import type { Metadata, Viewport } from "next";
+import React from "react";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title: 'About Drain Solutions Plus | Northern NJ Drain & Sewer Specialists',
@@ -20,7 +24,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  themeColor: '#ffffff',
   alternates: {
     canonical: 'https://www.drainsolutionplus.com/about-us',
   },
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
     siteName: 'Drain Solutions Plus',
     images: [
       {
-        url: '/images/client-images/commercial-drain-repair-1.webp',
+        url: '/images/services-images/commercial-drain-repair-1.webp',
         alt: 'Drain technicians completing a commercial drain repair',
       },
     ],
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Drain Solutions Plus | Northern NJ Drain & Sewer Specialists',
     description: 'Discover Drain Solutions Plus in Hawthorne, NJ and our commercial and residential drain, sewer, inspection and emergency services across Northern NJ.',
-    images: ['/images/client-images/commercial-drain-repair-1.webp'],
+    images: ['/images/services-images/commercial-drain-repair-1.webp'],
   },
 };
 

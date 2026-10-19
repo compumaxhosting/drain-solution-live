@@ -1,12 +1,14 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import InternalPageLinks from "@/components/InternalPageLinks";
+import RelatedServiceLinks from "@/components/RelatedServiceLinks";
 import {
   ArrowUpRight,
   ShieldCheck,
   Wrench,
   Search,
   Droplets,
-  CalendarCheck,
   CheckCircle2,
   PhoneCall,
   Clock,
@@ -64,10 +66,13 @@ const CommercialDrainService: React.FC = () => {
 
           {/* RIGHT IMAGE / BADGE */}
           <div className="relative min-h-[460px] lg:min-h-0">
-            <img
-              src="/images/client-images/iron-sewer-replaced-with-pvc1.webp"
+            <Image
+              src="/images/services-images/iron-sewer-replaced-with-pvc1.webp"
               alt="Commercial sewer line replaced with durable PVC piping"
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              preload
+              sizes="(max-width: 1024px) 100vw, 54vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/15" />
 
@@ -92,7 +97,6 @@ const CommercialDrainService: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 top-0 h-24 w-24 bg-[#c02f2d]" />
           </div>
         </div>
       </div>
@@ -132,11 +136,13 @@ const CommercialDrainService: React.FC = () => {
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
             {/* Visual Box */}
             <div className="relative order-2 lg:order-1">
-              <div className="overflow-hidden rounded-sm shadow-xl">
-                <img
-                  src="/images/client-images/emergency-main-sewer-clogged.webp"
+              <div className="relative h-[440px] overflow-hidden rounded-sm shadow-xl sm:h-[500px]">
+                <Image
+                  src="/images/services-images/emergency-main-sewer-clogged.webp"
                   alt="Clogged sewer line being addressed with commercial drain service"
-                  className="h-[440px] w-full object-cover sm:h-[500px]"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
 
@@ -828,6 +834,16 @@ const CommercialDrainService: React.FC = () => {
         </div>
       </div>
 
+      <RelatedServiceLinks
+        serviceIds={[
+          "commercial-drain-cleaning",
+          "commercial-drain-repairs",
+          "sewer-and-drain-cleaning",
+          "sewer-and-drain-video-inspections",
+          "hydro-jetting",
+        ]}
+      />
+
       {/* ================= FINAL CTA ================= */}
       <div className="relative overflow-hidden bg-[#014484]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -868,6 +884,7 @@ const CommercialDrainService: React.FC = () => {
           </div>
         </div>
       </div>
+      <InternalPageLinks excludeService="/commercial-drain-service" />
     </section>
   );
 };

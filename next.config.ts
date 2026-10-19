@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    unoptimized: true,
+  },
   reactCompiler: true,
   async redirects() {
     return [
@@ -47,6 +49,41 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/blog",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/schedule-service",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/drain-cleaning-sewer-repair-service-roseland-nj",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/drain-cleaning-sewer-repair-service-lyndhurst-nj",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/drain-cleaning-sewer-repair-service-weehawken-nj",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/drain-cleaning-sewer-repair-service-montvale-nj",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/drain-cleaning-sewer-repair-service-east-rutherford-nj",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/drain-cleaning-sewer-repair-service-hasbrouck-heights-nj-nj",
         destination: "/",
         permanent: true,
       },

@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
-import React from 'react';
+import type { Metadata, Viewport } from "next";
+import React from "react";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title: 'Residential Drain Service in Northern NJ | Drain Solution Plus',
@@ -23,7 +27,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  themeColor: '#ffffff',
   openGraph: {
     type: 'website',
     title: 'Residential Drain Service in Northern NJ | Drain Solution Plus',
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'Drain Solution Plus',
     images: [
       {
-        url: '/images/client-images/unclogged-sink-drain.webp',
+        url: '/images/services-images/unclogged-sink-drain.webp',
         alt: 'Residential drain service by Drain Solution Plus in Northern New Jersey',
       },
     ],
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     title: 'Residential Drain Service in Northern NJ | Drain Solution Plus',
     description:
       'Residential drain cleaning, hydro jetting, repairs and video inspections throughout Northern NJ. Contact Drain Solution Plus for service.',
-    images: ['/images/client-images/unclogged-sink-drain.webp'],
+    images: ['/images/services-images/unclogged-sink-drain.webp'],
   },
   referrer: 'strict-origin-when-cross-origin',
   alternates: {

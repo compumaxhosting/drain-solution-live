@@ -1,5 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import InternalPageLinks from "@/components/InternalPageLinks";
+import RelatedServiceLinks from "@/components/RelatedServiceLinks";
 import {
   ArrowUpRight,
   Check,
@@ -59,10 +62,13 @@ const ResidentialDrainService: React.FC = () => {
 
           {/* RIGHT IMAGE / BADGE */}
           <div className="relative min-h-[460px] lg:min-h-0">
-            <img
-              src="/images/client-images/unclogged-sink-drain.webp"
+            <Image
+              src="/images/services-images/unclogged-sink-drain.webp"
               alt="Residential Drain Cleaning & Repair in Northern NJ"
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              preload
+              sizes="(max-width: 1024px) 100vw, 54vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/15" />
 
@@ -81,7 +87,7 @@ const ResidentialDrainService: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 top-0 h-24 w-24 bg-[#c02f2d]" />
+             
           </div>
         </div>
       </div>
@@ -216,11 +222,13 @@ const ResidentialDrainService: React.FC = () => {
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
             {/* Visual Box */}
             <div className="relative order-2 lg:order-1">
-              <div className="overflow-hidden rounded-sm shadow-xl">
-                <img
-                  src="/images/client-images/emergency-main-sewer-clogged.webp"
+              <div className="relative h-[440px] overflow-hidden rounded-sm shadow-xl sm:h-[500px]">
+                <Image
+                  src="/images/services-images/emergency-main-sewer-clogged.webp"
                   alt="Residential Drain Repair"
-                  className="h-[440px] w-full object-cover sm:h-[500px]"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
 
@@ -429,9 +437,20 @@ const ResidentialDrainService: React.FC = () => {
               { q: "What areas do you serve?", a: "Drain Solution Plus lists Bergen, Essex, Hudson, and Passaic counties among its Northern New Jersey service areas. Contact the company if you are unsure whether your location is covered." },
               { q: "How quickly can residential drain service be scheduled?", a: "Drain Solution Plus advertises same-day service. Actual availability can depend on the nature of the problem, location, and current scheduling capacity." }
             ].map((faq, idx) => (
-              <div key={idx} className="bg-slate-50 border border-slate-200 p-6 rounded shadow-sm">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{faq.q}</h3>
-                <p className="text-slate-600 text-sm leading-7">
+              <details key={idx} className="group bg-slate-50 border border-slate-200 p-6 rounded shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold text-slate-900 [&::-webkit-details-marker]:hidden">
+                  {faq.q}
+                  <svg
+                    aria-hidden="true"
+                    className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-3 text-slate-600 text-sm leading-7">
                   {faq.q === "What areas do you serve?" ? (
                     <>
                       Drain Solution Plus lists{" "}
@@ -445,11 +464,22 @@ const ResidentialDrainService: React.FC = () => {
                     faq.a
                   )}
                 </p>
-              </div>
+              </details>
             ))}
           </div>
         </div>
       </div>
+
+      <RelatedServiceLinks
+        serviceIds={[
+          "residential-drain-cleaning",
+          "residential-drain-repairs",
+          "sewer-and-drain-video-inspections",
+          "hydro-jetting",
+          "toilet-clogs",
+          "sink-clogs",
+        ]}
+      />
 
       {/* ================= FINAL CTA ================= */}
       <div className="relative overflow-hidden bg-[#014484]">
@@ -483,6 +513,7 @@ const ResidentialDrainService: React.FC = () => {
           </div>
         </div>
       </div>
+      <InternalPageLinks excludeService="/residential-drain-service" />
     </section>
   );
 };

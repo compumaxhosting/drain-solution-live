@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,7 +19,7 @@ const allServicesData: ServiceItem[] = [
     title: "RESIDENTIAL DRAIN CLEANING",
     description:
       "Keeping the drains in your home clean and spotless is vital to preventing serious plumbing problems such as burst pipes, overflowing sinks and toilets and foul odors from permeating your home. The easiest and most effective way to prevent problems and ensure your drains are running smoothly is with professional residential drain cleaning services.\n\nAt DRAIN SOLUTIONS PLUS, we help homeowners overcome their drain issues with a series of comprehensive, safe and efficient drain cleaning services.\n\nTop notch drain cleaning specialists. We unclog 99.9% of the drains we work on. We have a variety of snake cable sizes, different machines and methods to unclogging your drains.",
-    image: "/images/client-images/sink-line-cleared.webp",
+    image: "/images/services-images/sink-line-cleared.webp",
     ctaText: "Drain Cleaning",
     ctaLink: "/our-services/residential-drain-cleaning",
   },
@@ -32,7 +29,7 @@ const allServicesData: ServiceItem[] = [
     title: "RESIDENTIAL DRAIN REPAIRS",
     description:
       "Drain and sewer problems are a headache for any homeowner. Not only do they cause issues with your home, but they also disrupt your routine and potentially threaten the safety of your family. When you need residential sewer line repairs or drain repairs, it’s important to call an expert you can trust to get the job done right.\n\nAt DRAIN SOLUTIONS PLUS, we provide expert solutions for all your drain repair needs. We specialize in video inspecting sewer lines with our state of the art camera technology. We have the knowledge and experience in locating where your problem is and coming up with a variety of solutions so you won’t have to experience a sewer problem again.\n\nVideo inspecting sewer line to the street to get a visual of the condition of your main line. Highly recommended to new homeowners or if you’re shopping for a house.",
-    image: "/images/client-images/kitchen-cleaning.webp",
+    image: "/images/services-images/kitchen-cleaning.webp",
     ctaText: "Drain Repairs",
     ctaLink: "/our-services/residential-drain-repairs",
   },
@@ -42,7 +39,7 @@ const allServicesData: ServiceItem[] = [
     title: "COMMERCIAL DRAIN REPAIRS",
     description:
       "Experiencing a drain problem on your commercial property causes serious headaches for business owners. Not only do drain problems pose serious safety and health risks, but they can also lead to loss of business and income if part of your building needs to be shut down during the repair.",
-    image: "/images/client-images/iron-sewer-replaced-with-pvc1.webp",
+    image: "/images/services-images/iron-sewer-replaced-with-pvc1.webp",
     ctaText: "Commercial Repairs",
     ctaLink: "/our-services/commercial-drain-repairs",
   },
@@ -52,7 +49,7 @@ const allServicesData: ServiceItem[] = [
     title: "COMMERCIAL DRAIN CLEANING",
     description:
       "Keeping the drains clean in your commercial property is vital to the successful operation of your business. Without clean drains, your business will suffer and you will notice increased problems in your commercial building. At DRAIN SOLUTIONS PLUS, we work with business owners to provide guaranteed drain solutions.",
-    image: "/images/client-images/commercial-drain-repair-2.webp",
+    image: "/images/services-images/commercial-drain-repair-1.webp",
     ctaText: "Commercial Cleaning",
     ctaLink: "/our-services/commercial-drain-cleaning",
   },
@@ -62,7 +59,7 @@ const allServicesData: ServiceItem[] = [
     title: "TOILET, FAUCET & LEAK REPAIRS",
     description:
       "At times you realise that you still have the same problem happening to your sink faucet situation over and over again. Now that’s really frustrating and you just can’t live with this. We at Drain Solutions Plus do the best to repair the faucet.\n\nIf you any more plumbing problems , we are there to help you.",
-    image: "/images/client-images/kitchen-line1.webp",
+    image: "/images/services-images/kitchen-line1.webp",
     ctaText: "Leak Repairs",
     ctaLink: "/our-services/faucet-leak-repairs",
   },
@@ -74,7 +71,7 @@ const allServicesData: ServiceItem[] = [
     title: "SEWER AND DRAIN CLEANING",
     description:
       "Accumulated debris, sludge, and tree roots can severely restrict your main sewer line flow. Our comprehensive sewer and drain cleaning service utilizes high-powered equipment to scour your pipes clean, preventing catastrophic backups and costly property damage for residential and commercial customers.",
-    image: "/images/client-images/bathtub-drain-snakin.webp",
+    image: "/images/services-images/bathtub-drain-snakin.webp",
     ctaText: "Sewer Cleaning",
     ctaLink: "/our-services/sewer-and-drain-cleaning",
   },
@@ -84,7 +81,7 @@ const allServicesData: ServiceItem[] = [
     title: "TOILET CLOGS",
     description:
       "A stubborn toilet clog can disrupt your household or business instantly. When standard plunging fails, our plumbing experts use specialized professional toilet augers to clear obstructions safely without scratching or cracking your porcelain fixtures.",
-    image: "/images/client-images/toilet-clog.webp",
+    image: "/images/services-images/toilet-clog.webp",
     ctaText: "Clear Toilet Clog",
     ctaLink: "/our-services/toilet-clogs",
   },
@@ -94,7 +91,7 @@ const allServicesData: ServiceItem[] = [
     title: "TUB CLOGS",
     description:
       "Bathtub drains frequently accumulate hair, skin flakes, and soap residue over time, leading to slow drainage or standing water during showers. We thoroughly clear tub traps and branch lines to get your bathroom flowing perfectly again.",
-    image: "/images/client-images/hair-pulled-from-tub.webp",
+    image: "/images/services-images/hair-pulled-from-tub.webp",
     ctaText: "Clear Tub Clog",
     ctaLink: "/our-services/tub-clogs",
   },
@@ -104,7 +101,7 @@ const allServicesData: ServiceItem[] = [
     title: "SINK CLOGS",
     description:
       "Kitchen sinks get choked with food particles, coffee grounds, and grease, while bathroom sinks battle toothpaste and hair. We clear P-traps, tailpieces, and branch lines to restore instant, clean drainage to your sinks.",
-    image: "/images/client-images/unclogged-sink-drain.webp",
+    image: "/images/services-images/unclogged-sink-drain.webp",
     ctaText: "Clear Sink Clog",
     ctaLink: "/our-services/sink-clogs",
   },
@@ -114,7 +111,7 @@ const allServicesData: ServiceItem[] = [
     title: "SEWER AND DRAIN REPAIRS",
     description:
       "Whether caused by shifting soil, tree root intrusion, or pipe aging, sewer and drain line damage requires prompt professional attention. We provide heavy-duty residential and commercial repair services to ensure your entire wastewater system remains secure and sanitary.",
-    image: "/images/client-images/sewer-pipe-repair-1.webp",
+    image: "/images/services-images/sewer-pipe-repair-1.webp",
     ctaText: "Sewer Repairs",
     ctaLink: "/our-services/sewer-and-drain-repairs",
   },
@@ -124,7 +121,7 @@ const allServicesData: ServiceItem[] = [
     title: "SEWER AND DRAIN VIDEO INSPECTIONS",
     description:
       "Stop guessing where your plumbing issues lie. Our advanced sewer and drain video inspection service runs a specialized high-definition camera through your entire line, projecting real-time video to locate cracks, root intrusion, and blockages with absolute precision.",
-    image: "/images/client-images/sewer-video-inspection-2.webp",
+    image: "/images/services-images/sewer-video-inspection-2.webp",
     ctaText: "Video Inspection",
     ctaLink: "/our-services/sewer-and-drain-video-inspections",
   },
@@ -134,7 +131,7 @@ const allServicesData: ServiceItem[] = [
     title: "HYDRO JETTING",
     description:
       "Hydro jetting uses ultra-high-pressure streams of water to blast away stubborn grease, scale, mineral deposits, and roots from the interior walls of your pipes. It leaves your lines as clean as the day they were installed, far outperforming traditional snaking.",
-    image: "/images/client-images/hydro-jetting.webp",
+    image: "/images/services-images/hydro-jetting.webp",
     ctaText: "Hydro Jetting",
     ctaLink: "/our-services/hydro-jetting",
   },
@@ -144,7 +141,7 @@ const allServicesData: ServiceItem[] = [
     title: "FLUSH VALVE LEAK REPAIRS",
     description:
       "Leaking flush valves lead to constant water waste, noisy bathrooms, and escalating utility bills. Our technicians specialize in rebuilding and replacing worn flush valve diaphragms, seals, and complete assemblies for flawless, quiet operation.",
-    image: "/images/client-images/shower-valve-2.webp",
+    image: "/images/services-images/shower-valve-2.webp",
     ctaText: "Repair Flush Valve",
     ctaLink: "/our-services/flush-valve-leak-repairs",
   },
@@ -154,7 +151,7 @@ const allServicesData: ServiceItem[] = [
     title: "SUMP PUMP REPAIRS OR REPLACEMENT",
     description:
       "A failing sump pump can leave your basement vulnerable to severe flooding and water damage during heavy rainfall. We provide prompt diagnostics, motor repairs, and full sump pump replacements including backup battery systems to keep your property protected year-round.",
-    image: "/images/client-images/sump-pump.webp",
+    image: "/images/services-images/sump-pump.webp",
     ctaText: "Sump Pump Services",
     ctaLink: "/our-services/sump-pump-repairs-or-replacement",
   },
@@ -164,7 +161,7 @@ const allServicesData: ServiceItem[] = [
     title: "SEWAGE EJECTOR PUMPS REPAIRS OR REPLACEMENT",
     description:
       "Basement bathrooms, laundry rooms, and wet bars rely on sewage ejector pumps to lift wastewater up to the main sewer line. If your ejector pump fails, it can cause severe backups. We offer fast repair, maintenance, and heavy-duty replacement services.",
-    image: "/images/client-images/ejector.webp",
+    image: "/images/services-images/ejector.webp",
     ctaText: "Ejector Pump Services",
     ctaLink: "/our-services/sewage-ejector-pumps-repairs-or-replacement",
   },
@@ -186,12 +183,16 @@ export default function ServicePageServices() {
             <span className="h-2 w-2 rounded-full bg-[#c02f2d]" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#014485]">
-            Services
-          </h2>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#014485]">
+            Drain &amp; Sewer Services
+          </h1>
 
           <div className="mt-3.5 h-1 w-14 bg-[#c02f2d] rounded-full" />
         </div>
+
+        <h2 className="mb-10 text-center text-lg font-bold uppercase tracking-wider text-[#014485] sm:mb-12 sm:text-xl">
+          Residential and Commercial Drain Solutions
+        </h2>
 
         {/* ================= ALTERNATING ROWS ================= */}
         <div className="flex flex-col space-y-12 sm:space-y-16 lg:space-y-20">

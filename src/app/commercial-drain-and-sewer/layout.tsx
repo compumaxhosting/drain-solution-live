@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
-import React from 'react';
+import type { Metadata, Viewport } from "next";
+import React from "react";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title: 'Commercial Drain Cleaning NJ | Clogged Drain Services | Drain Solutions Plus',
@@ -52,7 +56,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  themeColor: '#ffffff',
   alternates: {
     canonical: 'https://www.drainsolutionplus.com/commercial-drain-and-sewer',
   },
@@ -64,7 +67,7 @@ export const metadata: Metadata = {
     siteName: 'Drain Solutions Plus',
     images: [
       {
-        url: '/images/client-images/iron-sewer-replaced-with-pvc1.webp',
+        url: '/images/services-images/iron-sewer-replaced-with-pvc1.webp',
         alt: 'Commercial sewer pipe replacement with new PVC piping',
       },
     ],
@@ -73,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Commercial Drain Cleaning NJ | Clogged Drain Services',
     description: 'Commercial drain cleaning for clogged kitchen, bathroom, laundry and floor drains in Hawthorne and throughout Northern New Jersey.',
-    images: ['/images/client-images/iron-sewer-replaced-with-pvc1.webp'],
+    images: ['/images/services-images/iron-sewer-replaced-with-pvc1.webp'],
   },
 };
 

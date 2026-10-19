@@ -1,4 +1,6 @@
-import React from "react";
+import Image from "next/image";
+import InternalPageLinks from "@/components/InternalPageLinks";
+import RelatedServiceLinks from "@/components/RelatedServiceLinks";
 import {
   ArrowUpRight,
   Check,
@@ -83,10 +85,13 @@ const CommercialSewerService = () => {
 
           {/* IMAGE SIDE */}
           <div className="relative min-h-[500px] lg:min-h-0">
-            <img
-              src="/images/client-images/slab-sewer-repair.webp"
+            <Image
+              src="/images/services-images/slab-sewer-repair.webp"
               alt="Sewer line repair beneath a concrete slab at a commercial property"
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              preload
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              className="object-cover"
             />
 
             <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10" />
@@ -110,7 +115,7 @@ const CommercialSewerService = () => {
             </div>
 
             {/* RED CORNER */}
-            <div className="absolute right-0 top-0 h-24 w-24 bg-[#c02f2d]" />
+            <div className="absolute right-0 top-0  bg-[#c02f2d]" />
           </div>
         </div>
       </div>
@@ -241,11 +246,13 @@ const CommercialSewerService = () => {
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           {/* IMAGE */}
           <div className="relative">
-            <div className="overflow-hidden">
-              <img
-                src="/images/client-images/emergency-main-sewer-clogged.webp"
+            <div className="relative h-[430px] overflow-hidden sm:h-[540px]">
+              <Image
+                src="/images/services-images/emergency-main-sewer-clogged.webp"
                 alt="Blocked sewer line requiring commercial sewer repair"
-                className="h-[430px] w-full object-cover sm:h-[540px]"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
 
@@ -385,6 +392,17 @@ const CommercialSewerService = () => {
         </div>
       </div>
 
+      <RelatedServiceLinks
+        serviceIds={[
+          "sewer-and-drain-cleaning",
+          "sewer-and-drain-repairs",
+          "sewer-and-drain-video-inspections",
+          "hydro-jetting",
+          "commercial-drain-cleaning",
+          "commercial-drain-repairs",
+        ]}
+      />
+
       {/* ================= FINAL CTA ================= */}
       <div className="relative overflow-hidden bg-[#014484]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -415,6 +433,7 @@ const CommercialSewerService = () => {
           </div>
         </div>
       </div>
+      <InternalPageLinks excludeService="/commercial-sewer-service" />
     </section>
   );
 };

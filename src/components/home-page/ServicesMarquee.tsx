@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 
 const services = [
   "Sewer",
@@ -46,20 +43,6 @@ export default function ServicesMarquee() {
           </div>
         ))}
       </div>
-
-      <style jsx global>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 28s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }

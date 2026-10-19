@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Drain Solution Plus",
     images: [
       {
-        url: "/images/client-images/sewer-pipe-repaired.webp",
+        url: "/images/services-images/sewer-pipe-repaired.webp",
         alt: "Residential sewer service in Northern New Jersey",
       },
     ],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Residential Sewer Service in Northern NJ | Drain Solution Plus",
     description:
       "Residential sewer service in Northern NJ for sewer cleaning, repair, hydro-jetting, inspections and installation.",
-    images: ["/images/client-images/sewer-pipe-repaired.webp"],
+    images: ["/images/services-images/sewer-pipe-repaired.webp"],
   },
   referrer: "strict-origin-when-cross-origin",
 };

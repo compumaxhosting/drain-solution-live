@@ -1,30 +1,15 @@
-"use client";
-
-import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AboutSection() {
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
+export default function AboutSection({
+  headingLevel = 2,
+  preloadImage = false,
+}: {
+  headingLevel?: 1 | 2;
+  preloadImage?: boolean;
+}) {
   return (
     <section
-      ref={sectionRef}
       className="relative w-full overflow-hidden bg-[#fafaf9] py-13 sm:py-18 lg:py-20"
     >
       {/* Editorial Structural Hairlines */}
@@ -42,20 +27,13 @@ export default function AboutSection() {
             {/* Minimalist Geometric Backdrop Accent */}
             <div className="absolute -left-8 top-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-stone-100 -z-10" />
 
-            {/* Van Container With Slide-in From Left */}
-            <div
-              className={`relative z-10 w-full transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                inView
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-20 sm:-translate-x-44 opacity-0"
-              }`}
-            >
+            <div className="relative z-10 w-full">
               <Image
                 src="/images/5.webp"
                 alt="Drain Solutions Plus Service Fleet Vehicle"
                 width={700}
                 height={420}
-                priority
+                preload={preloadImage}
                 className="h-auto w-full object-contain filter drop-shadow-[0_16px_22px_rgba(0,0,0,0.18)]"
               />
 
@@ -97,10 +75,17 @@ export default function AboutSection() {
             </div>
 
             {/* Main Title (Updated to Signature Navy Blue #014485) */}
-            <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-black uppercase tracking-tight text-[#014485] leading-[1.15]">
-              We Specialize In <br />
-              <span className="text-[#c02f2d]">Sewer &amp; Drain Cleaning</span>
-            </h2>
+            {headingLevel === 1 ? (
+              <h1 className="text-2xl sm:text-4xl lg:text-[44px] font-black uppercase tracking-tight text-[#014485] leading-[1.15]">
+                We Specialize In <br />
+                <span className="text-[#c02f2d]">Sewer &amp; Drain Cleaning</span>
+              </h1>
+            ) : (
+              <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-black uppercase tracking-tight text-[#014485] leading-[1.15]">
+                We Specialize In <br />
+                <span className="text-[#c02f2d]">Sewer &amp; Drain Cleaning</span>
+              </h2>
+            )}
 
             {/* Body Copy */}
             <div className="space-y-3.5 sm:space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed font-normal">
@@ -113,6 +98,11 @@ export default function AboutSection() {
             </div>
 
             {/* Structured Service Pillars */}
+            {headingLevel === 1 && (
+              <h2 className="w-full text-sm font-bold uppercase tracking-[0.15em] text-[#014485]">
+                Our Core Service Areas
+              </h2>
+            )}
             <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-1 sm:pt-2">
               {[
                 { no: "01", name: "Residential Drain Cleaning", note: "Sinks, baths & stacks" },

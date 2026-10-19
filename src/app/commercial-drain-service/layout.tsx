@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Drain Solution Plus",
     images: [
       {
-        url: "/images/client-images/commercial-drain-repair-2.webp",
+        url: "/images/services-images/commercial-drain-repair-1.webp",
         alt: "Commercial drain cleaning and repair services in Northern New Jersey",
       },
     ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Commercial Drain Cleaning & Repair | Northern NJ",
     description:
       "Commercial drain cleaning and repair for Northern NJ businesses with inspections, water jetting, maintenance and repairs.",
-    images: ["/images/client-images/commercial-drain-repair-2.webp"],
+    images: ["/images/services-images/commercial-drain-repair-1.webp"],
   },
   referrer: "strict-origin-when-cross-origin",
 };

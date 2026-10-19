@@ -16,7 +16,6 @@ import {
   Wrench,
   X,
   Star,
-  QrCode,
 } from "lucide-react";
 
 const serviceOptions = [
@@ -160,9 +159,9 @@ export default function ContactBookingSection() {
             Service Request
           </div>
 
-          <h2 className="text-[30px] font-bold leading-[1.12] tracking-tight text-[#014484] sm:text-4xl lg:text-5xl">
+          <h1 className="text-[30px] font-bold leading-[1.12] tracking-tight text-[#014484] sm:text-4xl lg:text-5xl">
             Schedule Your Drain &amp; Sewer Service
-          </h2>
+          </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500 sm:mt-5 sm:text-base sm:leading-7">
             Tell us about your service needs and our team will review your
@@ -223,9 +222,9 @@ export default function ContactBookingSection() {
                             01
                           </span>
                           <div>
-                            <h4 className="text-sm font-bold text-slate-800">
+                            <h2 className="text-sm font-bold text-slate-800">
                               Contact Information
-                            </h4>
+                            </h2>
                             <p className="text-[11px] text-slate-400">
                               How can we reach you?
                             </p>
@@ -329,9 +328,9 @@ export default function ContactBookingSection() {
                             02
                           </span>
                           <div>
-                            <h4 className="text-sm font-bold text-slate-800">
+                            <h2 className="text-sm font-bold text-slate-800">
                               Service Information
-                            </h4>
+                            </h2>
                             <p className="text-[11px] text-slate-400">
                               Help us understand the job
                             </p>
@@ -397,9 +396,9 @@ export default function ContactBookingSection() {
                             03
                           </span>
                           <div>
-                            <h4 className="text-sm font-bold text-slate-800">
+                            <h2 className="text-sm font-bold text-slate-800">
                               Issue Details
-                            </h4>
+                            </h2>
                             <p className="text-[11px] text-slate-400">
                               Describe the problem
                             </p>
@@ -669,7 +668,6 @@ export default function ContactBookingSection() {
                       alt="Google QR Scanner"
                       width={120}
                       height={120}
-                      priority
                       className="mx-auto h-[120px] w-[120px] object-contain"
                     />
                   </a>

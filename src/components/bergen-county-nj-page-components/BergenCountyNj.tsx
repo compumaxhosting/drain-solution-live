@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import InternalPageLinks from "@/components/InternalPageLinks";
 
 export const BergenCountyNj: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -245,6 +246,7 @@ export const BergenCountyNj: React.FC = () => {
           </p>
         </section>
       </div>
+      <InternalPageLinks excludeCounty="/bergen-county-nj" />
     </article>
   );
 };

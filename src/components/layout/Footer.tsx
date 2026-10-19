@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -70,12 +70,11 @@ export default function Footer() {
           <div className="lg:col-span-3 flex flex-col items-start space-y-4">
             <div className="rounded-xl bg-white px-5 py-3.5 shadow-md flex items-center justify-center w-full max-w-[210px] transition-transform duration-200 hover:scale-[1.02]">
               <Image
-                src="/images/logo.webp"
+                src="/images/logo.png"
                 alt="Drain Solutions Plus"
-                width={190}
-                height={80}
+                width={168}
+                height={120}
                 className="w-full h-auto object-contain"
-                priority
               />
             </div>
             <p className="text-xs sm:text-[13px] leading-relaxed text-white/80 max-w-[240px] font-normal">

@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/images/client-images/drain-pipe-video-inspection.webp",
+        url: "/images/services-images/drain-pipe-video-inspection.webp",
         alt: "Technician performing a sewer pipe video inspection",
       },
     ],
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drain Cleaning NJ | Commercial Sewer & Drain Services",
     description: "Commercial drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services across Northern New Jersey.",
-    images: ["/images/client-images/drain-pipe-video-inspection.webp"],
+    images: ["/images/services-images/drain-pipe-video-inspection.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",
@@ -81,7 +81,7 @@ const jsonLd = {
       "url": "https://www.drainsolutionplus.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.drainsolutionplus.com/path-to-your-logo.webp"
+        "url": "https://www.drainsolutionplus.com/images/logo.png"
       },
       "image": "https://www.drainsolutionplus.com/path-to-your-business-image.webp",
       "description": "Drain Solutions Plus provides commercial and residential drain cleaning, sewer cleaning, sewer repair, video sewer inspections, toilet repair, faucet and leak repair, frozen pipe repair, and emergency drain services throughout Northern New Jersey.",
@@ -239,7 +239,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col pb-16 md:pb-0">
+      <body className="site-shell min-h-full flex flex-col">
         <TopBar />
         <Header />
         {children}

@@ -1,4 +1,4 @@
-import PassaicCountyNj from '@/components/passaic-county-nj-page-components/PassaicCountyNj'
+import PassaicCountyNj from "@/components/passaic-county-nj-page-components/PassaicCountyNj";
 
 
 const page = () => {
