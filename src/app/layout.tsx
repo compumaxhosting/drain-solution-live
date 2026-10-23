@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import React from "react";
 import { FixedBottomBar } from "@/components/layout/FixedBottomBar";
+import { AnalyticsClickTracker } from "@/components/layout/AnalyticsClickTracker";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
@@ -243,6 +245,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="site-shell min-h-full flex flex-col">
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = function(){window.dataLayer.push(arguments);};
+              window.gtag('js', new Date());
+              window.gtag('config', 'G-CJ1WJDT5JV');
+            `,
+          }}
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CJ1WJDT5JV"
+          strategy="afterInteractive"
+        />
+        <AnalyticsClickTracker />
         <TopBar />
         <Header />
         {children}
