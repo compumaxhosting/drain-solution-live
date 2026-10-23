@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "drain camera inspection",
   ],
   authors: [{ name: "Drain Solutions Plus" }],
+  verification: {
+    google: "ccfxmKF0PBLqJb9fczHSPN1yxAuR-SuhT0-9aRzWtzw",
+  },
   metadataBase: new URL("https://www.drainsolutionplus.com"),
   icons: {
     icon: "/images/favicon.webp",
