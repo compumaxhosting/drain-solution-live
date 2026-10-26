@@ -12,11 +12,14 @@ const servicedLocations = [
 ];
 
 const companyLinks = [
+  { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/our-services" },
   { name: "Our Projects", href: "/successful-drain-sewer-projects-north-nj" },
   { name: "Reviews", href: "/reviews" },
   { name: "Contact", href: "/contact" },
+  { name: "Blogs", href: "/blog" },
+
 ];
 
 const serviceLinks = [
@@ -164,6 +167,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
+                    prefetch={link.href !== "/blog"}
                     className="transition-colors hover:text-white hover:underline underline-offset-4"
                   >
                     {link.name}

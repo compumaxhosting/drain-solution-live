@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
@@ -151,5 +152,19 @@
        <loc>https://www.drainsolutionplus.com/passaic-county-nj</loc>
        <lastmod>2026-10-14T19:32:27+00:00</lastmod>
        <priority>0.8000</priority>
+  </url>
+
+  <!-- blogs -->
+     <url>
+       <loc>https://www.drainsolutionplus.com/blog</loc>
+       <lastmod>2026-10-26T21:51:25+05:30</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.drainsolutionplus.com/blog/why-do-my-drains-keep-clogging</loc>
+       <lastmod>2026-10-26T21:51:25+05:30</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
   </url>
 </urlset>

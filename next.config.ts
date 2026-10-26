@@ -48,11 +48,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog",
-        destination: "/",
-        permanent: true,
-      },
-      {
         source: "/schedule-service",
         destination: "/",
         permanent: true,

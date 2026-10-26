@@ -25,6 +25,7 @@ const navLinks: NavItem[] = [
   { name: "Projects", href: "/successful-drain-sewer-projects-north-nj" },
   { name: "Contact", href: "/contact" },
   { name: "Reviews", href: "/reviews" },
+  { name: "Blogs", href: "/blog" },
 ];
 
 export default function Header() {
@@ -228,6 +229,7 @@ export default function Header() {
               <div key={item.name} className="relative shrink-0 py-6">
                 <Link
                   href={item.href}
+                  prefetch={item.href !== "/blog"}
                   className={`whitespace-nowrap text-xs uppercase tracking-wide transition-all hover:text-white/80 2xl:text-[13px] ${
                     isActive ? "text-white" : "text-white/95"
                   }`}
@@ -458,6 +460,7 @@ export default function Header() {
                 <li key={item.name} className="border-b border-red-800/40 pb-2">
                   <Link
                     href={item.href}
+                    prefetch={item.href !== "/blog"}
                     onClick={closeMobileMenu}
                     className={`flex items-center justify-between py-1 text-sm font-semibold uppercase tracking-wider text-white ${
                       isActive
