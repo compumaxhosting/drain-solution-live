@@ -391,9 +391,10 @@ export default function Header() {
 
         <div className="flex justify-end border-b border-red-800/40 px-5 py-4 sm:px-6">
           <div className="flex w-[min(210px,100%)] flex-col items-center rounded-lg border-l-[6px] border-[#014485] bg-[#ffdf20] px-4 py-2.5 text-center leading-tight shadow-lg">
-            <span className="offer-color-cycle text-3xl font-black xs:text-4xl">$59</span>
-            <span className="offer-color-cycle text-sm font-bold">Drain Cleaning Special</span>
-          </div>
+            <span className="offer-color-cycle text-4xl font-black">$99</span>
+            <span className="offer-color-cycle text-sm font-bold">
+              Drain Cleaning Special <br /> 10 Years in Business!
+            </span></div>
         </div>
 
         <nav
