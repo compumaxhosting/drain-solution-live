@@ -77,7 +77,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-[100] w-full bg-[#c02f2d] shadow-md">
-      <div className="mx-auto flex h-16 w-full max-w-[1920px] items-center justify-between pr-2 sm:h-[88px] sm:pr-5 lg:h-[100px] lg:pr-8 2xl:h-[112px]">
+      <div className="mx-auto flex w-full max-w-[1920px] flex-col px-2 sm:px-5 lg:px-8">
+        <div className="flex h-16 w-full items-center justify-between gap-2 sm:h-[88px] lg:h-[100px] 2xl:h-[112px]">
         {/* ================= LEFT SECTION: LOGO TAB + BADGE ================= */}
         <div className="flex items-center h-full shrink-0 overflow-visible gap-2 sm:gap-3">
           <div
@@ -121,7 +122,7 @@ export default function Header() {
         {/* ================= DESKTOP NAVIGATION LINKS ================= */}
         <nav
           aria-label="Main navigation"
-          className="hidden min-w-0 flex-1 items-center justify-center gap-3 px-2 2xl:flex 2xl:gap-4 2xl:px-3"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-2 px-2 2xl:flex 2xl:gap-3 2xl:px-3"
         >
           {navLinks.map((item) => {
             const isActive =
@@ -285,6 +286,11 @@ export default function Header() {
               className="h-8 w-8 object-contain"
             />
           </a>
+
+          <div className="flex w-[210px] shrink-0 flex-col items-center rounded-lg border-l-[6px] border-[#014485] bg-[#ffdf20] px-4 py-2.5 text-center leading-tight shadow-lg">
+            <span className="offer-color-cycle text-4xl font-black">$99</span>
+            <span className="offer-color-cycle text-sm font-bold">Drain Cleaning Special <br /> 10 Years in Business!</span>
+          </div>
         </div>
 
         {/* ================= HEADER CONTROLS (Mobile & Tablets) ================= */}
@@ -342,6 +348,8 @@ export default function Header() {
             </svg>
           </button>
         </div>
+        </div>
+
       </div>
 
       {/* ================= BLUR BACKDROP OVERLAY ================= */}
@@ -379,6 +387,13 @@ export default function Header() {
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </button>
+        </div>
+
+        <div className="flex justify-end border-b border-red-800/40 px-5 py-4 sm:px-6">
+          <div className="flex w-[min(210px,100%)] flex-col items-center rounded-lg border-l-[6px] border-[#014485] bg-[#ffdf20] px-4 py-2.5 text-center leading-tight shadow-lg">
+            <span className="offer-color-cycle text-3xl font-black xs:text-4xl">$59</span>
+            <span className="offer-color-cycle text-sm font-bold">Drain Cleaning Special</span>
+          </div>
         </div>
 
         <nav

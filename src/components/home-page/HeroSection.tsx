@@ -20,16 +20,15 @@ export default function HeroSection() {
       </div>
 
       {/* ================= MAIN HERO CONTAINER (FLUSH LEFT) ================= */}
-      <div className="relative z-10 w-full px-5 py-12 sm:px-10 sm:py-16 md:px-14 lg:px-20 xl:px-24">
+      <div className="relative z-10 w-full px-5 py-6 sm:px-10 sm:py-10 md:px-14 lg:px-20 xl:px-24">
         <div className="max-w-4xl text-left">
-          
           {/* ================= MAIN HEADING ================= */}
-<h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white">
-  <span className="[text-shadow:_1px_1px_0_#9ca3af,_-1px_-1px_0_#9ca3af,_1px_-1px_0_#9ca3af,_-1px_1px_0_#9ca3af,_0_0_12px_rgba(156,163,175,0.4)]" >The Sewer &amp; Drain Experts{" "}</span>
-  <span className="block sm:inline text-[#014485] [text-shadow:_1px_1px_0_#ffdf20,_-1px_-1px_0_#9ca3af,_1px_-1px_0_#ffdf20,_-1px_1px_0_#ffdf20,_0_0_12px_rgba(156,163,175,0.4)]">
-    That You Can Trust
-  </span>
-</h1>
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white">
+            <span className="[text-shadow:_1px_1px_0_#9ca3af,_-1px_-1px_0_#9ca3af,_1px_-1px_0_#9ca3af,_-1px_1px_0_#9ca3af,_0_0_12px_rgba(156,163,175,0.4)]" >The Sewer &amp; Drain Experts{" "}</span>
+            <span className="block sm:inline text-[#014485] [text-shadow:_1px_1px_0_#ffdf20,_-1px_-1px_0_#9ca3af,_1px_-1px_0_#ffdf20,_-1px_1px_0_#ffdf20,_0_0_12px_rgba(156,163,175,0.4)]">
+              That You Can Trust
+            </span>
+          </h1>
           {/* ================= REDUCED PADDING & INCREASED IMAGE WIDTH ================= */}
           <div className="mt-6 inline-block rounded-lg overflow-hidden shadow-lg bg-white border border-stone-200">
             <div className="relative h-12 sm:h-14 px-1 py-1 flex items-center justify-center">

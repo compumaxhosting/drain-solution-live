@@ -50,3 +50,25 @@ body {
 .animate-marquee {
   animation: marquee 28s linear infinite;
 }
+
+@keyframes offer-color-cycle {
+  0%,
+  49.9% {
+    color: #c02f2d;
+  }
+  50%,
+  100% {
+    color: #014485;
+  }
+}
+
+.offer-color-cycle {
+  animation: offer-color-cycle 1s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-color-cycle {
+    animation: none;
+    color: #c02f2d;
+  }
+}
