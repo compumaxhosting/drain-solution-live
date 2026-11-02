@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Drain Solutions Plus" }],
   verification: {
-    google: "ccfxmKF0PBLqJb9fczHSPN1yxAuR-SuhT0-9aRzWtzw",
+    google: "peGj9G-aBjrRRsUdmanEJO61KFPYk3dPHrmdz72WVhA",
   },
   metadataBase: new URL("https://www.drainsolutionplus.com"),
   icons: {
