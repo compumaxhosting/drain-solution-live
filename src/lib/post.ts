@@ -70,25 +70,34 @@ export function getAllPosts(): BlogPostMeta[] {
   if (!fs.existsSync(postsDirectory)) return [];
   
   const filenames = fs.readdirSync(postsDirectory);
-  return filenames.map((filename) => {
-    const slug = filename.replace(/\.md$/, '');
-    const fullPath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data } = matter(fileContents);
-    const postImages = getPostImages(data);
+  return filenames
+    .map((filename) => {
+      const slug = filename.replace(/\.md$/, '');
+      const fullPath = path.join(postsDirectory, filename);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data } = matter(fileContents);
+      const postImages = getPostImages(data);
 
-    return {
-      slug,
-      title: data.title || '',
-      description: data.description || '',
-      date: data.date || '',
-      keywords: data.keywords,
-      author: data.author,
-      image: postImages.image,
-      imageAlt: postImages.imageAlt,
-      schema: data.schema,
-    };
-  });
+      return {
+        slug,
+        title: data.title || '',
+        description: data.description || '',
+        date: data.date || '',
+        keywords: data.keywords,
+        author: data.author,
+        image: postImages.image,
+        imageAlt: postImages.imageAlt,
+        schema: data.schema,
+      };
+    })
+    .sort((a, b) => {
+      const aDate = Date.parse(a.date);
+      const bDate = Date.parse(b.date);
+
+      if (Number.isNaN(aDate)) return Number.isNaN(bDate) ? 0 : 1;
+      if (Number.isNaN(bDate)) return -1;
+      return bDate - aDate;
+    });
 }
 
 export function getPostBySlug(
