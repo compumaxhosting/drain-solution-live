@@ -17,15 +17,15 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Drain Cleaning NJ | Commercial Sewer & Drain Services | Drain Solutions Plus",
-  description: "Professional commercial drain cleaning NJ, sewer cleaning, sewer repair, camera inspections and emergency drain services for businesses across Northern New Jersey.",
+  title: "Residential Drain Cleaning NJ | Sewer & Drain Services | Drain Solutions Plus",
+  description: "Professional residential drain cleaning NJ, sewer cleaning, sewer repair, camera inspections and emergency drain services for businesses across Northern New Jersey.",
   keywords: [
     "drain cleaning NJ",
     "sewer cleaning NJ",
     "sewer line repair NJ",
     "sewer camera inspection NJ",
-    "commercial drain cleaning NJ",
-    "commercial sewer cleaning",
+    "residential drain cleaning NJ",
+    "residential sewer cleaning",
     "emergency drain cleaning NJ",
     "sewer line cleaning",
     "hydro jetting",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Drain Cleaning NJ | Commercial Sewer & Drain Services | Drain Solutions Plus",
-    description: "Commercial drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services throughout Northern New Jersey.",
+    title: "Drain Cleaning NJ | residential Sewer & Drain Services | Drain Solutions Plus",
+    description: "residential drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services throughout Northern New Jersey.",
     url: "https://www.drainsolutionplus.com/",
     siteName: "Drain Solutions Plus",
     locale: "en_US",
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drain Cleaning NJ | Commercial Sewer & Drain Services",
-    description: "Commercial drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services across Northern New Jersey.",
+    title: "Drain Cleaning NJ | residential Sewer & Drain Services",
+    description: "Residential drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services across Northern New Jersey.",
     images: ["/images/services-images/drain-pipe-video-inspection.webp"],
   },
   other: {
@@ -89,7 +89,7 @@ const jsonLd = {
         "url": "https://www.drainsolutionplus.com/images/logo.png"
       },
       "image": "https://www.drainsolutionplus.com/path-to-your-business-image.webp",
-      "description": "Drain Solutions Plus provides commercial and residential drain cleaning, sewer cleaning, sewer repair, video sewer inspections, toilet repair, faucet and leak repair, frozen pipe repair, and emergency drain services throughout Northern New Jersey.",
+      "description": "Drain Solutions Plus provides residential and residential drain cleaning, sewer cleaning, sewer repair, video sewer inspections, toilet repair, faucet and leak repair, frozen pipe repair, and emergency drain services throughout Northern New Jersey.",
       "telephone": "YOUR-VERIFIED-PHONE",
       "priceRange": "$$",
       "areaServed": [
@@ -111,8 +111,8 @@ const jsonLd = {
         }
       ],
       "knowsAbout": [
-        "Commercial Drain Cleaning",
-        "Commercial Sewer Cleaning",
+        "Residential Drain Cleaning",
+        "Residential Sewer Cleaning",
         "Sewer Line Repair",
         "Sewer Camera Inspection",
         "Hydro Jetting",
@@ -140,8 +140,8 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.drainsolutionplus.com/#webpage",
       "url": "https://www.drainsolutionplus.com/",
-      "name": "Drain Cleaning NJ | Commercial Sewer & Drain Services | Drain Solutions Plus",
-      "description": "Professional commercial drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services throughout Northern New Jersey.",
+      "name": "Drain Cleaning NJ | Residential Sewer & Drain Services | Drain Solutions Plus",
+      "description": "Professional residential drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services throughout Northern New Jersey.",
       "isPartOf": {
         "@id": "https://www.drainsolutionplus.com/#website"
       },
@@ -156,9 +156,9 @@ const jsonLd = {
     },
     {
       "@type": "Service",
-      "@id": "https://www.drainsolutionplus.com/#commercial-drain-cleaning",
-      "name": "Commercial Drain Cleaning",
-      "serviceType": "Commercial Drain Cleaning",
+      "@id": "https://www.drainsolutionplus.com/#residential-drain-cleaning",
+      "name": "residential Drain Cleaning",
+      "serviceType": "residential Drain Cleaning",
       "provider": {
         "@id": "https://www.drainsolutionplus.com/#business"
       },
@@ -166,7 +166,7 @@ const jsonLd = {
         "@type": "State",
         "name": "New Jersey"
       },
-      "description": "Commercial drain cleaning services for businesses experiencing clogged, slow, or backed-up drainage systems."
+      "description": "residential drain cleaning services for businesses experiencing clogged, slow, or backed-up drainage systems."
     },
     {
       "@type": "Service",
@@ -180,7 +180,7 @@ const jsonLd = {
         "@type": "State",
         "name": "New Jersey"
       },
-      "description": "Professional sewer cleaning services for commercial and residential properties throughout Northern New Jersey."
+      "description": "Professional sewer cleaning services for residential and residential properties throughout Northern New Jersey."
     },
     {
       "@type": "Service",
