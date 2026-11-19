@@ -639,10 +639,16 @@ export default function ContactBookingSection() {
 
               <a
                 href="mailto:drainsolutionsplus@gmail.com"
-                className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-5 text-sm font-semibold text-[#014484] transition-colors hover:text-[#c02f2d]"
+                aria-label="Email Drain Solutions Plus"
+                className="mt-5 inline-flex items-center border-t border-slate-100 pt-5 transition-opacity hover:opacity-80"
               >
-                <Mail className="h-4 w-4" />
-                drainsolutionsplus@gmail.com
+                <Image
+                  src="/images/gmail-images/gmail-blue.png"
+                  alt="Gmail"
+                  width={120}
+                  height={32}
+                  className="h-8 w-auto object-contain"
+                />
               </a>
             </div>
 

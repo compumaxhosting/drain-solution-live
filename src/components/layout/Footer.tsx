@@ -241,9 +241,16 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:drainsolutionsplus@gmail.com"
-                className="break-all transition-colors hover:text-white hover:underline underline-offset-4"
+                aria-label="Email Drain Solutions Plus"
+                className="inline-flex transition-opacity hover:opacity-80"
               >
-                drainsolutionsplus@gmail.com
+                <Image
+                  src="/images/gmail-images/gmail-white.png"
+                  alt="Gmail"
+                  width={120}
+                  height={32}
+                  className="h-8 w-auto object-contain"
+                />
               </a>
             </div>
 

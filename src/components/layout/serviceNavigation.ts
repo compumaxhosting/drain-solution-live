@@ -11,37 +11,43 @@ interface ServiceGroup {
 
 export const serviceGroups: ServiceGroup[] = [
   {
-    title: "Services",
+    title: "Residential Drain Services",
     items: [
+      { name: "Residential Drain Services", href: "/residential-drain-service" },
       { name: "Residential Drain Cleaning", href: "/our-services/residential-drain-cleaning" },
       { name: "Residential Drain Repairs", href: "/our-services/residential-drain-repairs" },
-      { name: "Commercial Drain Repairs", href: "/our-services/commercial-drain-repairs" },
-      { name: "Commercial Drain Cleaning", href: "/our-services/commercial-drain-cleaning" },
+      { name: "Toilet Clog Removal", href: "/our-services/toilet-clogs" },
+      { name: "Residential Tub Clog Removal", href: "/our-services/tub-clogs" },
+      { name: "Sink Clog Removal", href: "/our-services/sink-clogs" },
       { name: "Faucet & Leak Repairs", href: "/our-services/faucet-leak-repairs" },
-      { name: "Sewer and Drain Cleaning", href: "/our-services/sewer-and-drain-cleaning" },
-      { name: "Toilet Clogs", href: "/our-services/toilet-clogs" },
-      { name: "Residential Tub Clogs", href: "/our-services/tub-clogs" },
-      { name: "Sink Clogs", href: "/our-services/sink-clogs" },
-      { name: "Sewer and Drain Repairs", href: "/our-services/sewer-and-drain-repairs" },
-      { name: "Sewer and Drain Video Inspections", href: "/our-services/sewer-and-drain-video-inspections" },
-      { name: "Hydro Jetting", href: "/our-services/hydro-jetting" },
       { name: "Flush Valve Leak Repairs", href: "/our-services/flush-valve-leak-repairs" },
-      { name: "Sump Pump Repairs or Replacement", href: "/our-services/sump-pump-repairs-or-replacement" },
-      { name: "Sewage Ejector Pump Repairs or Replacement", href: "/our-services/sewage-ejector-pumps-repairs-or-replacement" },
+      { name: "Sump Pump Repair or Replacement", href: "/our-services/sump-pump-repairs-or-replacement" },
+      { name: "Sewage Ejector Pump Repair or Replacement", href: "/our-services/sewage-ejector-pumps-repairs-or-replacement" },
     ],
   },
   {
-    title: "Residential",
+    title: "Residential Sewer Services",
     items: [
-      { name: "Residential Drain", desc: "Top-notch household drain cleaning", href: "/residential-drain-service" },
-      { name: "Residential Sewer", desc: "Precise home piping restorations", href: "/residential-sewer-service" },
+      { name: "Residential Sewer Services", href: "/residential-sewer-service" },
+      { name: "Sewer & Drain Cleaning", href: "/our-services/sewer-and-drain-cleaning" },
+      { name: "Sewer & Drain Repairs", href: "/our-services/sewer-and-drain-repairs" },
+      { name: "Sewer & Drain Video Inspections", href: "/our-services/sewer-and-drain-video-inspections" },
+      { name: "Hydro Jetting", href: "/our-services/hydro-jetting" },
     ],
   },
   {
-    title: "Commercial",
+    title: "Commercial Drain Services",
     items: [
-      { name: "Commercial Drain", desc: "Heavy-duty commercial cleaning", href: "/commercial-drain-service" },
-      { name: "Commercial Sewer", desc: "Industrial and commercial repairs", href: "/commercial-sewer-service" },
+      { name: "Commercial Drain Services", href: "/commercial-drain-service" },
+      { name: "Commercial Drain Cleaning", href: "/our-services/commercial-drain-cleaning" },
+      { name: "Commercial Drain Repairs", href: "/our-services/commercial-drain-repairs" },
+    ],
+  },
+  {
+    title: "Commercial Sewer Services",
+    items: [
+      { name: "Commercial Sewer Services", href: "/commercial-sewer-service" },
+      { name: "Commercial Drain & Sewer Services", href: "/commercial-drain-and-sewer" },
     ],
   },
 ];

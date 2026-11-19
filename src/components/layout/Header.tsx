@@ -16,12 +16,6 @@ const navLinks: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/our-services", hasDropdown: true },
-  { name: "Residential", href: "/", hasDropdown: true },
-  {
-    name: "Commercial",
-    href: "/commercial-drain-and-sewer",
-    hasDropdown: true,
-  },
   { name: "Projects", href: "/successful-drain-sewer-projects-north-nj" },
   { name: "Contact", href: "/contact" },
   { name: "Reviews", href: "/reviews" },
@@ -122,7 +116,7 @@ export default function Header() {
         {/* ================= DESKTOP NAVIGATION LINKS ================= */}
         <nav
           aria-label="Main navigation"
-          className="hidden min-w-0 flex-1 items-center justify-center gap-2 px-2 2xl:flex 2xl:gap-3 2xl:px-3"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-4 px-3 2xl:flex 2xl:gap-7 2xl:px-5"
         >
           {navLinks.map((item) => {
             const isActive =
@@ -187,38 +181,52 @@ export default function Header() {
                     }`}
                   >
                     <div
-                      className={`${item.name === "Services" ? "w-[min(760px,calc(100vw-2rem))]" : "w-[320px]"} max-h-[70vh] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl bg-[#a82422] border border-white/20 py-3 px-2 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]`}
+                      className={`${item.name === "Services" ? "w-[min(980px,calc(100vw-2rem))]" : "w-[320px]"} max-h-[70vh] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl bg-[#a82422] border border-white/20 py-3 px-3 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]`}
                     >
-                      {matchedGroup && (
-                        <div
-                          className={
-                            item.name === "Services"
-                              ? "grid grid-cols-3 gap-1"
-                              : "space-y-1"
-                          }
-                        >
-                          {matchedGroup.items.map((svc) => (
-                            <Link
-                              key={svc.name}
-                              href={svc.href}
-                              className={`group/item block rounded-lg transition-all duration-150 hover:bg-white/10 ${item.name === "Services" ? "px-2 py-3" : "px-3 py-2.5"}`}
-                            >
-                              <div className="flex items-center justify-between">
-                                <span className="min-w-0 flex-1 break-words text-xs uppercase tracking-wide text-white group-hover/item:text-amber-300 transition-colors">
-                                  {svc.name}
-                                </span>
-                                <span className="ml-1 shrink-0 text-xs text-white/50 group-hover/item:text-white transition-transform">
-                                  →
-                                </span>
+                      {item.name === "Services" ? (
+                        <div className="grid grid-cols-4 gap-3">
+                          {serviceGroups.map((group) => (
+                            <div key={group.title}>
+                              <h3 className="mb-2 border-b border-white/20 pb-2 text-[11px] font-bold uppercase tracking-wide text-amber-300">
+                                {group.title}
+                              </h3>
+                              <div className="space-y-1">
+                                {group.items.map((svc) => (
+                                  <Link
+                                    key={svc.name}
+                                    href={svc.href}
+                                    className="group/item block rounded-lg px-2 py-2 transition-all duration-150 hover:bg-white/10"
+                                  >
+                                    <span className="block break-words text-[11px] leading-snug uppercase tracking-wide text-white group-hover/item:text-amber-300 transition-colors">
+                                      {svc.name}
+                                    </span>
+                                  </Link>
+                                ))}
                               </div>
-                              {svc.desc && (
-                                <p className="text-[10.5px] text-white/70 transition-colors line-clamp-1 mt-0.5">
-                                  {svc.desc}
-                                </p>
-                              )}
-                            </Link>
+                            </div>
                           ))}
                         </div>
+                      ) : (
+                        matchedGroup && (
+                          <div className="space-y-1">
+                            {matchedGroup.items.map((svc) => (
+                              <Link
+                                key={svc.name}
+                                href={svc.href}
+                                className="group/item block rounded-lg px-3 py-2.5 transition-all duration-150 hover:bg-white/10"
+                              >
+                                <div className="flex items-center justify-between">
+                                  <span className="min-w-0 flex-1 break-words text-xs uppercase tracking-wide text-white group-hover/item:text-amber-300 transition-colors">
+                                    {svc.name}
+                                  </span>
+                                  <span className="ml-1 shrink-0 text-xs text-white/50 group-hover/item:text-white transition-transform">
+                                    →
+                                  </span>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        )
                       )}
                     </div>
                   </div>
@@ -401,7 +409,7 @@ export default function Header() {
           aria-label="Mobile navigation"
           className="flex-1 overflow-y-auto px-5 py-4 sm:px-6"
         >
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col gap-4">
             {navLinks.map((item) => {
               const isActive =
                 item.href === "/"
@@ -447,7 +455,34 @@ export default function Header() {
                       </svg>
                     </button>
 
-                    {matchedGroup && (
+                    {item.name === "Services" ? (
+                      <div
+                        id={`mobile-services-dropdown`}
+                        className={`mt-2 space-y-4 pl-3 border-l-2 border-white/30 ${
+                          isDropdownExpanded ? "" : "hidden"
+                        }`}
+                      >
+                        {serviceGroups.map((group) => (
+                          <div key={group.title}>
+                            <h3 className="mb-1 text-[11px] font-bold uppercase tracking-wide text-amber-300">
+                              {group.title}
+                            </h3>
+                            <div className="space-y-1">
+                              {group.items.map((svc) => (
+                                <Link
+                                  key={svc.name}
+                                  href={svc.href}
+                                  onClick={closeMobileMenu}
+                                  className="block py-1 text-xs font-medium text-white/90 hover:text-white uppercase"
+                                >
+                                  {svc.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : matchedGroup && (
                       <div
                         id={`mobile-${item.name
                           .toLowerCase()
