@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/index.php",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index.phpc",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/drain-cleaning-sewer-repair-service-bloomingdale-nj",
         destination: "/",
         permanent: true,

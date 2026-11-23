@@ -10,6 +10,29 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+const getParagraphs = (text: string) =>
+  {
+    const explicitParagraphs = text
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean);
+
+    if (explicitParagraphs.length > 1) return explicitParagraphs;
+
+    const sentences = text
+      .replace(/\n/g, " ")
+      .match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)/g)
+      ?.map((sentence) => sentence.trim())
+      .filter(Boolean) ?? [text.trim()];
+
+    const paragraphs: string[] = [];
+    for (let index = 0; index < sentences.length; index += 2) {
+      paragraphs.push(sentences.slice(index, index + 2).join(" "));
+    }
+
+    return paragraphs.filter(Boolean);
+  };
+
 const relatedServiceIds: Record<string, string[]> = {
   "residential-drain-cleaning": ["residential-drain-repairs", "toilet-clogs", "sink-clogs", "tub-clogs"],
   "residential-drain-repairs": ["residential-drain-cleaning", "sewer-and-drain-repairs", "sewer-and-drain-video-inspections", "hydro-jetting"],
@@ -108,9 +131,16 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                 <div className="h-1 w-14 bg-[#c02f2d] rounded-full" />
 
-                <p className="text-base sm:text-lg leading-relaxed text-stone-600 font-normal pt-2">
-                  {service.longDescription}
-                </p>
+                <div className="space-y-5 pt-1">
+                  {getParagraphs(service.longDescription).map((paragraph, index) => (
+                    <p
+                      key={`${service.id}-paragraph-${index}`}
+                      className="text-[15px] sm:text-base leading-[1.75] text-stone-600 font-normal"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
 
                 <div className="pt-4 flex flex-wrap gap-4">
                   <Link
