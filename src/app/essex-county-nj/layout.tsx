@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "sewer repair Essex County NJ",
     "hydro jetting Essex County NJ",
     "sewer video inspection Essex County NJ",
-    "plumbing services Essex County NJ",
+    " sewer and drain services Essex County NJ",
     "sump pump repair Essex County NJ",
   ],
   authors: [{ name: "Drain Solutions Plus" }],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "Expert Drain Cleaning & Sewer Services in Essex County, NJ",
-    description: "Residential and commercial drain, sewer, plumbing and pump services throughout Essex County, NJ from Drain Solutions Plus.",
+    description: "Residential and commercial drain, sewer,  sewer and drain and pump services throughout Essex County, NJ from Drain Solutions Plus.",
     url: "https://www.drainsolutionplus.com/essex-county-nj",
     siteName: "Drain Solutions Plus",
     locale: "en_US",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Expert Drain Cleaning & Sewer Services in Essex County, NJ",
-    description: "Residential and commercial drain, sewer, plumbing and pump services throughout Essex County, NJ.",
+    description: "Residential and commercial drain, sewer,  sewer and drain and pump services throughout Essex County, NJ.",
     images: ["/images/njj.webp"],
   },
   other: {
@@ -71,7 +71,7 @@ const jsonLd = {
       "name": "Drain Solutions Plus",
       "url": "https://www.drainsolutionplus.com/",
       "telephone": "+1-201-881-9622",
-      "description": "Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, leak repair, hydro jetting, video inspection, sump pump, and sewage ejector pump services throughout Northern New Jersey.",
+      "description": "Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, leak repair, hydro jetting, video inspection, sump pump, and sewage ejector pump services throughout Northern New Jersey.",
       "image": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.webp",
       "logo": {
         "@type": "ImageObject",
@@ -95,9 +95,9 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": "https://www.drainsolutionplus.com/essex-county-nj/#service",
-      "name": "Drain, Sewer & Plumbing Services in Essex County, NJ",
+      "name": "Drain, Sewer &  sewer and drain Services in Essex County, NJ",
       "url": "https://www.drainsolutionplus.com/essex-county-nj",
-      "description": "Residential and commercial drain, sewer, plumbing, leak repair, hydro jetting, video inspection, sump pump, and sewage ejector pump services throughout Essex County, New Jersey.",
+      "description": "Residential and commercial drain, sewer,  sewer and drain, leak repair, hydro jetting, video inspection, sump pump, and sewage ejector pump services throughout Essex County, New Jersey.",
       "provider": {
         "@id": "https://www.drainsolutionplus.com/#business"
       },

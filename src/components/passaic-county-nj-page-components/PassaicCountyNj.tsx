@@ -12,7 +12,7 @@ export const PassaicCountyNj: React.FC = () => {
   const faqs = [
     {
       q: 'Does Drain Solutions Plus serve Passaic County?',
-      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, and pump services throughout Passaic County, including Clifton, Passaic, Paterson, Wayne, Totowa, Hawthorne, Pompton Lakes, Little Falls, West Milford, and Woodland Park.',
+      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, and pump services throughout Passaic County, including Clifton, Passaic, Paterson, Wayne, Totowa, Hawthorne, Pompton Lakes, Little Falls, West Milford, and Woodland Park.',
     },
     {
       q: 'What drain services are available?',
@@ -52,7 +52,7 @@ export const PassaicCountyNj: React.FC = () => {
           Drain Cleaning &amp; Sewer Services Throughout Passaic County, NJ
         </h1>
         <p className="text-base sm:text-lg mb-4 text-slate-700 leading-relaxed">
-          Drain Solutions Plus provides residential and commercial drain cleaning, drain repair, sewer services, plumbing repairs, and pump services throughout Passaic County, NJ. Our services include residential and commercial drain cleaning, drain repairs, sewer and drain cleaning, sewer and drain repairs, video inspections, hydro jetting, toilet, tub, and sink clog removal, faucet and leak repairs, flush valve leak repairs, sump pump repairs or replacement, and sewage ejector pump repairs or replacement.
+          Drain Solutions Plus provides residential and commercial drain cleaning, drain repair, sewer services,  sewer and drain repairs, and pump services throughout Passaic County, NJ. Our services include residential and commercial drain cleaning, drain repairs, sewer and drain cleaning, sewer and drain repairs, video inspections, hydro jetting, toilet, tub, and sink clog removal, faucet and leak repairs, flush valve leak repairs, sump pump repairs or replacement, and sewage ejector pump repairs or replacement.
         </p>
         <p className="text-base sm:text-lg mb-6 text-slate-700 leading-relaxed">
           If you&apos;re dealing with a clogged drain, recurring blockage, slow drainage, sewer backup, leaking fixture, or suspected sewer-line problem, identifying the cause is an important first step. Drain Solutions Plus provides cleaning, inspection, repair, and replacement services based on the specific problem.
@@ -169,7 +169,7 @@ export const PassaicCountyNj: React.FC = () => {
             Faucet, Leak &amp; Flush Valve Repairs
           </h2>
           <p className="mb-4 text-slate-700">
-            Not every plumbing problem involves a blocked drain. Drain Solutions Plus also provides faucet and leak repairs and flush valve leak repairs.
+            Not every  sewer and drain problem involves a blocked drain. Drain Solutions Plus also provides faucet and leak repairs and flush valve leak repairs.
           </p>
           <p className="text-slate-700">
             A leaking faucet or fixture can waste water and may require repair or replacement of the affected component. Flush valve problems can also cause a toilet to continue running or leak after flushing.

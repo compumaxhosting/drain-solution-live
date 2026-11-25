@@ -43,7 +43,7 @@ const ResidentialSewerService: React.FC = () => {
               </h1>
 
               <p className="mt-7 text-base leading-8 text-white/80">
-                A sewer problem can affect your entire home&apos;s plumbing system. Slow drainage, recurring blockages, unpleasant odors, leaks, or other sewer-line issues may indicate that the problem is farther into the system than a single clogged fixture.
+                A sewer problem can affect your entire home&apos;s  sewer and drain system. Slow drainage, recurring blockages, unpleasant odors, leaks, or other sewer-line issues may indicate that the problem is farther into the system than a single clogged fixture.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-4">

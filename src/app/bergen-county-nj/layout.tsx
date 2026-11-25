@@ -3,14 +3,14 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "Drain Cleaning & Sewer Services Throughout Bergen County, NJ",
-  description: "Get residential and commercial drain cleaning, sewer repair, hydro jetting, video inspections and plumbing services throughout Bergen County, NJ.",
+  description: "Get residential and commercial drain cleaning, sewer repair, hydro jetting, video inspections and  sewer and drain services throughout Bergen County, NJ.",
   keywords: [
     "drain cleaning Bergen County NJ",
     "sewer repair Bergen County NJ",
     "drain repair Bergen County NJ",
     "hydro jetting Bergen County NJ",
     "sewer cleaning Bergen County NJ",
-    "plumbing services Bergen County NJ",
+    " sewer and drain services Bergen County NJ",
   ],
   authors: [{ name: "Drain Solutions Plus" }],
   metadataBase: new URL("https://www.drainsolutionplus.com"),
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "Drain Cleaning & Sewer Services Throughout Bergen County, NJ",
-    description: "Residential and commercial drain, sewer, plumbing and pump services throughout Bergen County, NJ from Drain Solutions Plus.",
+    description: "Residential and commercial drain, sewer,  sewer and drain and pump services throughout Bergen County, NJ from Drain Solutions Plus.",
     url: "https://www.drainsolutionplus.com/bergen-county-nj",
     siteName: "Drain Solutions Plus",
     locale: "en_US",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Drain Cleaning & Sewer Services Throughout Bergen County, NJ",
-    description: "Residential and commercial drain, sewer, plumbing and pump services throughout Bergen County, NJ.",
+    description: "Residential and commercial drain, sewer,  sewer and drain and pump services throughout Bergen County, NJ.",
     images: ["/images/njj.webp"],
   },
   other: {
@@ -69,7 +69,7 @@ const jsonLd = {
       "name": "Drain Solutions Plus",
       "url": "https://www.drainsolutionplus.com/",
       "telephone": "+1-201-881-9622",
-      "description": "Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, leak detection, and related services throughout Northern New Jersey.",
+      "description": "Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, leak detection, and related services throughout Northern New Jersey.",
       "image": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.webp",
       "logo": {
         "@type": "ImageObject",
@@ -117,14 +117,14 @@ const jsonLd = {
         "name": "Bergen County, New Jersey"
       },
       "url": "https://www.drainsolutionplus.com/bergen-county-nj",
-      "description": "Residential and commercial drain, sewer, plumbing, and pump services throughout Bergen County, New Jersey, including drain cleaning and repair, sewer cleaning and repair, video inspections, hydro jetting, fixture clog removal, leak repairs, sump pump services, and sewage ejector pump services."
+      "description": "Residential and commercial drain, sewer,  sewer and drain, and pump services throughout Bergen County, New Jersey, including drain cleaning and repair, sewer cleaning and repair, video inspections, hydro jetting, fixture clog removal, leak repairs, sump pump services, and sewage ejector pump services."
     },
     {
       "@type": "WebPage",
       "@id": "https://www.drainsolutionplus.com/bergen-county-nj/#webpage",
       "url": "https://www.drainsolutionplus.com/bergen-county-nj",
       "name": "Drain Cleaning & Sewer Services Throughout Bergen County, NJ",
-      "description": "Get residential and commercial drain cleaning, sewer repair, hydro jetting, video inspections and plumbing services throughout Bergen County, NJ.",
+      "description": "Get residential and commercial drain cleaning, sewer repair, hydro jetting, video inspections and  sewer and drain services throughout Bergen County, NJ.",
       "isPartOf": {
         "@id": "https://www.drainsolutionplus.com/#website"
       },

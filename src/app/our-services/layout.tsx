@@ -241,7 +241,7 @@ const jsonLd = {
         "@type": "State",
         "name": "New Jersey"
       },
-      "description": "Frozen and burst pipe repair services for urgent residential and commercial plumbing problems."
+      "description": "Frozen and burst pipe repair services for urgent residential and commercial  sewer and drain problems."
     },
     {
       "@type": "Service",

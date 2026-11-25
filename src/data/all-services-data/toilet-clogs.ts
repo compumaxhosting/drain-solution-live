@@ -16,7 +16,7 @@ export const toiletClogs: ServiceItem = {
     "Expert advice on preventing future recurring bowl backups"
   ],
   footerHeading: "Water Rising in the Bowl?",
-  footerText: "Don't risk an overflow disaster. Call our plumbing professionals to clear your toilet clogs quickly and cleanly.",
+  footerText: "Don't risk an overflow disaster. Call our  sewer and drain professionals to clear your toilet clogs quickly and cleanly.",
   
   meta: {
     title: "Toilet Clog Removal in Hawthorne, NJ | Drain Solution Plus",

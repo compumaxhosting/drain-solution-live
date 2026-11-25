@@ -41,7 +41,7 @@ export const tubClogs: ServiceItem = {
     },
     {
       question: "Why does my bathtub keep clogging?",
-      answer: "Recurring tub clogs may be caused by accumulated hair and buildup, a deeper blockage in the drain line, or an underlying plumbing issue. Professional evaluation can help identify the cause."
+      answer: "Recurring tub clogs may be caused by accumulated hair and buildup, a deeper blockage in the drain line, or an underlying  sewer and drain issue. Professional evaluation can help identify the cause."
     },
     {
       question: "Can a clogged tub drain cause water damage?",
@@ -109,7 +109,7 @@ export const tubClogs: ServiceItem = {
             "name": "Why does my bathtub keep clogging?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Recurring tub clogs may be caused by accumulated hair and buildup, a deeper blockage in the drain line, or an underlying plumbing issue. Professional evaluation can help identify the cause."
+              "text": "Recurring tub clogs may be caused by accumulated hair and buildup, a deeper blockage in the drain line, or an underlying  sewer and drain issue. Professional evaluation can help identify the cause."
             }
           },
           {

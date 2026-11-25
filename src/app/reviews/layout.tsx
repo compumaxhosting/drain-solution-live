@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "drain service reviews Northern NJ",
     "drain cleaning reviews",
     "sewer service reviews",
-    "plumbing reviews Northern New Jersey",
+    " sewer and drain reviews Northern New Jersey",
     "customer reviews Drain Solution Plus",
   ],
   alternates: {

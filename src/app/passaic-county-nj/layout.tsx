@@ -69,7 +69,7 @@ const jsonLd = {
       "name": "Drain Solutions Plus",
       "url": "https://www.drainsolutionplus.com/",
       "telephone": "+1-201-881-9622",
-      "description": "Drain Solutions Plus provides residential and commercial drain cleaning, drain repair, sewer cleaning, sewer repair, video sewer inspections, high-pressure water jetting, and related plumbing services throughout Northern New Jersey.",
+      "description": "Drain Solutions Plus provides residential and commercial drain cleaning, drain repair, sewer cleaning, sewer repair, video sewer inspections, high-pressure water jetting, and related  sewer and drain services throughout Northern New Jersey.",
       "image": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.webp",
       "logo": {
         "@type": "ImageObject",

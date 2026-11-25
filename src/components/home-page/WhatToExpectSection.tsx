@@ -15,7 +15,7 @@ const steps = [
   {
     number: "01",
     title: "Assess the Situation",
-    description: "We'll inspect the plumbing issue and determine what's causing the problem.",
+    description: "We'll inspect the  sewer and drain issue and determine what's causing the problem.",
     icon: Search,
   },
   {
@@ -39,7 +39,7 @@ const steps = [
   {
     number: "05",
     title: "We Come Prepared",
-    description: "We typically carry the tools and equipment needed to diagnose and repair common plumbing and drain problems on the first visit.",
+    description: "We typically carry the tools and equipment needed to diagnose and repair common  sewer and drain and drain problems on the first visit.",
     icon: Wrench,
   },
 ];
@@ -132,7 +132,7 @@ export default function WhatToExpectSection() {
               <Phone className="h-5 w-5" />
             </div>
             <p className="text-sm font-medium text-gray-700">
-              Have a plumbing or drain problem?{" "}
+              Have a  sewer and drain or drain problem?{" "}
               <span className="font-bold text-[#014484]">Give Drain Solutions Plus a call. We&apos;re ready to help.</span>
             </p>
           </div>

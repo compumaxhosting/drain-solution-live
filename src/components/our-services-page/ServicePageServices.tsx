@@ -18,7 +18,7 @@ const allServicesData: ServiceItem[] = [
     tag: "Residential Solutions",
     title: "RESIDENTIAL DRAIN CLEANING",
     description:
-      "Keeping the drains in your home clean and spotless is vital to preventing serious plumbing problems such as burst pipes, overflowing sinks and toilets and foul odors from permeating your home. The easiest and most effective way to prevent problems and ensure your drains are running smoothly is with professional residential drain cleaning services.\n\nAt DRAIN SOLUTIONS PLUS, we help homeowners overcome their drain issues with a series of comprehensive, safe and efficient drain cleaning services.\n\nTop notch drain cleaning specialists. We unclog 99.9% of the drains we work on. We have a variety of snake cable sizes, different machines and methods to unclogging your drains.",
+      "Keeping the drains in your home clean and spotless is vital to preventing serious  sewer and drain problems such as burst pipes, overflowing sinks and toilets and foul odors from permeating your home. The easiest and most effective way to prevent problems and ensure your drains are running smoothly is with professional residential drain cleaning services.\n\nAt DRAIN SOLUTIONS PLUS, we help homeowners overcome their drain issues with a series of comprehensive, safe and efficient drain cleaning services.\n\nTop notch drain cleaning specialists. We unclog 99.9% of the drains we work on. We have a variety of snake cable sizes, different machines and methods to unclogging your drains.",
     image: "/images/services-images/sink-line-cleared.webp",
     ctaText: "Drain Cleaning",
     ctaLink: "/our-services/residential-drain-cleaning",
@@ -58,7 +58,7 @@ const allServicesData: ServiceItem[] = [
     tag: "Fixture & Leak Care",
     title: "TOILET, FAUCET & LEAK REPAIRS",
     description:
-      "At times you realise that you still have the same problem happening to your sink faucet situation over and over again. Now that’s really frustrating and you just can’t live with this. We at Drain Solutions Plus do the best to repair the faucet.\n\nIf you any more plumbing problems , we are there to help you.",
+      "At times you realise that you still have the same problem happening to your sink faucet situation over and over again. Now that’s really frustrating and you just can’t live with this. We at Drain Solutions Plus do the best to repair the faucet.\n\nIf you any more  sewer and drain problems , we are there to help you.",
     image: "/images/services-images/kitchen-line1.webp",
     ctaText: "Leak Repairs",
     ctaLink: "/our-services/faucet-leak-repairs",
@@ -80,7 +80,7 @@ const allServicesData: ServiceItem[] = [
     tag: "Targeted Fixture Care",
     title: "TOILET CLOGS",
     description:
-      "A stubborn toilet clog can disrupt your household or business instantly. When standard plunging fails, our plumbing experts use specialized professional toilet augers to clear obstructions safely without scratching or cracking your porcelain fixtures.",
+      "A stubborn toilet clog can disrupt your household or business instantly. When standard plunging fails, our  sewer and drain experts use specialized professional toilet augers to clear obstructions safely without scratching or cracking your porcelain fixtures.",
     image: "/images/services-images/toilet-clog.webp",
     ctaText: "Clear Toilet Clog",
     ctaLink: "/our-services/toilet-clogs",
@@ -120,7 +120,7 @@ const allServicesData: ServiceItem[] = [
     tag: "Advanced Diagnostics",
     title: "SEWER AND DRAIN VIDEO INSPECTIONS",
     description:
-      "Stop guessing where your plumbing issues lie. Our advanced sewer and drain video inspection service runs a specialized high-definition camera through your entire line, projecting real-time video to locate cracks, root intrusion, and blockages with absolute precision.",
+      "Stop guessing where your  sewer and drain issues lie. Our advanced sewer and drain video inspection service runs a specialized high-definition camera through your entire line, projecting real-time video to locate cracks, root intrusion, and blockages with absolute precision.",
     image: "/images/services-images/sewer-video-inspection-2.webp",
     ctaText: "Video Inspection",
     ctaLink: "/our-services/sewer-and-drain-video-inspections",

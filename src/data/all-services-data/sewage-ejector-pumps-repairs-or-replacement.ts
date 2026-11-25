@@ -5,7 +5,7 @@ export const sewageEjectorPumpsRepairsOrReplacement: ServiceItem = {
   tag: "Wastewater Pumping",
   title: "Sewage Ejector Pump Repair & Replacement in Hawthorne, NJ",
   description: "Professional sewage ejector pump repair and replacement in Hawthorne, NJ. Fix failing pumps and help prevent wastewater backups, odors, and water damage.",
-  longDescription: "Drain Solution Plus provides professional sewage ejector pump repair and replacement services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair malfunctioning sewage ejector pumps and replace worn or failed systems to help move wastewater from below-grade plumbing fixtures to the main sewer line. If your sewage ejector pump is not turning on, runs continuously, makes unusual noises, struggles to remove wastewater, or causes sewage to back up, our experienced team can identify the problem and recommend the right solution. Timely sewage ejector pump service can help reduce the risk of wastewater backups, unpleasant odors, water damage, and costly plumbing problems. For dependable sewage ejector pump repair or replacement in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus for professional service.",
+  longDescription: "Drain Solution Plus provides professional sewage ejector pump repair and replacement services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair malfunctioning sewage ejector pumps and replace worn or failed systems to help move wastewater from below-grade  sewer and drain fixtures to the main sewer line. If your sewage ejector pump is not turning on, runs continuously, makes unusual noises, struggles to remove wastewater, or causes sewage to back up, our experienced team can identify the problem and recommend the right solution. Timely sewage ejector pump service can help reduce the risk of wastewater backups, unpleasant odors, water damage, and costly  sewer and drain problems. For dependable sewage ejector pump repair or replacement in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus for professional service.",
   image: "/images/services-images/ejector.webp",
   ctaText: "Ejector Pump Services",
   ctaLink: "/our-services/sewage-ejector-pumps-repairs-or-replacement",
@@ -15,7 +15,7 @@ export const sewageEjectorPumpsRepairsOrReplacement: ServiceItem = {
     "Complete heavy-duty sewage ejector pump replacement",
     "Float switch and check valve inspection and servicing"
   ],
-  footerHeading: "Basement Plumbing Backup Issues?",
+  footerHeading: "Basement  sewer and drain Backup Issues?",
   footerText: "Keep your below-grade drainage running safely with our expert sewage ejector pump services.",
   
   meta: {
@@ -29,7 +29,7 @@ export const sewageEjectorPumpsRepairsOrReplacement: ServiceItem = {
   faqs: [
     {
       question: "What is a sewage ejector pump?",
-      answer: "A sewage ejector pump moves wastewater and sewage from plumbing fixtures located below the main sewer line to the building's sewer system."
+      answer: "A sewage ejector pump moves wastewater and sewage from  sewer and drain fixtures located below the main sewer line to the building's sewer system."
     },
     {
       question: "What are the signs of a failing sewage ejector pump?",
@@ -94,7 +94,7 @@ export const sewageEjectorPumpsRepairsOrReplacement: ServiceItem = {
             "name": "What is a sewage ejector pump?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A sewage ejector pump moves wastewater and sewage from plumbing fixtures located below the main sewer line to the building's sewer system."
+              "text": "A sewage ejector pump moves wastewater and sewage from  sewer and drain fixtures located below the main sewer line to the building's sewer system."
             }
           },
           {

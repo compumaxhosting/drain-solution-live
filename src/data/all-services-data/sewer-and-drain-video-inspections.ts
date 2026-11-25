@@ -16,7 +16,7 @@ export const sewerAndDrainVideoInspections: ServiceItem = {
     "Targeted diagnosis saving you time and exploratory excavation costs"
   ],
   footerHeading: "Want to See Inside Your Pipes?",
-  footerText: "Get an accurate look at your plumbing's condition with our state-of-the-art sewer and drain video inspections.",
+  footerText: "Get an accurate look at your  sewer and drain's condition with our state-of-the-art sewer and drain video inspections.",
   
   meta: {
     title: "Sewer & Drain Video Inspection in Hawthorne, NJ | Drain Solution Plus",

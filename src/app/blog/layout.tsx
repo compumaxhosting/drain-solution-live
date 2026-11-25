@@ -2,21 +2,21 @@ import type { Metadata, Viewport } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Drain Cleaning Tips & Plumbing Advice | Drain Solution Plus',
+  title: 'Drain Cleaning Tips &  sewer and drain Advice | Drain Solution Plus',
   description:
-    'Explore drain cleaning tips, plumbing advice, and clog prevention guides from Drain Solution Plus serving Hawthorne, Passaic, Bergen, Hudson, and Essex County, NJ.',
+    'Explore drain cleaning tips,  sewer and drain advice, and clog prevention guides from Drain Solution Plus serving Hawthorne, Passaic, Bergen, Hudson, and Essex County, NJ.',
   keywords: [
     'Drain Solution Plus blog',
     'drain cleaning tips',
-    'plumbing advice New Jersey',
+    ' sewer and drain advice New Jersey',
     'clogged drain solutions',
     'drain clog prevention',
     'residential drain cleaning NJ',
-    'plumbing maintenance tips',
+    ' sewer and drain maintenance tips',
     'drain cleaning Hawthorne NJ',
-    'Passaic County plumbing',
+    'Passaic County  sewer and drain',
     'Bergen County drain cleaning',
-    'Hudson County plumbing',
+    'Hudson County  sewer and drain',
     'Essex County drain cleaning',
   ],
   authors: [{ name: 'Drain Solution Plus' }],
@@ -29,23 +29,23 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Drain Cleaning Tips & Plumbing Advice | Drain Solution Plus',
+    title: 'Drain Cleaning Tips &  sewer and drain Advice | Drain Solution Plus',
     description:
-      'Get practical drain cleaning tips, plumbing advice, and clog prevention guides for homeowners in Hawthorne and surrounding New Jersey counties.',
+      'Get practical drain cleaning tips,  sewer and drain advice, and clog prevention guides for homeowners in Hawthorne and surrounding New Jersey counties.',
     url: 'https://www.drainsolutionplus.com/blog',
     siteName: 'Drain Solution Plus',
     images: [
       {
         url: 'https://www.drainsolutionplus.com/images/services-images/sink-line-cleared.webp',
-        alt: 'Drain Solution Plus plumbing and residential drain cleaning advice',
+        alt: 'Drain Solution Plus  sewer and drain and residential drain cleaning advice',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Drain Cleaning Tips & Plumbing Advice | Drain Solution Plus',
+    title: 'Drain Cleaning Tips &  sewer and drain Advice | Drain Solution Plus',
     description:
-      'Discover practical plumbing advice, drain cleaning tips, and clog prevention solutions from Drain Solution Plus in New Jersey.',
+      'Discover practical  sewer and drain advice, drain cleaning tips, and clog prevention solutions from Drain Solution Plus in New Jersey.',
     images: ['https://www.drainsolutionplus.com/images/services-images/sink-line-cleared.webp'],
   },
   other: {
@@ -64,9 +64,9 @@ const blogCollectionSchema = {
       '@type': 'CollectionPage',
       '@id': 'https://www.drainsolutionplus.com/blog#webpage',
       'url': 'https://www.drainsolutionplus.com/blog',
-      'name': 'Drain Cleaning Tips & Plumbing Advice | Drain Solution Plus',
+      'name': 'Drain Cleaning Tips &  sewer and drain Advice | Drain Solution Plus',
       'description':
-        'Explore drain cleaning tips, plumbing advice, and clog prevention guides from Drain Solution Plus serving Hawthorne, Passaic, Bergen, Hudson, and Essex County, NJ.',
+        'Explore drain cleaning tips,  sewer and drain advice, and clog prevention guides from Drain Solution Plus serving Hawthorne, Passaic, Bergen, Hudson, and Essex County, NJ.',
       'isPartOf': {
         '@id': 'https://www.drainsolutionplus.com/#website',
       },
@@ -79,7 +79,7 @@ const blogCollectionSchema = {
       },
       'mainEntity': {
         '@type': 'ItemList',
-        'name': 'Drain Cleaning and Plumbing Articles',
+        'name': 'Drain Cleaning and  sewer and drain Articles',
         'itemListOrder': 'https://schema.org/ItemListOrderDescending',
       },
     },

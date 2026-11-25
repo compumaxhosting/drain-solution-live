@@ -15,7 +15,7 @@ export const commercialDrainRepairs: ServiceItem = {
     "Structural stack reinforcement for multi-story buildings",
     "Minimal downtime solutions customized for active businesses"
   ],
-  footerHeading: "Need Commercial Plumbing Support?",
+  footerHeading: "Need Commercial  sewer and drain Support?",
   footerText: "Avoid costly business interruptions and health code violations. Partner with our certified heavy-duty commercial repair specialists.",
   
   meta: {

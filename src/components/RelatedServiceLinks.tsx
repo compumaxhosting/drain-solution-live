@@ -20,7 +20,7 @@ export default function RelatedServiceLinks({
         </h2>
         <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
           Explore related services from Drain Solution Plus to find help for
-          other drain, sewer, and plumbing needs.
+          other drain, sewer, and  sewer and drain needs.
         </p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (

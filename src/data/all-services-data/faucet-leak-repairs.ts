@@ -4,8 +4,8 @@ export const faucetLeakRepairs: ServiceItem = {
   id: "faucet-leak-repairs",
   tag: "Fixture & Leak Care",
   title: "Faucet & Leak Repairs in Hawthorne, NJ",
-  description: "Professional faucet and leak repairs in Hawthorne, NJ for homes and businesses. Fix leaking faucets, hidden leaks, and plumbing fixtures.",
-  longDescription: "Drain Solution Plus provides professional faucet and leak repair services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair leaking faucets, plumbing fixtures, and water leaks to help reduce water waste and prevent damage to your property. Whether you are dealing with a dripping faucet, hidden water leak, damaged fixture, or recurring plumbing issue, our experienced team can identify the source of the problem and recommend an effective repair. Professional leak detection and timely faucet repair can help protect your home or business from water damage, corrosion, and costly plumbing problems. For reliable faucet and leak repair in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus for professional service and practical plumbing solutions.",
+  description: "Professional faucet and leak repairs in Hawthorne, NJ for homes and businesses. Fix leaking faucets, hidden leaks, and  sewer and drain fixtures.",
+  longDescription: "Drain Solution Plus provides professional faucet and leak repair services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair leaking faucets,  sewer and drain fixtures, and water leaks to help reduce water waste and prevent damage to your property. Whether you are dealing with a dripping faucet, hidden water leak, damaged fixture, or recurring  sewer and drain issue, our experienced team can identify the source of the problem and recommend an effective repair. Professional leak detection and timely faucet repair can help protect your home or business from water damage, corrosion, and costly  sewer and drain problems. For reliable faucet and leak repair in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus for professional service and practical  sewer and drain solutions.",
   image: "/images/services-images/kitchen-line1.webp",
   ctaText: "Leak Repairs",
   ctaLink: "/our-services/faucet-leak-repairs",
@@ -20,8 +20,8 @@ export const faucetLeakRepairs: ServiceItem = {
   
   meta: {
     title: "Faucet & Leak Repairs in Hawthorne, NJ | Drain Solution Plus",
-    description: "Professional faucet and leak repairs in Hawthorne, NJ for homes and businesses. Fix leaking faucets, hidden leaks, and plumbing fixtures.",
-    keywords: "faucet leak repairs, faucet repair Hawthorne NJ, leak repair Hawthorne NJ, water leak repair, faucet repair NJ, leak detection, plumbing leak repair, Drain Solution Plus",
+    description: "Professional faucet and leak repairs in Hawthorne, NJ for homes and businesses. Fix leaking faucets, hidden leaks, and  sewer and drain fixtures.",
+    keywords: "faucet leak repairs, faucet repair Hawthorne NJ, leak repair Hawthorne NJ, water leak repair, faucet repair NJ, leak detection,  sewer and drain leak repair, Drain Solution Plus",
     canonical: "https://www.drainsolutionplus.com/our-services/faucet-leak-repairs",
     ogImage: "https://www.drainsolutionplus.com/images/services-images/kitchen-line1.webp"
   },
@@ -37,7 +37,7 @@ export const faucetLeakRepairs: ServiceItem = {
     },
     {
       question: "Can a leaking faucet cause water damage?",
-      answer: "Yes. A persistent faucet or plumbing leak can waste water and may contribute to moisture damage, corrosion, mold, or deterioration around the affected area if it is not addressed."
+      answer: "Yes. A persistent faucet or  sewer and drain leak can waste water and may contribute to moisture damage, corrosion, mold, or deterioration around the affected area if it is not addressed."
     },
     {
       question: "How are hidden water leaks detected?",
@@ -61,7 +61,7 @@ export const faucetLeakRepairs: ServiceItem = {
         "@id": "https://www.drainsolutionplus.com/our-services/faucet-leak-repairs#service",
         "name": "Faucet & Leak Repairs",
         "serviceType": "Faucet and Leak Repair",
-        "description": "Professional faucet and leak repair services in Hawthorne, NJ for residential and commercial properties, including leaking faucets, plumbing fixtures, hidden water leaks, and leak detection.",
+        "description": "Professional faucet and leak repair services in Hawthorne, NJ for residential and commercial properties, including leaking faucets,  sewer and drain fixtures, hidden water leaks, and leak detection.",
         "url": "https://www.drainsolutionplus.com/our-services/faucet-leak-repairs",
         "provider": {
           "@type": "Plumber",
@@ -101,7 +101,7 @@ export const faucetLeakRepairs: ServiceItem = {
             "name": "Can a leaking faucet cause water damage?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. A persistent faucet or plumbing leak can waste water and may contribute to moisture damage, corrosion, mold, or deterioration around the affected area if it is not addressed."
+              "text": "Yes. A persistent faucet or  sewer and drain leak can waste water and may contribute to moisture damage, corrosion, mold, or deterioration around the affected area if it is not addressed."
             }
           },
           {

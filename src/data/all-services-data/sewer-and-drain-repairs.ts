@@ -5,7 +5,7 @@ export const sewerAndDrainRepairs: ServiceItem = {
   tag: "Piping Restorations",
   title: "Sewer & Drain Repairs in Hawthorne, NJ",
   description: "Professional sewer and drain repairs in Hawthorne, NJ for cracked, leaking, damaged, or misaligned pipes. Serving residential and commercial properties.",
-  longDescription: "Drain Solution Plus provides professional sewer and drain repair services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair damaged, cracked, leaking, misaligned, or deteriorating drain and sewer lines to help restore reliable drainage and protect your property from backups, water damage, and recurring plumbing problems. Our experienced team can diagnose sewer and drain issues using professional equipment, including video camera inspections, and recommend an appropriate repair solution based on the condition of the line. Common problems may include pipe cracks, root intrusion, joint damage, corrosion, leaks, and other structural issues that cannot be resolved through routine drain cleaning. When appropriate, modern repair methods such as trenchless technology can help minimize excavation and disruption to your property. For reliable sewer and drain repairs in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus to schedule a professional evaluation.",
+  longDescription: "Drain Solution Plus provides professional sewer and drain repair services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair damaged, cracked, leaking, misaligned, or deteriorating drain and sewer lines to help restore reliable drainage and protect your property from backups, water damage, and recurring  sewer and drain problems. Our experienced team can diagnose sewer and drain issues using professional equipment, including video camera inspections, and recommend an appropriate repair solution based on the condition of the line. Common problems may include pipe cracks, root intrusion, joint damage, corrosion, leaks, and other structural issues that cannot be resolved through routine drain cleaning. When appropriate, modern repair methods such as trenchless technology can help minimize excavation and disruption to your property. For reliable sewer and drain repairs in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus to schedule a professional evaluation.",
   image: "/images/services-images/sewer-pipe-repair-1.webp",
   ctaText: "Sewer Repairs",
   ctaLink: "/our-services/sewer-and-drain-repairs",
@@ -13,7 +13,7 @@ export const sewerAndDrainRepairs: ServiceItem = {
     "Root intrusion removal and damaged pipe section replacement",
     "Resolution for persistent sewer backups and structural collapses",
     "Heavy-duty materials built to withstand shifting ground pressure",
-    "Compliance with local plumbing codes and environmental safety"
+    "Compliance with local  sewer and drain codes and environmental safety"
   ],
   footerHeading: "Facing Major Sewer Line Damage?",
   footerText: "Trust our seasoned professionals to deliver durable, long-lasting sewer and drain repair solutions.",

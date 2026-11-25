@@ -38,7 +38,7 @@ const reviews: Review[] = [
     name: "Andreysis R",
     source: "Customer Yelp",
     review:
-      "Amazing company!!! We're new home buyers and needed to pass inspection. Main sewage line was uncapped, clogged, and the entire pipe was cracked everywhere. Kitchen was clogged and had leaking pipes and bathroom as well. After being stood up by another plumbing company 'Drain Doctor,' the plumbers from Drain Solutions Plus came to our house the same day. Not only were they very knowledgeable, respectful and well spoken, they were able to fix everything. They stayed at the house until 9.30 pm. The best part was when we got the bill — very very fair prices!",
+      "Amazing company!!! We're new home buyers and needed to pass inspection. Main sewage line was uncapped, clogged, and the entire pipe was cracked everywhere. Kitchen was clogged and had leaking pipes and bathroom as well. After being stood up by another  sewer and drain company 'Drain Doctor,' the plumbers from Drain Solutions Plus came to our house the same day. Not only were they very knowledgeable, respectful and well spoken, they were able to fix everything. They stayed at the house until 9.30 pm. The best part was when we got the bill — very very fair prices!",
   },
   {
     name: "Michael Anderson",

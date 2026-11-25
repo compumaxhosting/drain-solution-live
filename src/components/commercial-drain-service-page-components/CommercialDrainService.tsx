@@ -240,7 +240,7 @@ const CommercialDrainService: React.FC = () => {
               Unlike a basic household drain clog, a commercial drainage problem may involve larger or more heavily used drain lines, recurring buildup, grease, or problems farther inside the system. Proper diagnosis can help determine whether the issue can be resolved through cleaning or whether the drain or pipe also requires repair.
             </p>
             <p>
-              For businesses, addressing drainage problems promptly can help reduce operational disruption and prevent a minor drainage issue from developing into a more significant plumbing problem.
+              For businesses, addressing drainage problems promptly can help reduce operational disruption and prevent a minor drainage issue from developing into a more significant  sewer and drain problem.
             </p>
           </div>
         </div>
@@ -257,7 +257,7 @@ const CommercialDrainService: React.FC = () => {
               Common Commercial Drain Problems
             </h2>
             <p className="mt-4 text-base text-slate-600">
-              Businesses can experience a range of drainage problems depending on the property and how its plumbing system is used. Common warning signs include:
+              Businesses can experience a range of drainage problems depending on the property and how its  sewer and drain system is used. Common warning signs include:
             </p>
             <div className="mt-6 mx-auto h-1 w-20 bg-[#c02f2d]" />
           </div>
@@ -625,7 +625,7 @@ const CommercialDrainService: React.FC = () => {
                   A slow drain may eventually stop draining. A recurring clog may indicate a deeper problem. A damaged drain line may require more extensive attention than a simple blockage.
                 </p>
                 <p>
-                  For a commercial property, the practical concern is not only the plumbing itself. Drainage problems can interfere with normal business activity and create inconvenience for employees, customers, tenants, or visitors.
+                  For a commercial property, the practical concern is not only the  sewer and drain itself. Drainage problems can interfere with normal business activity and create inconvenience for employees, customers, tenants, or visitors.
                 </p>
                 <p>
                   Prompt professional assessment can help determine whether the issue requires cleaning, inspection, maintenance, or repair.
@@ -696,7 +696,7 @@ const CommercialDrainService: React.FC = () => {
               Why Choose Drain Solution Plus for Commercial Drain Service?
             </h2>
             <p className="mt-4 text-base text-slate-600">
-              Drain Solution Plus focuses specifically on drain and sewer cleaning and repair. The company also states that it provides upfront pricing for plumbing and drain repair services.
+              Drain Solution Plus focuses specifically on drain and sewer cleaning and repair. The company also states that it provides upfront pricing for  sewer and drain and drain repair services.
             </p>
             <div className="mt-6 mx-auto h-1 w-20 bg-[#c02f2d]" />
           </div>
@@ -805,7 +805,7 @@ const CommercialDrainService: React.FC = () => {
               <HelpCircle className="h-5 w-5 text-[#c02f2d] shrink-0" /> What causes commercial drains to clog?
             </h3>
             <p className="mt-3 text-sm leading-7 text-slate-600 pl-8">
-              Commercial drains can develop blockages from accumulated grease, debris, sediment, foreign material, and repeated use. The specific cause depends on the property&apos;s plumbing system and how the drainage system is used. Recurring blockages may require inspection to identify an underlying problem.
+              Commercial drains can develop blockages from accumulated grease, debris, sediment, foreign material, and repeated use. The specific cause depends on the property&apos;s  sewer and drain system and how the drainage system is used. Recurring blockages may require inspection to identify an underlying problem.
             </p>
           </div>
 

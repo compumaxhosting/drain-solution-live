@@ -28,7 +28,7 @@ const myGalleryProjects: ProjectItem[] = [
   {
     id: 1,
     title: "Shower Valve Replacement & Repair",
-    category: "Plumbing Repair",
+    category: " sewer and drain Repair",
     description:
       "Removed the damaged shower valve assembly and professionally installed a new valve system for reliable water control and long-term performance.",
     image: "/images/before-after/1.webp",

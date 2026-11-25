@@ -5,7 +5,7 @@ export const flushValveLeakRepairs: ServiceItem = {
   tag: "Valve Specialist Care",
   title: "Flush Valve Leak Repairs in Hawthorne, NJ",
   description: "Professional flush valve leak repairs in Hawthorne, NJ for running toilets, faulty valves, water leaks, and unnecessary water waste.",
-  longDescription: "Drain Solution Plus provides professional flush valve leak repair services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair leaking, worn, damaged, or malfunctioning flush valves that can cause running toilets, continuous water flow, weak flushing, and unnecessary water waste. If your toilet keeps running, leaks around the flush valve, or does not flush properly, our experienced team can identify the problem and recommend an effective repair. Timely flush valve repair can help reduce water waste, prevent further plumbing issues, and restore reliable toilet performance. For dependable flush valve leak repairs in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus for professional plumbing service.",
+  longDescription: "Drain Solution Plus provides professional flush valve leak repair services in Hawthorne, NJ, serving residential and commercial properties throughout Passaic County, Bergen County, Hudson County, and Essex County. We repair leaking, worn, damaged, or malfunctioning flush valves that can cause running toilets, continuous water flow, weak flushing, and unnecessary water waste. If your toilet keeps running, leaks around the flush valve, or does not flush properly, our experienced team can identify the problem and recommend an effective repair. Timely flush valve repair can help reduce water waste, prevent further  sewer and drain issues, and restore reliable toilet performance. For dependable flush valve leak repairs in Hawthorne, NJ and surrounding areas, contact Drain Solution Plus for professional  sewer and drain service.",
   image: "/images/services-images/shower-valve-2.webp",
   ctaText: "Repair Flush Valve",
   ctaLink: "/our-services/flush-valve-leak-repairs",
@@ -21,7 +21,7 @@ export const flushValveLeakRepairs: ServiceItem = {
   meta: {
     title: "Flush Valve Leak Repairs in Hawthorne, NJ | Drain Solution Plus",
     description: "Professional flush valve leak repairs in Hawthorne, NJ for running toilets, faulty valves, water leaks, and unnecessary water waste.",
-    keywords: "flush valve leak repairs, flush valve repair Hawthorne NJ, toilet flush valve repair, toilet valve leak repair, running toilet repair, flush valve replacement, toilet plumbing repair, Drain Solution Plus",
+    keywords: "flush valve leak repairs, flush valve repair Hawthorne NJ, toilet flush valve repair, toilet valve leak repair, running toilet repair, flush valve replacement, toilet  sewer and drain repair, Drain Solution Plus",
     canonical: "https://www.drainsolutionplus.com/our-services/flush-valve-leak-repairs",
     ogImage: "https://www.drainsolutionplus.com/images/services-images/shower-valve-2.webp"
   },
@@ -49,7 +49,7 @@ export const flushValveLeakRepairs: ServiceItem = {
     },
     {
       question: "Does Drain Solution Plus provide flush valve leak repairs outside Hawthorne, NJ?",
-      answer: "Yes. Drain Solution Plus provides flush valve and plumbing repair services in Hawthorne and throughout Passaic County, Bergen County, Hudson County, and Essex County, New Jersey."
+      answer: "Yes. Drain Solution Plus provides flush valve and  sewer and drain repair services in Hawthorne and throughout Passaic County, Bergen County, Hudson County, and Essex County, New Jersey."
     }
   ],
 
@@ -125,7 +125,7 @@ export const flushValveLeakRepairs: ServiceItem = {
             "name": "Does Drain Solution Plus provide flush valve leak repairs outside Hawthorne, NJ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Drain Solution Plus provides flush valve and plumbing repair services in Hawthorne and throughout Passaic County, Bergen County, Hudson County, and Essex County, New Jersey."
+              "text": "Yes. Drain Solution Plus provides flush valve and  sewer and drain repair services in Hawthorne and throughout Passaic County, Bergen County, Hudson County, and Essex County, New Jersey."
             }
           }
         ]

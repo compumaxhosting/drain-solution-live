@@ -12,7 +12,7 @@ export const EssexCountyNj: React.FC = () => {
   const faqs = [
     {
       q: 'Does Drain Solutions Plus serve Essex County, NJ?',
-      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, and pump services throughout Essex County, including Newark, Montclair, Bloomfield, West Orange, Livingston, Maplewood, Nutley, Verona, Cedar Grove, Irvington, and East Orange.',
+      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, and pump services throughout Essex County, including Newark, Montclair, Bloomfield, West Orange, Livingston, Maplewood, Nutley, Verona, Cedar Grove, Irvington, and East Orange.',
     },
     {
       q: 'What drain cleaning services are available?',
@@ -52,13 +52,13 @@ export const EssexCountyNj: React.FC = () => {
           Drain Cleaning &amp; Sewer Services Throughout Essex County, NJ
         </h1>
         <p className="text-base sm:text-lg mb-4 text-slate-700 leading-relaxed">
-          Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, and pump services throughout Essex County, NJ. From a clogged sink or toilet to recurring drainage problems, sewer issues, leaking fixtures, or pump failures, our services address a range of plumbing and wastewater needs for homes and businesses.
+          Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, and pump services throughout Essex County, NJ. From a clogged sink or toilet to recurring drainage problems, sewer issues, leaking fixtures, or pump failures, our services address a range of  sewer and drain and wastewater needs for homes and businesses.
         </p>
         <p className="text-base sm:text-lg mb-6 text-slate-700 leading-relaxed">
           Our Essex County service area includes Newark, Montclair, Bloomfield, West Orange, Livingston, Maplewood, Nutley, Verona, Cedar Grove, Irvington, East Orange, and surrounding Essex County communities.
         </p>
         <p className="text-lg font-bold text-[#014485]">
-          Need drain, sewer, or plumbing service? Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your needs or schedule service.
+          Need drain, sewer, or  sewer and drain service? Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your needs or schedule service.
         </p>
       </header>
 
@@ -168,7 +168,7 @@ export const EssexCountyNj: React.FC = () => {
             Drain Solutions Plus also provides faucet and leak repair and flush valve leak repair throughout Essex County.
           </p>
           <p className="text-slate-700">
-            These services can address leaking or malfunctioning plumbing fixtures. Prompt attention to a persistent leak can help prevent continued water loss and problems around the affected fixture.
+            These services can address leaking or malfunctioning  sewer and drain fixtures. Prompt attention to a persistent leak can help prevent continued water loss and problems around the affected fixture.
           </p>
         </section>
 
@@ -201,7 +201,7 @@ export const EssexCountyNj: React.FC = () => {
             Serving Essex County Communities
           </h2>
           <p className="mb-2 text-slate-700">
-            Drain Solutions Plus provides drain, sewer, plumbing, and pump services throughout Essex County, including:
+            Drain Solutions Plus provides drain, sewer,  sewer and drain, and pump services throughout Essex County, including:
           </p>
           <ul className="list-disc list-inside space-y-1 mb-4 text-slate-700 marker:text-[#c02f2d]">
             <li>Belleville</li>
@@ -238,7 +238,7 @@ export const EssexCountyNj: React.FC = () => {
             When Should You Request Drain or Sewer Service?
           </h2>
           <p className="mb-4 text-slate-700">
-            Professional evaluation may be appropriate when a drain repeatedly clogs, multiple fixtures are affected, wastewater backs up, a sewer problem returns after cleaning, or you have a persistent plumbing leak.
+            Professional evaluation may be appropriate when a drain repeatedly clogs, multiple fixtures are affected, wastewater backs up, a sewer problem returns after cleaning, or you have a persistent  sewer and drain leak.
           </p>
           <p className="text-slate-700">
             Recurring drainage problems can have different causes. Depending on the situation, the appropriate solution may involve cleaning, hydro jetting, video inspection, repair, or another service.
@@ -292,10 +292,10 @@ export const EssexCountyNj: React.FC = () => {
             Get Drain &amp; Sewer Service in Essex County, NJ
           </h2>
           <p className="mb-4 text-slate-700 text-lg">
-            Whether you are dealing with a clogged fixture, recurring drainage issue, sewer problem, plumbing leak, or pump issue, Drain Solutions Plus provides residential and commercial services throughout Essex County.
+            Whether you are dealing with a clogged fixture, recurring drainage issue, sewer problem,  sewer and drain leak, or pump issue, Drain Solutions Plus provides residential and commercial services throughout Essex County.
           </p>
           <p className="font-bold text-[#014485] text-lg">
-            Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your drain, sewer, plumbing, or pump service needs.
+            Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your drain, sewer,  sewer and drain, or pump service needs.
           </p>
         </section>
       </div>

@@ -44,7 +44,7 @@ export const sinkClogs: ServiceItem = {
       answer: "Recurring sink clogs may be caused by ongoing buildup, improper items entering the drain, or a deeper blockage in the drain line. A professional inspection can help determine the underlying cause."
     },
     {
-      question: "Can a clogged sink indicate a larger plumbing problem?",
+      question: "Can a clogged sink indicate a larger  sewer and drain problem?",
       answer: "Yes. If multiple fixtures are draining slowly or backing up, the problem may extend beyond the sink and could involve a larger drain or sewer line blockage."
     },
     {
@@ -114,7 +114,7 @@ export const sinkClogs: ServiceItem = {
           },
           {
             "@type": "Question",
-            "name": "Can a clogged sink indicate a larger plumbing problem?",
+            "name": "Can a clogged sink indicate a larger  sewer and drain problem?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes. If multiple fixtures are draining slowly or backing up, the problem may extend beyond the sink and could involve a larger drain or sewer line blockage."

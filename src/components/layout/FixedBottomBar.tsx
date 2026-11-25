@@ -126,7 +126,7 @@ export const FixedBottomBar: React.FC<FixedBottomBarProps> = ({
                   Explore our services
                 </h2>
                 <p id="bottom-bar-services-description" className="mt-1 text-sm text-slate-500">
-                  Find the right drain, sewer, or plumbing service.
+                  Find the right drain, sewer, or  sewer and drain service.
                 </p>
               </div>
               <button

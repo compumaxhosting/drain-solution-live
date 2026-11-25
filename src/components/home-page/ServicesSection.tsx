@@ -17,7 +17,7 @@ const servicesData: ServiceItem[] = [
     tag: "Residential Solutions",
     title: "RESIDENTIAL DRAIN CLEANING",
     description:
-      "Keeping the drains in your home clean and spotless is vital to preventing serious plumbing problems such as burst pipes, overflowing sinks and toilets and foul odors from permeating your home. The easiest and most effective way to prevent problems and ensure your drains are running smoothly is with professional residential drain cleaning services.\n\nAt DRAIN SOLUTIONS PLUS, we help homeowners overcome their drain issues with a series of comprehensive, safe and efficient drain cleaning services.\n\nTop notch drain cleaning specialists. We unclog 99.9% of the drains we work on. We have a variety of snake cable sizes, different machines and methods to unclogging your drains.",
+      "Keeping the drains in your home clean and spotless is vital to preventing serious  sewer and drain problems such as burst pipes, overflowing sinks and toilets and foul odors from permeating your home. The easiest and most effective way to prevent problems and ensure your drains are running smoothly is with professional residential drain cleaning services.\n\nAt DRAIN SOLUTIONS PLUS, we help homeowners overcome their drain issues with a series of comprehensive, safe and efficient drain cleaning services.\n\nTop notch drain cleaning specialists. We unclog 99.9% of the drains we work on. We have a variety of snake cable sizes, different machines and methods to unclogging your drains.",
     image: "/images/services-images/sink-line-cleared.webp",
     ctaText: "Drain Cleaning",
     ctaLink: "/our-services/residential-drain-cleaning",

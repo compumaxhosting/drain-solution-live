@@ -12,7 +12,7 @@ export const HudsonCountyNj: React.FC = () => {
   const faqs = [
     {
       q: 'Does Drain Solutions Plus serve Hudson County, NJ?',
-      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, and pump services throughout Hudson County, including Jersey City, Hoboken, Bayonne, North Bergen, Union City, West New York, Secaucus, Kearny, Harrison, Guttenberg, Weehawken, and East Newark.',
+      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, and pump services throughout Hudson County, including Jersey City, Hoboken, Bayonne, North Bergen, Union City, West New York, Secaucus, Kearny, Harrison, Guttenberg, Weehawken, and East Newark.',
     },
     {
       q: 'What drain cleaning services are available?',
@@ -36,7 +36,7 @@ export const HudsonCountyNj: React.FC = () => {
     },
     {
       q: 'Do you provide faucet and leak repairs?',
-      a: 'Yes. Faucet and leak repair and flush valve leak repair are included among the plumbing services available throughout the service area.',
+      a: 'Yes. Faucet and leak repair and flush valve leak repair are included among the  sewer and drain services available throughout the service area.',
     },
   ];
 
@@ -48,7 +48,7 @@ export const HudsonCountyNj: React.FC = () => {
           Drain Cleaning &amp; Sewer Services Throughout Hudson County, NJ
         </h1>
         <p className="text-base sm:text-lg mb-4 text-slate-700 leading-relaxed">
-          Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, and pump services throughout Hudson County, NJ. From a clogged sink or toilet to recurring drainage problems, sewer issues, leaking fixtures, or pump failures, our services cover a range of plumbing and wastewater needs for homes and businesses.
+          Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, and pump services throughout Hudson County, NJ. From a clogged sink or toilet to recurring drainage problems, sewer issues, leaking fixtures, or pump failures, our services cover a range of  sewer and drain and wastewater needs for homes and businesses.
         </p>
         <p className="text-base sm:text-lg mb-6 text-slate-700 leading-relaxed">
           Our Hudson County service area includes Jersey City, Hoboken, Bayonne, North Bergen, Union City, West New York, Secaucus, Kearny, Harrison, Guttenberg, Weehawken, and East Newark.
@@ -161,7 +161,7 @@ export const HudsonCountyNj: React.FC = () => {
             Faucet, Leak &amp; Flush Valve Repair
           </h2>
           <p className="mb-4 text-slate-700">
-            Drain Solutions Plus also provides faucet and leak repair and flush valve leak repair throughout Hudson County. These services can address leaking or malfunctioning plumbing fixtures.
+            Drain Solutions Plus also provides faucet and leak repair and flush valve leak repair throughout Hudson County. These services can address leaking or malfunctioning  sewer and drain fixtures.
           </p>
           <p className="text-slate-700">
             A leaking faucet or flush valve can waste water and may continue to cause problems if the underlying fixture issue is not addressed.
@@ -227,7 +227,7 @@ export const HudsonCountyNj: React.FC = () => {
             When Should You Request Drain or Sewer Service?
           </h2>
           <p className="mb-4 text-slate-700">
-            Consider professional evaluation when a drain repeatedly becomes blocked, several fixtures are affected, wastewater backs up, a sewer problem returns after cleaning, or you notice a persistent plumbing leak.
+            Consider professional evaluation when a drain repeatedly becomes blocked, several fixtures are affected, wastewater backs up, a sewer problem returns after cleaning, or you notice a persistent  sewer and drain leak.
           </p>
           <p className="text-slate-700">
             For recurring problems, cleaning alone may not identify the underlying cause. Depending on the situation, drain cleaning, hydro jetting, video inspection, repair, or another service may be appropriate.
@@ -284,7 +284,7 @@ export const HudsonCountyNj: React.FC = () => {
             Whether you are dealing with a clogged fixture, recurring drainage issue, sewer problem, leaking faucet, or pump issue, Drain Solutions Plus provides residential and commercial services throughout Hudson County.
           </p>
           <p className="font-bold text-[#014485] text-lg">
-            Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your drain, sewer, plumbing, or pump service needs.
+            Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your drain, sewer,  sewer and drain, or pump service needs.
           </p>
         </section>
       </div>

@@ -21,7 +21,7 @@ export const residentialDrainRepairs: ServiceItem = {
   meta: {
     title: "Residential Drain Repairs in Hawthorne, NJ | Drain Solution Plus",
     description: "Professional residential drain repairs in Hawthorne, NJ. Fix damaged pipes, leaks, sewer odors, and recurring drainage problems with Drain Solution Plus.",
-    keywords: "residential drain repairs, drain repair Hawthorne NJ, residential drain repair NJ, sewer pipe repair, drain pipe repair, plumbing repairs Hawthorne NJ, Drain Solution Plus",
+    keywords: "residential drain repairs, drain repair Hawthorne NJ, residential drain repair NJ, sewer pipe repair, drain pipe repair,  sewer and drain repairs Hawthorne NJ, Drain Solution Plus",
     canonical: "https://www.drainsolutionplus.com/our-services/residential-drain-repairs",
     ogImage: "https://www.drainsolutionplus.com/images/services-images/kitchen-cleaning.webp"
   },
@@ -29,7 +29,7 @@ export const residentialDrainRepairs: ServiceItem = {
   faqs: [
     {
       question: "What are residential drain repairs?",
-      answer: "Residential drain repairs address damaged, leaking, cracked, misaligned, or deteriorating drain pipes and related components to restore proper drainage and help prevent recurring plumbing problems."
+      answer: "Residential drain repairs address damaged, leaking, cracked, misaligned, or deteriorating drain pipes and related components to restore proper drainage and help prevent recurring  sewer and drain problems."
     },
     {
       question: "How do I know if my home's drain needs repair instead of cleaning?",
@@ -37,7 +37,7 @@ export const residentialDrainRepairs: ServiceItem = {
     },
     {
       question: "What types of residential drain pipes can be repaired?",
-      answer: "Residential drain repair may include under-sink branch lines, PVC or metal piping, misaligned drain lines, and other damaged sections of a home's drainage or sewer system, depending on the condition of the plumbing."
+      answer: "Residential drain repair may include under-sink branch lines, PVC or metal piping, misaligned drain lines, and other damaged sections of a home's drainage or sewer system, depending on the condition of the  sewer and drain."
     },
     {
       question: "Can a damaged drain pipe cause sewer odors?",
@@ -85,7 +85,7 @@ export const residentialDrainRepairs: ServiceItem = {
             "name": "What are residential drain repairs?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Residential drain repairs address damaged, leaking, cracked, misaligned, or deteriorating drain pipes and related components to restore proper drainage and help prevent recurring plumbing problems."
+              "text": "Residential drain repairs address damaged, leaking, cracked, misaligned, or deteriorating drain pipes and related components to restore proper drainage and help prevent recurring  sewer and drain problems."
             }
           },
           {
@@ -101,7 +101,7 @@ export const residentialDrainRepairs: ServiceItem = {
             "name": "What types of residential drain pipes can be repaired?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Residential drain repair may include under-sink branch lines, PVC or metal piping, misaligned drain lines, and other damaged sections of a home's drainage or sewer system, depending on the condition of the plumbing."
+              "text": "Residential drain repair may include under-sink branch lines, PVC or metal piping, misaligned drain lines, and other damaged sections of a home's drainage or sewer system, depending on the condition of the  sewer and drain."
             }
           },
           {

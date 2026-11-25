@@ -16,7 +16,7 @@ export const residentialDrainCleaning: ServiceItem = {
     "Prevention of costly emergency water damage across sinks and showers"
   ],
   footerHeading: "Experiencing Slow Drainage at Home?",
-  footerText: "Don't let a minor clog turn into a major plumbing emergency. Our professional technicians are ready to restore your home's water flow quickly and cleanly.",
+  footerText: "Don't let a minor clog turn into a major  sewer and drain emergency. Our professional technicians are ready to restore your home's water flow quickly and cleanly.",
   
   meta: {
     title: "Residential Drain Cleaning in Hawthorne, NJ | Drain Solution Plus",
@@ -41,7 +41,7 @@ export const residentialDrainCleaning: ServiceItem = {
     },
     {
       question: "Can drain cleaning help with recurring clogs?",
-      answer: "Yes. Professional drain cleaning can remove accumulated debris and buildup that may contribute to recurring clogs. If a blockage repeatedly returns, a professional inspection may help identify an underlying plumbing or sewer issue."
+      answer: "Yes. Professional drain cleaning can remove accumulated debris and buildup that may contribute to recurring clogs. If a blockage repeatedly returns, a professional inspection may help identify an underlying  sewer and drain or sewer issue."
     },
     {
       question: "Does Drain Solution Plus serve areas outside Hawthorne, NJ?",
@@ -86,7 +86,7 @@ export const residentialDrainCleaning: ServiceItem = {
         "@id": "https://www.drainsolutionplus.com/#organization",
         "name": "Drain Solution Plus",
         "url": "https://www.drainsolutionplus.com/",
-        "description": "Drain Solution Plus provides residential drain cleaning and plumbing solutions in Hawthorne, NJ and surrounding New Jersey counties.",
+        "description": "Drain Solution Plus provides residential drain cleaning and  sewer and drain solutions in Hawthorne, NJ and surrounding New Jersey counties.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Hawthorne",

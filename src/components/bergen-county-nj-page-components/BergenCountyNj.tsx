@@ -11,7 +11,7 @@ export const BergenCountyNj: React.FC = () => {
   const faqs = [
     {
       q: 'Does Drain Solutions Plus serve Bergen County?',
-      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, and pump services throughout Bergen County, NJ, including communities such as Fort Lee, Hackensack, Englewood, Paramus, Ridgewood, Mahwah, Fair Lawn, and Teaneck.',
+      a: 'Yes. Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, and pump services throughout Bergen County, NJ, including communities such as Fort Lee, Hackensack, Englewood, Paramus, Ridgewood, Mahwah, Fair Lawn, and Teaneck.',
     },
     {
       q: 'What drain services are available in Bergen County?',
@@ -39,13 +39,13 @@ export const BergenCountyNj: React.FC = () => {
           Drain Cleaning &amp; Sewer Services Throughout Bergen County, NJ
         </h1>
         <p className="text-base sm:text-lg mb-4 text-slate-700 leading-relaxed">
-          Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, and pump services throughout Bergen County, NJ. Whether you have a clogged sink, blocked toilet, slow bathtub drain, recurring sewer problem, leaking faucet, or a sump or sewage ejector pump issue, our services are designed to address common drainage and plumbing problems for homes and businesses.
+          Drain Solutions Plus provides residential and commercial drain, sewer,  sewer and drain, and pump services throughout Bergen County, NJ. Whether you have a clogged sink, blocked toilet, slow bathtub drain, recurring sewer problem, leaking faucet, or a sump or sewage ejector pump issue, our services are designed to address common drainage and  sewer and drain problems for homes and businesses.
         </p>
         <p className="text-base sm:text-lg mb-6 text-slate-700 leading-relaxed">
           Our Bergen County service area includes communities such as Fort Lee, Hackensack, Englewood, Paramus, Ridgewood, Mahwah, Fair Lawn, Teaneck, and surrounding communities.
         </p>
         <p className="text-lg font-bold text-[#014485]">
-          Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your drain, sewer, or plumbing service needs.
+          Call <a href="tel:2018819622" className="text-[#c02f2d] hover:underline">(201) 881-9622</a> to discuss your drain, sewer, or  sewer and drain service needs.
         </p>
       </header>
 
@@ -143,7 +143,7 @@ export const BergenCountyNj: React.FC = () => {
             Faucet, Leak &amp; Flush Valve Repairs
           </h2>
           <p className="mb-4 text-slate-700">
-            Drain Solutions Plus also provides faucet and leak repair and flush valve leak repair. These services address plumbing fixtures that may be leaking, malfunctioning, or failing to shut off properly.
+            Drain Solutions Plus also provides faucet and leak repair and flush valve leak repair. These services address  sewer and drain fixtures that may be leaking, malfunctioning, or failing to shut off properly.
           </p>
           <p className="text-slate-700">
             Addressing a leak promptly can help prevent continued water loss and potential damage around the affected fixture.
@@ -185,7 +185,7 @@ export const BergenCountyNj: React.FC = () => {
             When Should You Call for Drain or Sewer Service?
           </h2>
           <p className="mb-4 text-slate-700">
-            Professional service may be appropriate when a drain repeatedly clogs, several fixtures drain slowly, a sewer backup occurs, a plumbing fixture leaks, or a pump is no longer operating properly.
+            Professional service may be appropriate when a drain repeatedly clogs, several fixtures drain slowly, a sewer backup occurs, a  sewer and drain fixture leaks, or a pump is no longer operating properly.
           </p>
           <p className="text-slate-700">
             Recurring problems can have different causes. Cleaning may resolve some blockages, while inspection or repair may be appropriate when a problem continues or a line appears damaged.

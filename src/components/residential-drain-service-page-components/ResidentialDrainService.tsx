@@ -388,7 +388,7 @@ const ResidentialDrainService: React.FC = () => {
                 Why Homeowners Choose Drain Solution Plus
               </h2>
               <p className="text-white/80 text-base leading-8 mb-6">
-                Choosing a drain company is about more than simply getting water moving again. Homeowners need a service provider that can identify the problem, explain the available options, and work with the existing plumbing system. Drain Solution Plus brings:
+                Choosing a drain company is about more than simply getting water moving again. Homeowners need a service provider that can identify the problem, explain the available options, and work with the existing  sewer and drain system. Drain Solution Plus brings:
               </p>
 
               <ul className="grid grid-cols-1 gap-3">
@@ -499,7 +499,7 @@ const ResidentialDrainService: React.FC = () => {
                 Need Residential Drain Cleaning or Repair?
               </h2>
               <p className="mt-4 text-sm leading-7 text-white/75">
-                Don&apos;t let a slow or clogged drain become a bigger plumbing problem. Whether you need help with a stubborn household clog, recurring drainage problems, or a damaged drain line, Drain Solution Plus can assess the issue and help determine the appropriate next step.
+                Don&apos;t let a slow or clogged drain become a bigger  sewer and drain problem. Whether you need help with a stubborn household clog, recurring drainage problems, or a damaged drain line, Drain Solution Plus can assess the issue and help determine the appropriate next step.
               </p>
             </div>
 
