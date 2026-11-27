@@ -38,7 +38,14 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://www.drainsolutionplus.com"),
   icons: {
-    icon: "/images/favicon.webp",
+    icon: [
+      {
+        url: "/images/favicon.webp",
+        type: "image/webp",
+      },
+    ],
+    shortcut: "/images/favicon.webp",
+    apple: "/images/favicon.webp",
   },
   alternates: {
     canonical: "/",
@@ -86,7 +93,7 @@ const jsonLd = {
       "url": "https://www.drainsolutionplus.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.drainsolutionplus.com/images/logo.png"
+        "url": "https://www.drainsolutionplus.com/images/logo.webp"
       },
       "image": "https://www.drainsolutionplus.com/path-to-your-business-image.webp",
       "description": "Drain Solutions Plus provides residential and residential drain cleaning, sewer cleaning, sewer repair, video sewer inspections, toilet repair, faucet and leak repair, frozen pipe repair, and emergency drain services throughout Northern New Jersey.",

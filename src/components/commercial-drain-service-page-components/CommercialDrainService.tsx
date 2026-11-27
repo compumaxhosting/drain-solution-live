@@ -696,7 +696,7 @@ const CommercialDrainService: React.FC = () => {
               Why Choose Drain Solution Plus for Commercial Drain Service?
             </h2>
             <p className="mt-4 text-base text-slate-600">
-              Drain Solution Plus focuses specifically on drain and sewer cleaning and repair. The company also states that it provides upfront pricing for  sewer and drain and drain repair services.
+              Drain Solution Plus focuses specifically on drain and sewer cleaning and repair. The company also states that it provides upfront pricing for  sewer and drain repair services.
             </p>
             <div className="mt-6 mx-auto h-1 w-20 bg-[#c02f2d]" />
           </div>

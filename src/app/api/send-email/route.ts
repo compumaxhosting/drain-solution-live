@@ -146,7 +146,7 @@ export async function POST(request: Request) {
     }
 
     // ==================================================
-    // LOAD LOGO FROM /public/images/logo.png
+    // LOAD LOGO FROM /public/images/logo.webp
     // ==================================================
 
     let logoAttachment:
@@ -159,12 +159,12 @@ export async function POST(request: Request) {
       | undefined;
 
     try {
-      const logoPath = path.join(process.cwd(), "public", "images", "logo.png");
+      const logoPath = path.join(process.cwd(), "public", "images", "logo.webp");
 
       const logoBuffer = await readFile(logoPath);
 
       logoAttachment = {
-        filename: "drain-solutions-plus-logo.png",
+        filename: "drain-solutions-plus-logo.webp",
         content: logoBuffer.toString("base64"),
         contentType: "image/png",
         contentId: "drain-solutions-plus-logo",
@@ -173,7 +173,7 @@ export async function POST(request: Request) {
       console.log("Email logo loaded successfully.");
     } catch (logoError) {
       console.error(
-        "Could not load logo from /public/images/logo.png:",
+        "Could not load logo from /public/images/logo.webp:",
         logoError,
       );
     }

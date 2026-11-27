@@ -118,7 +118,7 @@ export default function TopBar() {
           >
             <Image
               src="/images/yelp-icon.webp"
-              alt=""
+              alt="Yelp customer reviews for Drain Solutions Plus"
               width={20}
               height={20}
               className="h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5 object-contain"

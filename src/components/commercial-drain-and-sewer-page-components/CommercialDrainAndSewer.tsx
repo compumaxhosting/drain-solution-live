@@ -159,7 +159,7 @@ const CommercialDrainAndSewer: React.FC = () => {
 
             <p>
               One of the primary causes of foundation failure is the accumulation of
-              water around the structure's base—often referred to as puddling water.
+              water around the structure&apos;s base—often referred to as puddling water.
               Following heavy rain and severe storms, stagnant water infiltrates the soil,
               triggering rapid erosion and destabilizing the supporting subgrade.
             </p>
@@ -168,7 +168,7 @@ const CommercialDrainAndSewer: React.FC = () => {
               Over time, unmanaged saturation leads to uneven settling, structural cracking,
               and compromised interior safety. Implementing proactive, commercial-grade
               drainage diverts water away from vulnerable foundation perimeters, safeguarding
-              your business's bottom line.
+              your business&apos;s bottom line.
             </p>
           </div>
         </div>

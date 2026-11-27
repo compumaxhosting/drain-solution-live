@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="lg:col-span-3 flex flex-col items-start space-y-4">
             <div className="rounded-xl bg-white px-5 py-3.5 shadow-md flex items-center justify-center w-full max-w-[210px] transition-transform duration-200 hover:scale-[1.02]">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Drain Solutions Plus"
                 width={168}
                 height={120}
@@ -321,7 +321,7 @@ export default function Footer() {
               >
                 <Image
                   src="/images/yelp-icon.webp"
-                  alt=""
+                  alt="Read customer reviews of Drain Solutions Plus on Yelp"
                   width={20}
                   height={20}
                   className="h-5 w-5 object-contain"

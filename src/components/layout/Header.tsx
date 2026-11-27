@@ -33,12 +33,6 @@ export default function Header() {
   );
 
   useEffect(() => {
-    setDesktopDropdownOpen(null);
-    setMobileMenuOpen(false);
-    setMobileDropdownOpen(null);
-  }, [pathname]);
-
-  useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -89,7 +83,7 @@ export default function Header() {
               >
                 <Link href="/" className="inline-flex items-center">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo.webp"
                     alt="Drain Solution Plus company logo"
                     width={168}
                     height={120}
@@ -288,7 +282,7 @@ export default function Header() {
           >
             <Image
               src="/images/wasup.webp"
-              alt=""
+              alt="Drain and sewer cleaning services by Drain Solutions Plus"
               width={128}
               height={128}
               className="h-8 w-8 object-contain"
@@ -329,7 +323,7 @@ export default function Header() {
           >
             <Image
               src="/images/wasup.webp"
-              alt=""
+              alt="Professional sewer and drain solutions in Northern New Jersey"
               width={128}
               height={128}
               className="h-7 w-7 object-contain sm:h-8 sm:w-8"
